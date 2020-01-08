@@ -1,3 +1,3 @@
-# app-store-module-skeleton
+# Store Module Skeleton
 
-Skeleton project for new Gambio AppStore packages.
+Skeleton project for new Gambio Store packages.
