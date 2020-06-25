@@ -11,5 +11,7 @@
 
 $t_language_text_section_content_array = [
     'BOX_SKELETON_MODULE' => 'Gambio Module Skeleton',
-    'PAGE_TITLE' => 'Gambio Module Skeleton'
+    'PAGE_TITLE' => 'Gambio Module Skeleton',
+    'HOME' => 'Home page',
+    'CONFIGURATION' => 'Configuration page'
 ];
