@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<!-- {load_language_text section="admin_menu" use_fallback=$smarty.const.SHOW_UNTRANSLATED_MENUITEMS} -->
+<!-- {load_language_text section="skeleton_module" use_fallback=$smarty.const.SHOW_UNTRANSLATED_MENUITEMS} -->
 
 <admin_menu>
     <menugroup id="BOX_HEADING_SKELETON_MODULE" sort="400" class="fa fa-cloud-download"
-               title="{$txt.BOX_SKELETON_MODULE|escape}" brand="alt" type="standalone">
+               title="{$txt.BOX_SKELETON_MODULE|escape}" type="standalone">
 	    <menuitem sort="10" link="admin.php" link_param="do=SkeletonModule" title="{$txt.BOX_SKELETON_MODULE|escape}" />
     </menugroup>
 </admin_menu>
