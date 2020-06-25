@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Title</title>
-    </head>
-    <body>
-        
-    </body>
-</html>
+{extends file="get_usermod:layouts/main/layout.html"}
+
+{block name="content"}
+    <div class="timer-group">
+        <div class="timer hour">
+            <div class="hand"><span></span></div>
+            <div class="hand"><span></span></div>
+        </div>
+        <div class="timer minute">
+            <div class="hand"><span></span></div>
+            <div class="hand"><span></span></div>
+        </div>
+        <div class="timer second">
+            <div class="hand"><span></span></div>
+            <div class="hand"><span></span></div>
+        </div>
+        <div class="face">
+            <h2>Beautiful Timer</h2>
+            <p id="lazy">01:30:00</p>
+        </div>
+    </div>
+{/block}
+
