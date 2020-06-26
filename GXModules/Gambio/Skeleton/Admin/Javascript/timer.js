@@ -5,11 +5,16 @@ var defaults = {}
   , face = document.getElementById('lazy')
   , currentTimer = face.innerHTML;
 
-setInterval(tick, 1000);
+var timerInterval = setInterval(tick, 1000);
 
 function tick() {
 
   var timestamp = calculateTimestamp(currentTimer);
+  
+  if (timestamp < 1) {
+      clearInterval(timerInterval);
+      return;
+  }
   
   timestamp -= one_second;
   

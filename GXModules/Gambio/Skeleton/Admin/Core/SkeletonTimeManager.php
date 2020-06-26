@@ -2,12 +2,6 @@
 
 class SkeletonTimeManager
 {
-    
-    private function getStartDate()
-    {
-        return '1593165073'; // timestamp when we started the counter. returns 0 if not set or reseted.
-    }
-    
     public function getCountdownTimer()
     {
         $secondsSinceStart = $this->getTimeDiffFromNow(); // seconds
@@ -16,6 +10,17 @@ class SkeletonTimeManager
         
         return $this->convertFromSecondsToTime($diff > 0 ? $diff : 0);
     }
+
+    private function isRunning()
+    {
+
+    }
+    
+    private function getStartDate()
+    {
+        return time() - 3590; // timestamp when we started the counter. returns 0 if not set or reseted.
+    }
+
     
     private function getTimeDiffFromNow()
     {
@@ -34,7 +39,8 @@ class SkeletonTimeManager
     private function getSecondsFromTimerValue($timerValue = '00:00:00')
     {
         $timeArray = explode( ':', $timerValue);
-        
+        $timeArray = array_reverse( $timeArray);
+
         $seconds = 0;
         foreach ($timeArray as $key => $timeValue) {
             $seconds += $timeValue * (60 ** $key);
