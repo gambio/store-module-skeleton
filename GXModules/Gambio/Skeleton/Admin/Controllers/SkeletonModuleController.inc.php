@@ -9,8 +9,36 @@
    --------------------------------------------------------------
 */
 
+require_once __DIR__ . '/../Core/SkeletonTimeManager.php';
+
 class SkeletonModuleController extends AdminHttpViewController
 {
+    private $timeManager;
+
+
+    /**
+     * SkeletonModuleController constructor.
+     *
+     * @param \HttpContextReaderInterface     $httpContextReader
+     * @param \HttpResponseProcessorInterface $httpResponseProcessor
+     * @param \ContentViewInterface           $defaultContentView
+     */
+    public function __construct(
+        HttpContextReaderInterface $httpContextReader,
+        HttpResponseProcessorInterface $httpResponseProcessor,
+        ContentViewInterface $defaultContentView
+    ) {
+        $this->timeManager = new SkeletonTimeManager();
+
+        parent::__construct($httpContextReader, $httpResponseProcessor, $defaultContentView);
+    }
+
+    private function getTimeManager()
+    {
+        return $this->timeManager;
+    }
+
+
     /**
      * Determines whether to display the data processing terms, the registration or the downloads page of the iframe
      *
@@ -31,7 +59,10 @@ class SkeletonModuleController extends AdminHttpViewController
             new Asset('../GXModules/Gambio/Skeleton/Admin/Javascript/timer.js'),
             new Asset('../GXModules/Gambio/Skeleton/Admin/Styles/skeleton_module.css'),
         ]);
-        $data              = new KeyValueCollection([]);
+        
+        $data              = new KeyValueCollection([
+            'countdown' => $this->getTimeManager()->getCountdownTimer()
+        ]);
 
         return new AdminLayoutHttpControllerResponse($title, $template, $data, $assets, $contentNavigation);
     }
