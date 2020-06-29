@@ -14,6 +14,7 @@ require_once __DIR__ . '/../Core/SkeletonTimeManager.php';
 class SkeletonModuleController extends AdminHttpViewController
 {
     private $timeManager;
+    private $languageTextManager;
 
 
     /**
@@ -28,14 +29,20 @@ class SkeletonModuleController extends AdminHttpViewController
         HttpResponseProcessorInterface $httpResponseProcessor,
         ContentViewInterface $defaultContentView
     ) {
-        $this->timeManager = new SkeletonTimeManager();
+        $this->timeManager = SkeletonTimeManager::getInstance();
+        $this->languageTextManager = new LanguageTextManager('skeleton_module', $_SESSION['languages_id']);
 
         parent::__construct($httpContextReader, $httpResponseProcessor, $defaultContentView);
     }
-
-    private function getTimeManager()
+    
+    
+    private function getContentNavigation($mainPage = false)
     {
-        return $this->timeManager;
+        $contentNavigation = MainFactory::create('ContentNavigationCollection', []);
+        $contentNavigation->add(new StringType($this->languageTextManager->get_text('HOME', 'skeleton_module')), new StringType('admin.php?do=SkeletonModule'), new BoolType($mainPage));
+        $contentNavigation->add(new StringType($this->languageTextManager->get_text('CONFIGURATION', 'skeleton_module')), new StringType('admin.php?do=SkeletonModule/configuration'), new BoolType(!$mainPage));
+        
+        return $contentNavigation;
     }
 
 
@@ -47,23 +54,37 @@ class SkeletonModuleController extends AdminHttpViewController
      */
     public function actionDefault()
     {
-        $languageTextManager = new LanguageTextManager('skeleton_module', $_SESSION['languages_id']);
-        $title             = new NonEmptyStringType($languageTextManager->get_text('PAGE_TITLE', 'skeleton_module'));
+        $title             = new NonEmptyStringType($this->languageTextManager->get_text('PAGE_TITLE', 'skeleton_module'));
         $template          = new ExistingFile(new NonEmptyStringType(__DIR__ . '/../Html/skeleton_module.html'));
-
-        $contentNavigation = MainFactory::create('ContentNavigationCollection', []);
-        $contentNavigation->add(new StringType($languageTextManager->get_text('HOME', 'skeleton_module')), new StringType('admin.php?do=SkeletonModule'), new BoolType(true));
-        $contentNavigation->add(new StringType($languageTextManager->get_text('CONFIGURATION', 'skeleton_module')), new StringType('admin.php?do=SkeletonModule/configuration'), new BoolType(false));
 
         $assets            = new AssetCollection([
             new Asset('../GXModules/Gambio/Skeleton/Admin/Javascript/timer.js'),
             new Asset('../GXModules/Gambio/Skeleton/Admin/Styles/skeleton_module.css'),
         ]);
-        
+
         $data              = new KeyValueCollection([
-            'countdown' => $this->getTimeManager()->getCountdownTimer()
+            'remained' => $this->timeManager->getRemainedTime(),
+            'timer_value' => $this->timeManager->getTimerInSeconds()
         ]);
 
-        return new AdminLayoutHttpControllerResponse($title, $template, $data, $assets, $contentNavigation);
+        return new AdminLayoutHttpControllerResponse($title, $template, $data, $assets, $this->getContentNavigation(true));
+    }
+    
+    public function actionConfiguration()
+    {
+        if (isset($_POST['skeleton_timer'])) {
+            $timer = $_POST['skeleton_timer'];
+            $this->timeManager->setTimer($timer);
+        } else {
+            $timer = $this->timeManager->getTimer() ?: '00:00:00';
+        }
+
+        $title = new NonEmptyStringType($this->languageTextManager->get_text('PAGE_TITLE', 'skeleton_module'));
+        $data = new KeyValueCollection([
+            'timer_value' => $timer
+        ]);
+
+        $template = new ExistingFile(new NonEmptyStringType(__DIR__ . '/../Html/skeleton_configuration.html'));
+        return new AdminLayoutHttpControllerResponse($title, $template, $data, null, $this->getContentNavigation());
     }
 }

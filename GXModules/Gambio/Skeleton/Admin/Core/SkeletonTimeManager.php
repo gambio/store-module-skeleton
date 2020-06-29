@@ -8,12 +8,13 @@ class SkeletonTimeManager
     private $configuration;
     
     private function __clone() {}
+    public function __wakeup() {}
     private function __construct($timerConfiguration)
     {
         $this->configuration = $timerConfiguration;
     }
 
-    private function getSecondsFromTimerValue($timerValue = '00:00:00')
+    public function getSecondsFromTimerValue($timerValue = '00:00:00')
     {
         $timeArray = explode( ':', $timerValue);
         $timeArray = array_reverse($timeArray);
@@ -26,8 +27,12 @@ class SkeletonTimeManager
         return $seconds;
     }
 
+    public function setTimer($value)
+    {
+        $this->configuration->setTimerValue($value);
+    }
 
-    public function getTimerValue()
+    public function getTimer()
     {
         return $this->configuration->getTimerValue();
     }
@@ -35,7 +40,7 @@ class SkeletonTimeManager
     public function getRemainedTime()
     {
         $now = time();
-        $timerValueInSeconds = $this->getTimerValue();
+        $timerValueInSeconds = $this->getTimer();
         $timerStartedTimestamp = $this->configuration->getTimerStarted();
         
         $secondsFromStart = $now - $timerStartedTimestamp;
@@ -47,9 +52,37 @@ class SkeletonTimeManager
     public static function getInstance()
     {
         if (self::$instance === null) {
-            self::$instance = new SkeletonTimeManager(new SkeletonConfiguration);
+
+            define('StoreKey_MigrationScript', true);
+
+            require_once __DIR__ . '/../../../Store/Core/Facades/GambioStoreFileSystemFacade.php';
+            require_once __DIR__ . '/../../../Store/Core/Facades/GambioStoreDatabaseFacade.php';
+            require_once __DIR__ . '/../../../Store/Core/Facades/GambioStoreCompatibilityFacade.php';
+            require_once __DIR__ . '/../../../Store/Core/Facades/GambioStoreConfigurationFacade.php';
+
+            
+            $fileSystem = new GambioStoreFileSystemFacade();
+            $database = GambioStoreDatabaseFacade::connect($fileSystem);
+            $compatability = new GambioStoreCompatibilityFacade($database);
+            $configuration = new GambioStoreConfigurationFacade($database, $compatability);
+
+            self::$instance = new SkeletonTimeManager(new SkeletonConfiguration($configuration));
         }
         
         return self::$instance;
+    }
+    
+    public function getTimerInSeconds()
+    {
+        $timer = $this->getTimer();
+        return $this->getSecondsFromTimerValue($timer);
+    }
+
+
+
+
+    public function test()
+    {
+        return $this->configuration->test();
     }
 }

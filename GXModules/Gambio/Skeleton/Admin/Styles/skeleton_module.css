@@ -187,7 +187,5 @@
 }
 
 .buttons {
-    display: block;
-    margin: 0 auto;
-    width: 7%;
+    margin-top: 10px;
 }

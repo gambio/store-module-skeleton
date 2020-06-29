@@ -1,38 +1,26 @@
 var defaults = {}
-  , one_second = 1000
-  , one_minute = one_second * 60
-  , one_hour = one_minute * 60
-  , face = document.getElementById('lazy')
-  , currentTimer = face.innerHTML;
+    , face = document.getElementById('lazy')
+    , remained = face.dataset.remained // seconds
+    , timer_value = face.dataset.timer_value // seconds
 
 var timerInterval = setInterval(tick, 1000);
 
 function tick() {
-
-  var timestamp = calculateTimestamp(currentTimer);
-  
-  if (timestamp < 1) {
-      clearInterval(timerInterval);
-      return;
-  }
-  
-  timestamp -= one_second;
-  
-  currentTimer = convertTimestampToVisualClock(timestamp);
-
-  face.innerText = currentTimer;
-  
+    face.innerText = convertSecondsToVisualClock(remained--);
+    if (remained < 0) {
+        clearInterval(timerInterval);
+    }
 }
 
-function calculateTimestamp(timer) {
-  var parts = timer.split(':');
-  return parts[0] * one_hour + parts[1] * one_minute + parts[2] * one_second;
+function convertSecondsToVisualClock(seconds) {
+    var parts = [];
+    parts[0] = '' + Math.floor(seconds / 3600);
+    parts[1] = '' + Math.floor((seconds / 60) % 60);
+    parts[2] = '' + Math.floor(seconds % 60);
+    return parts.join(':');
 }
 
-function convertTimestampToVisualClock(timestamp) {
-  var parts = [];
-  parts[0] = '' + Math.floor( timestamp / one_hour );
-  parts[1] = '' + Math.floor( (timestamp % one_hour) / one_minute );
-  parts[2] = '' + Math.floor( ( (timestamp % one_hour) % one_minute ) / one_second );
-  return parts.join(':');
+document.getElementById('skeleton-timer-reset').onclick = function changeContent() {
+    face.innerText = convertSecondsToVisualClock(timer_value);
+    remained = timer_value;
 }

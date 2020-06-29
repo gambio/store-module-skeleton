@@ -1,29 +1,31 @@
 {extends file="get_usermod:layouts/main/layout.html"}
 
 {block name="content"}
-    <div class="timer-group">
-        <div class="timer hour">
-            <div class="hand"><span></span></div>
-            <div class="hand"><span></span></div>
-        </div>
-        <div class="timer minute">
-            <div class="hand"><span></span></div>
-            <div class="hand"><span></span></div>
-        </div>
-        <div class="timer second">
-            <div class="hand"><span></span></div>
-            <div class="hand"><span></span></div>
-        </div>
-        <div class="face">
-            <h2>Beautiful Timer</h2>
-            <p id="lazy">{$content.countdown}</p>
-        </div>
-    </div>
 
+    <div class="col-1 text-center">
+        <div class="timer-group">
+            <div class="timer hour">
+                <div class="hand"><span></span></div>
+                <div class="hand"><span></span></div>
+            </div>
+            <div class="timer minute">
+                <div class="hand"><span></span></div>
+                <div class="hand"><span></span></div>
+            </div>
+            <div class="timer second">
+                <div class="hand"><span></span></div>
+                <div class="hand"><span></span></div>
+            </div>
+            <div class="face">
+                <h2>Beautiful Timer</h2>
+                <p id="lazy" data-remained="{$content.remained}" data-timer_value="{$content.timer_value}"></p>
+            </div>
+        </div>
 
-    <div class="buttons">
-        <button type="button" class="btn btn-primary">Start</button>
-        <button type="button" class="btn btn-secondary">Reset</button>
+        <div class="buttons">
+            <button type="button" class="btn btn-primary">Start</button>
+            <button id="skeleton-timer-reset" type="button" class="btn btn-secondary">Reset</button>
+        </div>
     </div>
 
 {/block}
