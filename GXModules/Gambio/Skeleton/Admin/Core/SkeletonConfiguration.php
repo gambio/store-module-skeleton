@@ -30,6 +30,11 @@ class SkeletonConfiguration
         return $this->storeConfiguration->get('SKELETON_TIMER_STARTED');
     }
     
+    public function resetTimer()
+    {
+        return $this->storeConfiguration->remove('SKELETON_TIMER_STARTED');
+    }
+    
     public function setTimerStarted($value)
     {
         if ($this->storeConfiguration->get('SKELETON_TIMER_STARTED') === null) {

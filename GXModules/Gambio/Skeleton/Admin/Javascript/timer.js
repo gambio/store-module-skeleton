@@ -21,6 +21,15 @@ function convertSecondsToVisualClock(seconds) {
 }
 
 document.getElementById('skeleton-timer-reset').onclick = function changeContent() {
-    face.innerText = convertSecondsToVisualClock(timer_value);
-    remained = timer_value;
+    
+    fetch('admin.php?do=SkeletonModuleAjax/ResetTimer')
+        .then(() => clearInterval(timerInterval))
+        .then(() => face.innerText = convertSecondsToVisualClock(timer_value))
+        .then(() => remained = timer_value);
+}
+
+document.getElementById('skeleton-timer-start').onclick = function changeContent() {
+    fetch('admin.php?do=SkeletonModuleAjax/StartTimer')
+        .then(() => setInterval(tick, 1000))
+        .then(data => console.log(data));
 }

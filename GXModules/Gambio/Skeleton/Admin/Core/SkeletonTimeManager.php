@@ -26,6 +26,16 @@ class SkeletonTimeManager
 
         return $seconds;
     }
+    
+    public function resetTimer()
+    {
+        $this->configuration->resetTimer();
+    }
+    
+    public function setTimerStarted()
+    {
+        $this->configuration->setTimerStarted(time());
+    }
 
     public function setTimer($value)
     {
@@ -40,7 +50,7 @@ class SkeletonTimeManager
     public function getRemainedTime()
     {
         $now = time();
-        $timerValueInSeconds = $this->getTimer();
+        $timerValueInSeconds = $this->getTimerInSeconds();
         $timerStartedTimestamp = $this->configuration->getTimerStarted();
         
         $secondsFromStart = $now - $timerStartedTimestamp;

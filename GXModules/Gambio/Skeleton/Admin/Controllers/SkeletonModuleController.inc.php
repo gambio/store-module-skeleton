@@ -16,7 +16,6 @@ class SkeletonModuleController extends AdminHttpViewController
     private $timeManager;
     private $languageTextManager;
 
-
     /**
      * SkeletonModuleController constructor.
      *

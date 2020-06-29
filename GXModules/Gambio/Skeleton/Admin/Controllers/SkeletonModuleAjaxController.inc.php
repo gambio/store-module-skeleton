@@ -11,10 +11,40 @@
 
 class SkeletonModuleAjaxController extends AdminHttpViewController
 {
-    public function actionSetTimerConfigurationValue()
+    private $timeManager;
+    
+    /**
+     * SkeletonModuleController constructor.
+     *
+     * @param \HttpContextReaderInterface     $httpContextReader
+     * @param \HttpResponseProcessorInterface $httpResponseProcessor
+     * @param \ContentViewInterface           $defaultContentView
+     */
+    public function __construct(
+        HttpContextReaderInterface $httpContextReader,
+        HttpResponseProcessorInterface $httpResponseProcessor,
+        ContentViewInterface $defaultContentView
+    ) {
+        $this->timeManager = SkeletonTimeManager::getInstance();
+        
+        parent::__construct($httpContextReader, $httpResponseProcessor, $defaultContentView);
+    }
+    
+    public function actionStartTimer()
     {
-        // Set value to database
+        $this->timeManager->setTimerStarted();
+
         $responseData = ['success' => true];
         return new JsonHttpControllerResponse($responseData);
     }
+    
+    public function actionResetTimer()
+    {
+        $this->timeManager->resetTimer();
+        
+        $responseData = ['success' => true];
+        return new JsonHttpControllerResponse($responseData);
+    }
+    
+    
 }
