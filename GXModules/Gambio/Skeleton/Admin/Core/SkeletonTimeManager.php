@@ -87,12 +87,25 @@ class SkeletonTimeManager
         $timer = $this->getTimer();
         return $this->getSecondsFromTimerValue($timer);
     }
-
-
-
-
-    public function test()
+    
+    public function sanitize($timerValue)
     {
-        return $this->configuration->test();
+        $timeArray = explode( ':', $timerValue);
+        $timeArray = array_replace(array_fill(0, 3, '00'), $timeArray);
+        
+        array_walk($timeArray, function($item, $key) {
+            $item  = (int) $item;
+            
+            if ($key !== 0 && $item > 59) {
+                $item = 59;
+            }
+            if ($key === 0 && $item > 23) {
+                $item = 23;
+            }
+            
+            return $item;
+        });
+        
+        return implode( ':', $timeArray);
     }
 }

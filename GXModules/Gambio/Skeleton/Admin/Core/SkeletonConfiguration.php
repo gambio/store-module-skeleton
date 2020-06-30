@@ -14,10 +14,10 @@ class SkeletonConfiguration
     public function setTimerValue($value)
     {
         if ($this->storeConfiguration->get('SKELETON_TIMER') === null) {
-            $this->storeConfiguration->create('SKELETON_TIMER', $value);
-        } else {
-            $this->storeConfiguration->set('SKELETON_TIMER', $value);
+            return $this->storeConfiguration->create('SKELETON_TIMER', $value);
         }
+    
+        return $this->storeConfiguration->set('SKELETON_TIMER', $value);
     }
     
     public function getTimerValue()
@@ -32,15 +32,21 @@ class SkeletonConfiguration
     
     public function resetTimer()
     {
-        return $this->storeConfiguration->remove('SKELETON_TIMER_STARTED');
+        return $this->storeConfiguration->set('SKELETON_TIMER_STARTED', 0);
     }
     
     public function setTimerStarted($value)
     {
-        if ($this->storeConfiguration->get('SKELETON_TIMER_STARTED') === null) {
-            $this->storeConfiguration->create('SKELETON_TIMER_STARTED', $value);
-        } else {
-            $this->storeConfiguration->set('SKELETON_TIMER_STARTED', $value);
+        $timerStarted = $this->getTimerStarted();
+        
+        if (isset($timerStarted) && $timerStarted > 0) {
+            return false;
         }
+        
+        if ($timerStarted === null) {
+            return $this->storeConfiguration->create('SKELETON_TIMER_STARTED', $value);
+        }
+    
+        return $this->storeConfiguration->set('SKELETON_TIMER_STARTED', $value);
     }
 }

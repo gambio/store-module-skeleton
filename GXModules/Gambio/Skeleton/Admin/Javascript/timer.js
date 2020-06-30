@@ -2,13 +2,14 @@ var defaults = {}
     , face = document.getElementById('lazy')
     , remained = face.dataset.remained // seconds
     , timer_value = face.dataset.timer_value // seconds
+    , timerInterval;
 
-var timerInterval = setInterval(tick, 1000);
+startTimer();
 
 function tick() {
     face.innerText = convertSecondsToVisualClock(remained--);
     if (remained < 0) {
-        clearInterval(timerInterval);
+        stopTimer();
     }
 }
 
@@ -20,16 +21,40 @@ function convertSecondsToVisualClock(seconds) {
     return parts.join(':');
 }
 
-document.getElementById('skeleton-timer-reset').onclick = function changeContent() {
+function stopTimer() {
+    clearInterval(timerInterval);
+    timerInterval = null;
     
+    var hands = document.querySelectorAll('.hand span');
+    for (var i = 0; i < hands.length; i++) {
+        hands[i].style['animation-name'] = 'unset';
+    }
+}
+
+function startTimer() {
+    if (!timerInterval) {
+        timerInterval = setInterval(tick, 1000);
+    
+        var hands = document.querySelectorAll('.hand span');
+        for (var i = 0; i < hands.length; i++) {
+            if (i % 2 === 0) {
+                hands[i].style['animation-name'] = 'spin2';
+            } else {
+                hands[i].style['animation-name'] = 'spin1';
+            }
+        }
+    }
+}
+
+document.getElementById('skeleton-timer-reset').onclick = function changeContent() {
     fetch('admin.php?do=SkeletonModuleAjax/ResetTimer')
-        .then(() => clearInterval(timerInterval))
+        .then(() => stopTimer())
         .then(() => face.innerText = convertSecondsToVisualClock(timer_value))
         .then(() => remained = timer_value);
 }
 
 document.getElementById('skeleton-timer-start').onclick = function changeContent() {
     fetch('admin.php?do=SkeletonModuleAjax/StartTimer')
-        .then(() => setInterval(tick, 1000))
+        .then(() => startTimer())
         .then(data => console.log(data));
 }

@@ -72,8 +72,9 @@ class SkeletonModuleController extends AdminHttpViewController
     public function actionConfiguration()
     {
         if (isset($_POST['skeleton_timer'])) {
-            $timer = $_POST['skeleton_timer'];
+            $timer = $this->timeManager->sanitize($_POST['skeleton_timer']);
             $this->timeManager->setTimer($timer);
+            $this->timeManager->resetTimer();
         } else {
             $timer = $this->timeManager->getTimer() ?: '00:00:00';
         }
