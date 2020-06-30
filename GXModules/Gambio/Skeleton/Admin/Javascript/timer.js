@@ -14,8 +14,8 @@ if (remained > 0) {
 }
 
 function tick() {
-    face.innerText = convertSecondsToVisualClock(remained--);
-    if (remained < 0) {
+    face.innerText = convertSecondsToVisualClock(--remained);
+    if (remained < 1) {
         stopTimer();
     }
 }
