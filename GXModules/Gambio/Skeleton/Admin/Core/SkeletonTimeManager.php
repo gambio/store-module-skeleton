@@ -4,16 +4,34 @@ require_once __DIR__ . '/SkeletonConfiguration.php';
 
 class SkeletonTimeManager
 {
+    /**
+     * @var
+     */
     private static $instance;
+    
+    /**
+     * @var
+     */
     private $configuration;
     
-    private function __clone() {}
-    public function __wakeup() {}
+    /**
+     * SkeletonTimeManager constructor.
+     *
+     * @param $timerConfiguration
+     */
     private function __construct($timerConfiguration)
     {
         $this->configuration = $timerConfiguration;
     }
-
+    
+    
+    /**
+     * Converts string time to seconds.
+     *
+     * @param string $timerValue
+     *
+     * @return float|int
+     */
     public function getSecondsFromTimerValue($timerValue = '00:00:00')
     {
         $timeArray = explode( ':', $timerValue);
@@ -27,26 +45,52 @@ class SkeletonTimeManager
         return $seconds;
     }
     
+    
+    /**
+     * Reset timer.
+     */
     public function resetTimer()
     {
         $this->configuration->resetTimer();
     }
     
+    
+    /**
+     * Sets timer started.
+     */
     public function setTimerStarted()
     {
         $this->configuration->setTimerStarted(time());
     }
-
+    
+    
+    /**
+     * Sets timer to database.
+     *
+     * @param $value
+     */
     public function setTimer($value)
     {
         $this->configuration->setTimerValue($value);
     }
-
+    
+    
+    /**
+     * Gets timer data.
+     *
+     * @return mixed
+     */
     public function getTimer()
     {
         return $this->configuration->getTimerValue();
     }
     
+    
+    /**
+     * Returns remained time.
+     *
+     * @return int
+     */
     public function getRemainedTime()
     {
         $now = time();
@@ -59,6 +103,10 @@ class SkeletonTimeManager
         return $timerLeftSeconds > 0 ? $timerLeftSeconds : 0 ;
     }
     
+    
+    /**
+     * @return \SkeletonTimeManager
+     */
     public static function getInstance()
     {
         if (self::$instance === null) {
@@ -69,7 +117,6 @@ class SkeletonTimeManager
             require_once __DIR__ . '/../../../Store/Core/Facades/GambioStoreDatabaseFacade.php';
             require_once __DIR__ . '/../../../Store/Core/Facades/GambioStoreCompatibilityFacade.php';
             require_once __DIR__ . '/../../../Store/Core/Facades/GambioStoreConfigurationFacade.php';
-
             
             $fileSystem = new GambioStoreFileSystemFacade();
             $database = GambioStoreDatabaseFacade::connect($fileSystem);
@@ -82,12 +129,22 @@ class SkeletonTimeManager
         return self::$instance;
     }
     
+    
+    /**
+     * @return float|int
+     */
     public function getTimerInSeconds()
     {
         $timer = $this->getTimer();
         return $this->getSecondsFromTimerValue($timer);
     }
     
+    
+    /**
+     * @param $timerValue
+     *
+     * @return string
+     */
     public function sanitize($timerValue)
     {
         $timeArray = explode( ':', $timerValue);
@@ -108,4 +165,7 @@ class SkeletonTimeManager
         
         return implode( ':', $timeArray);
     }
+    
+    private function __clone() {}
+    public function __wakeup() {}
 }

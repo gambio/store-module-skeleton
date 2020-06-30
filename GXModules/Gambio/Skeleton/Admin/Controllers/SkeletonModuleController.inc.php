@@ -35,6 +35,13 @@ class SkeletonModuleController extends AdminHttpViewController
     }
     
     
+    /**
+     * Gets navigation content.
+     *
+     * @param bool $mainPage
+     *
+     * @return bool|\ContentNavigationCollection
+     */
     private function getContentNavigation($mainPage = false)
     {
         $contentNavigation = MainFactory::create('ContentNavigationCollection', []);
@@ -46,10 +53,9 @@ class SkeletonModuleController extends AdminHttpViewController
 
 
     /**
-     * Determines whether to display the data processing terms, the registration or the downloads page of the iframe
+     * Home page action.
      *
      * @return mixed
-
      */
     public function actionDefault()
     {
@@ -69,6 +75,12 @@ class SkeletonModuleController extends AdminHttpViewController
         return new AdminLayoutHttpControllerResponse($title, $template, $data, $assets, $this->getContentNavigation(true));
     }
     
+    
+    /**
+     * Configuration page.
+     *
+     * @return \AdminLayoutHttpControllerResponse
+     */
     public function actionConfiguration()
     {
         if (isset($_POST['skeleton_timer'])) {

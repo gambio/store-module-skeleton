@@ -30,6 +30,12 @@ class SkeletonModuleAjaxController extends AdminHttpViewController
         parent::__construct($httpContextReader, $httpResponseProcessor, $defaultContentView);
     }
     
+    
+    /**
+     * Starts the timer.
+     *
+     * @return \JsonHttpControllerResponse
+     */
     public function actionStartTimer()
     {
         $this->timeManager->setTimerStarted();
@@ -38,6 +44,12 @@ class SkeletonModuleAjaxController extends AdminHttpViewController
         return new JsonHttpControllerResponse($responseData);
     }
     
+    
+    /**
+     * Stops the timer.
+     *
+     * @return \JsonHttpControllerResponse
+     */
     public function actionResetTimer()
     {
         $this->timeManager->resetTimer();
