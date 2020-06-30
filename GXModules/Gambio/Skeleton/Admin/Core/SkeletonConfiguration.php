@@ -44,7 +44,8 @@ class SkeletonConfiguration
      */
     public function getTimerValue()
     {
-        return $this->storeConfiguration->get('SKELETON_TIMER');
+        $timer = $this->storeConfiguration->get('SKELETON_TIMER');
+        return $timer ?: 0;
     }
     
     
