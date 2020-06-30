@@ -82,7 +82,7 @@ class SkeletonTimeManager
      */
     public function getTimer()
     {
-        return $this->configuration->getTimerValue();
+        return $this->configuration->getTimerValue() ?: 0;
     }
     
     
@@ -94,8 +94,8 @@ class SkeletonTimeManager
     public function getRemainedTime()
     {
         $now = time();
-        $timerValueInSeconds = $this->getTimerInSeconds();
-        $timerStartedTimestamp = $this->configuration->getTimerStarted();
+        $timerValueInSeconds = $this->getTimerInSeconds() ?: 0;
+        $timerStartedTimestamp = $this->configuration->getTimerStarted() ?: 0;
         
         $secondsFromStart = $now - $timerStartedTimestamp;
         $timerLeftSeconds = $timerValueInSeconds - $secondsFromStart;

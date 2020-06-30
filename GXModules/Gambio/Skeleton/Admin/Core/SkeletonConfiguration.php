@@ -44,8 +44,7 @@ class SkeletonConfiguration
      */
     public function getTimerValue()
     {
-        $timer = $this->storeConfiguration->get('SKELETON_TIMER');
-        return $timer ?: 0;
+        return $this->storeConfiguration->get('SKELETON_TIMER');
     }
     
     
@@ -56,8 +55,7 @@ class SkeletonConfiguration
      */
     public function getTimerStarted()
     {
-        $timeStarted = $this->storeConfiguration->get('SKELETON_TIMER_STARTED');
-        return $timeStarted ?: 0;
+        return $this->storeConfiguration->get('SKELETON_TIMER_STARTED');
     }
     
     

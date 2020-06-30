@@ -4,7 +4,14 @@ var defaults = {}
     , timer_value = face.dataset.timer_value // seconds
     , timerInterval;
 
-startTimer();
+if (remained > 0) {
+    face.innerText = convertSecondsToVisualClock(remained);
+    startTimer();
+} else {
+    face.innerText = convertSecondsToVisualClock(timer_value);
+    stopTimer();
+    remained = timer_value;
+}
 
 function tick() {
     face.innerText = convertSecondsToVisualClock(remained--);
@@ -55,6 +62,5 @@ document.getElementById('skeleton-timer-reset').onclick = function changeContent
 
 document.getElementById('skeleton-timer-start').onclick = function changeContent() {
     fetch('admin.php?do=SkeletonModuleAjax/StartTimer')
-        .then(() => startTimer())
-        .then(data => console.log(data));
+        .then(() => startTimer());
 }
