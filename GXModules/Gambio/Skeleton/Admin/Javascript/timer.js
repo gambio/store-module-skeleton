@@ -15,10 +15,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
     function tick() {
-        face.innerText = convertSecondsToVisualClock(--remained);
         if (remained < 1) {
             stopTimer();
+            return;
         }
+        face.innerText = convertSecondsToVisualClock(--remained);
     }
     
     function convertSecondsToVisualClock(seconds) {

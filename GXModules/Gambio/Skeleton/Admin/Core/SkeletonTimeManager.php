@@ -36,12 +36,12 @@ class SkeletonTimeManager
     {
         $timeArray = explode( ':', $timerValue);
         $timeArray = array_reverse($timeArray);
-
+        
         $seconds = 0;
         foreach ($timeArray as $key => $timeValue) {
             $seconds += $timeValue * (60 ** $key);
         }
-
+        
         return $seconds;
     }
     
@@ -51,7 +51,7 @@ class SkeletonTimeManager
      */
     public function resetTimer()
     {
-        $this->configuration->resetTimer();
+        return $this->configuration->resetTimer();
     }
     
     
@@ -60,7 +60,14 @@ class SkeletonTimeManager
      */
     public function setTimerStarted()
     {
-        $this->configuration->setTimerStarted(time());
+        $timer = $this->getTimerInSeconds();
+        $timerStarted = (int) $this->configuration->getTimerStarted();
+        
+        if (time() - $timerStarted < $timer) {
+            return false;
+        }
+        
+        return $this->configuration->setTimerStarted(time());
     }
     
     
@@ -110,9 +117,9 @@ class SkeletonTimeManager
     public static function getInstance()
     {
         if (self::$instance === null) {
-
+            
             define('StoreKey_MigrationScript', true);
-
+            
             require_once __DIR__ . '/../../../Store/Core/Facades/GambioStoreFileSystemFacade.php';
             require_once __DIR__ . '/../../../Store/Core/Facades/GambioStoreDatabaseFacade.php';
             require_once __DIR__ . '/../../../Store/Core/Facades/GambioStoreCompatibilityFacade.php';
@@ -122,7 +129,7 @@ class SkeletonTimeManager
             $database = GambioStoreDatabaseFacade::connect($fileSystem);
             $compatability = new GambioStoreCompatibilityFacade($database);
             $configuration = new GambioStoreConfigurationFacade($database, $compatability);
-
+            
             self::$instance = new SkeletonTimeManager(new SkeletonConfiguration($configuration));
         }
         
