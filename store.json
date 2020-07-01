@@ -1,0 +1,48 @@
+{
+    "name": "Store Skeleton Module",
+    "repositoryName": "store-module-skeleton",
+    "shopIdentifier": "store_module_skeleton-1_0_0.php",
+    "type": "module",
+    "version": "1.0.0",
+    "title": {
+        "en": "Store Skeleton Module",
+        "de": "Store Skeleton Module"
+    },
+    "description": {
+        "en": "Demo module to demonstrate how the store's modular system works.",
+        "de": "Demo-Modul zur Demonstration, wie das modulare System des Ladens funktioniert."
+    },
+    "vendor": {
+        "name": "Gambio GmbH",
+        "url": "https://gambio.de/",
+        "avatar": "",
+        "gitlabGroupName": "gambio"
+    },
+    "migrations": {
+        "up": [],
+        "down": []
+    },
+    "requirements": {
+        "needed": {
+            "shop": {
+                "shopVersions": [">=3.15.1.0"]
+            },
+            "server": {
+                "phpVersions": [">=5.6"],
+                "mysqlVersions": [">=5.5"]
+            },
+            "themes": [],
+            "receiptFiles": []
+        },
+        "hidden": {
+            "shop": {
+                "shopVersions": []
+            },
+            "server": {
+                "phpVersions": [],
+                "mysqlVersions": []
+            },
+            "themes": []
+        }
+    }
+}
