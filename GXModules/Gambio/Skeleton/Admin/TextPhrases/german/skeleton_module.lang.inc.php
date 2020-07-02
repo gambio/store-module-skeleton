@@ -11,7 +11,8 @@
 
 $t_language_text_section_content_array = [
     'BOX_SKELETON_MODULE' => 'Gambio Module Skeleton',
-    'PAGE_TITLE' => 'Gambio Module Skeleton',
-    'HOME' => 'Home page',
-    'CONFIGURATION' => 'Configuration page'
+    'PAGE_TITLE'          => 'Gambio Module Skeleton',
+    'HOME'                => 'Home page',
+    'CONFIGURATION'       => 'Configuration page',
+    'DESCRIPTION'         => 'This is a test Gambio GX Module that demonstrates the creation of a simple shop module that is also Gambio Store ready. You will find further information on package development on https://developers.gambio.de'
 ];
