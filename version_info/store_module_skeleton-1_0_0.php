@@ -1,4 +1,4 @@
-?php
+<?php
 die('');
 ?>
 version: v1.0.0
