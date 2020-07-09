@@ -120,10 +120,10 @@ class SkeletonTimeManager
             
             define('StoreKey_MigrationScript', true);
             
-            require_once __DIR__ . '/../../../Store/Core/Facades/GambioStoreFileSystemFacade.php';
-            require_once __DIR__ . '/../../../Store/Core/Facades/GambioStoreDatabaseFacade.php';
-            require_once __DIR__ . '/../../../Store/Core/Facades/GambioStoreCompatibilityFacade.php';
-            require_once __DIR__ . '/../../../Store/Core/Facades/GambioStoreConfigurationFacade.php';
+            require_once __DIR__ . '/../../../../Gambio/Store/Core/Facades/GambioStoreFileSystemFacade.php';
+            require_once __DIR__ . '/../../../../Gambio/Store/Core/Facades/GambioStoreDatabaseFacade.php';
+            require_once __DIR__ . '/../../../../Gambio/Store/Core/Facades/GambioStoreCompatibilityFacade.php';
+            require_once __DIR__ . '/../../../../Gambio/Store/Core/Facades/GambioStoreConfigurationFacade.php';
             
             $fileSystem = new GambioStoreFileSystemFacade();
             $database = GambioStoreDatabaseFacade::connect($fileSystem);

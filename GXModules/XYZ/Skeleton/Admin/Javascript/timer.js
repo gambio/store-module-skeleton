@@ -1,9 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var defaults = {}
-        , face = document.getElementById('lazy')
-        , remained = face.dataset.remained // seconds
-        , timer_value = face.dataset.timer_value // seconds
-        , timerInterval;
+    var face = document.getElementById('lazy')
+    var remained = face.dataset.remained // seconds
+    var timer_value = face.dataset.timer_value // seconds
+    var timerInterval;
     
     if (remained > 0) {
         face.innerText = convertSecondsToVisualClock(remained);

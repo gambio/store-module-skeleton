@@ -1,8 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200,300,400);
 
 .timer-group {
+    margin-top: 10px;
     height: 400px;
-    margin: 0 auto;
     position: relative;
     width: 400px;
     color: #fff;
@@ -187,4 +187,6 @@
 
 .buttons {
     margin-top: 10px;
+    width: 400px;
+    text-align: center;
 }
