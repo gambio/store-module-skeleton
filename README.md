@@ -71,5 +71,5 @@ The file must be located in the version_info folder at the root of the module's 
 The file name can be any, but for convenience it is desirable to use the following sample; {module_name}-{version}.php, e.g. store_module_skeleton-1_0_0.php
 
 # 3. The GX Module
-This module is an example of a GX Module that demonstrates the features of the GXModules system and has the appropriate file structure. You can read more about creating GXModules module at (https://developers.gambio.de/).
+This module is an example of a GX Module that demonstrates the features of the GXModules system and has the appropriate file structure. You can read more about creating GXModules module at [https://developers.gambio.de/](https://developers.gambio.de/).
 
