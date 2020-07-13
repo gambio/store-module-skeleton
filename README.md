@@ -65,8 +65,11 @@ Skeleton project for new Gambio Store packages.
 - **GXModules/XYZ/Skeleton/Admin/Menu/menu_skeleton.xml** - Menu configuration for the module.
 - **GXModules/XYZ/Skeleton/Admin/Styles/skeleton_module.css** - CSS asset file for the module.
 
-# Receipt file
+# 2. Receipt file
 To register and use the module in the Gambio Store, the module must have a receipt file that is used as an identifier.
 The file must be located in the version_info folder at the root of the module's repository. The file name must be the value for the shopIdentifier field in the store.json file.
 The file name can be any, but for convenience it is desirable to use the following sample; {module_name}-{version}.php, e.g. store_module_skeleton-1_0_0.php
+
+# 3. The GX Module
+This module is an example of a GX Module that demonstrates the features of the GXModules system and has the appropriate file structure. You can read more about creating GXModules module at (https://developers.gambio.de/).
 
