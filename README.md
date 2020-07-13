@@ -73,3 +73,27 @@ The file name can be any, but for convenience it is desirable to use the followi
 # 3. The GX Module
 This module is an example of a GX Module that demonstrates the features of the GXModules system and has the appropriate file structure. You can read more about creating GXModules module at [https://developers.gambio.de/](https://developers.gambio.de/).
 
+# 4. Module controllers.
+The controllers are provided for processing requests and performing any actions by the module. Each controller inherits the HttpViewController (or successor). To perform an action by the controller, the address must contain the parameter "do", such as admin/admin.php?do=SkeletonModule/Configuration trigger method actionConfiguration class SkeletonModuleController.
+You can read more about controllers in GXModules module at [https://developers.gambio.de/](https://developers.gambio.de/).
+
+# 5. Adding custom assets and translations.
+
+##### 5.1 Assets.
+It is possible to add custom javascript and css files to your module. To do that you would have to provide assets collection with provided asset files.
+For example:
+```$xslt
+        $assets            = new AssetCollection([
+            new Asset('../GXModules/XYZ/Skeleton/Admin/Javascript/timer.js'),
+            new Asset('../GXModules/XYZ/Skeleton/Admin/Styles/skeleton_module.css'),
+        ]);
+```
+
+##### 5.2 Translations.
+
+You can translate text of your module using language files within the TextPhrases/{language} folder.
+The following naming convention is used when creating a language file: {section_name}.lang.inc.php, e.g. ```skeleton_module.lang.inc.php```
+
+To use the file in a template you have to include the file by its section name: ```{load_language_text section="skeleton_module"}```
+
+You can read more about adding assets and translations at [https://developers.gambio.de/](https://developers.gambio.de/).
