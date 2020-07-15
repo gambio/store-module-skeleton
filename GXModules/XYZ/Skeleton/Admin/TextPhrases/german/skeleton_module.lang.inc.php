@@ -10,9 +10,13 @@
 */
 
 $t_language_text_section_content_array = [
-    'BOX_SKELETON_MODULE' => 'Gambio Module Skeleton',
-    'PAGE_TITLE'          => 'Gambio Module Skeleton',
-    'HOME'                => 'Home page',
-    'CONFIGURATION'       => 'Configuration page',
-    'DESCRIPTION'         => 'This is a test Gambio GX Module that demonstrates the creation of a simple shop module that is also Gambio Store ready. You will find further information on package development on https://developers.gambio.de'
+    'BOX_SKELETON_MODULE' => 'Gambio Modulgerüst',
+    'PAGE_TITLE'          => 'Gambio Modulgerüst',
+    'HOME'                => 'Home',
+    'CONFIGURATION'       => 'Konfigurationsseite',
+    'DESCRIPTION'         => 'Dieses Modul dient als Grundgerüst, um die Erstellung eines simplen Shop-Moduls mit dem Gambio Store zu demonstrieren. Mehr Information dazu findest Du unter https://developers.gambio.de',
+    'START'               => 'Start',
+    'RESET'               => 'Reset',
+    'SET_TIMER_VALUE'     => 'Timer-Wert setzen',
+    'SAVE'                => 'Speichern'
 ];

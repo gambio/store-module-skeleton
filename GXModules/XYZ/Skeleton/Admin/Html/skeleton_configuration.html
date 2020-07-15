@@ -5,7 +5,7 @@
 	<div class="col-md-12">
         <form id="skeleton-configuration-form" class="form-horizontal" action="" method="post">
             <div class="form-group">
-                <label class="control-label" for="skeleton-timer">Set timer value: </label>
+                <label class="control-label" for="skeleton-timer">{$skeleton_module.SET_TIMER_VALUE}: </label>
                 <input id="skeleton-timer" class="form-control" value="{$content.timer_value}" type="time" name="skeleton_timer" step="2">
             </div>
         </form>
@@ -15,6 +15,6 @@
 
 {block name="bottom_save_bar"}
 {load_language_text section="admin_buttons" name="admin_buttons"}
-<button class="btn btn-primary" onclick="document.getElementById('skeleton-configuration-form').submit()">Save
+<button class="btn btn-primary" onclick="document.getElementById('skeleton-configuration-form').submit()">{$skeleton_module.SAVE}
 </button>
 {/block}
