@@ -18,6 +18,30 @@
         "avatar": "",
         "gitlabGroupName": "gambio"
     },
+    "displayImage": {
+        "en": "/images/placeholder.png",
+        "de": "/images/placeholder.png"
+    },
+    "highlights": [
+        {
+            "title": {
+                "en": "Basic module for developers",
+                "de": "Basis Modul für Entwickler"
+            }
+        },
+        {
+            "title": {
+                "en": "Easy to extend",
+                "de": "Leicht zu erweitern"
+            }
+        },
+        {
+            "title": {
+                "en": "With translation examples",
+                "de": "Mit Übersetzungsbeispielen"
+            }
+        }
+    ],
     "migrations": {
         "up": [],
         "down": []
