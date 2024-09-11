@@ -46,15 +46,12 @@ Below you can see the module filesystem tree structure where the **XYZ** folder 
 │           └── index.html
 ├── README.md
 ├── store.json
-└── version_info
-    └── store_module_skeleton-1_0_0.php
 ```
 
 ##### 1.2 The files description
 
 - **store.json** - Gambio Store configuration file.
 - **README.md** - this file
-- **version_info/store_module_skeleton-1_0_0.php** - the identifier file. It is used to identify the installed version of the module.
 - **GXModules/XYZ/Skeleton/GXModule.json** - the file enables the automatic integration of your module into the Module Center and the generation of a configuration page based on a JSON configuration file.
 - **GXModules/XYZ/Skeleton/Admin/TextPhrases/english/skeleton_module.lang.inc.php** - File containing English language translation strings
 - **GXModules/XYZ/Skeleton/Admin/TextPhrases/german/skeleton_module.lang.inc.php** - File containing German language translation strings
@@ -68,10 +65,10 @@ Below you can see the module filesystem tree structure where the **XYZ** folder 
 - **GXModules/XYZ/Skeleton/Admin/Menu/menu_skeleton.xml** - Menu configuration for the module.
 - **GXModules/XYZ/Skeleton/Admin/Styles/skeleton_module.css** - CSS asset file for the module.
 
-# 2. Receipt file
-To register and use the module in the Gambio Store, the module must have a receipt file that is used as an identifier.
-The file must be located in the version_info folder at the root of the module's repository. The file name must be the value for the shopIdentifier field in the store.json file.
-The file name can be any, but must be unique among packages and its versions. For convenience, it is desirable to use the following sample; {module_name}-{version}.php, e.g. store_module_skeleton-1_0_0.php
+# 2. Module Description
+You can use your own Screenshots to be injected in the Description inside of the store.json.
+In the .assets Folder is an example placeholder.png File. To get it injected in the Description, you have to wrap the Filename inside Brackets, e.g. [placeholder.png]
+This Placeholder will be replaced by our System to provide URLs to the processed asset File.
 
 # 3. The GX Module
 This module is an example of a GX Module that demonstrates the features of the GXModules system and has the appropriate file structure. You can read more about creating GXModules module at [https://developers.gambio.de/](https://developers.gambio.de/).
