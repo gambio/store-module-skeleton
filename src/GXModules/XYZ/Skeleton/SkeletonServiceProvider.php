@@ -4,7 +4,7 @@ namespace GXModules\XYZ\Skeleton;
 
 use Gambio\Core\Application\DependencyInjection\AbstractModuleServiceProvider;
 
-class XyzServiceProvider extends AbstractModuleServiceProvider
+class SkeletonServiceProvider extends AbstractModuleServiceProvider
 {
     public function boot(): void
     {

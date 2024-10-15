@@ -42,6 +42,8 @@ Below you can see the module filesystem tree structure where the **XYZ** folder 
 │           │       │   ├── index.html
 │           │       │   └── skeleton_module.lang.inc.php
 │           │       └── index.html
+│           ├── SkeletonServiceProvider.php
+│           ├── composer.json
 │           ├── GXModule.json
 │           └── index.html
 ├── README.md

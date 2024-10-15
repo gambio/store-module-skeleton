@@ -1,5 +1,5 @@
 {
-  "name": "vendor/package",
+  "name": "xyz/skeleton",
   "description": "Your Package Description for composer",
   "require": {
     "php": ">=8.0"
