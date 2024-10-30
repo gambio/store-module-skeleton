@@ -9,6 +9,13 @@ Skeleton project for new Gambio Store packages.
 Below you can see the module filesystem tree structure where the **XYZ** folder refers to a Vendor name and the **XYZ/Skeleton** to the module name.
 
 ```
+├── .assets
+│   └── vendor_logo(.png|.jpg|.svg)
+│   └── module_logo(.png|.jpg|.svg)
+│   └── de
+│       ├── description.html
+│   └── en
+│       ├── description.html
 ├── GXModules
 │   └── XYZ
 │       └── Skeleton
@@ -52,6 +59,10 @@ Below you can see the module filesystem tree structure where the **XYZ** folder 
 
 ##### 1.2 The files description
 
+- **.assets/module_logo(.png|.jpg|.svg)** - The Module Logo. Supported are PNG, JPG and SVG Files.
+- **.assets/vendor_logo(.png|.jpg|.svg)** - The Vendor Logo. Supported are PNG, JPG and SVG Files.
+- **.assets/de/description.html** - The german Description for the Module. If this file exists, the description key in the store.json will be ignored.
+- **.assets/en/description.html** - The english Description for the Module. If this file exists, the description key in the store.json will be ignored.
 - **store.json** - Gambio Store configuration file.
 - **README.md** - this file
 - **GXModules/XYZ/Skeleton/GXModule.json** - the file enables the automatic integration of your module into the Module Center and the generation of a configuration page based on a JSON configuration file.
