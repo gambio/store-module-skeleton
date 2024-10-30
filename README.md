@@ -6,7 +6,7 @@ Skeleton project for new Gambio Store packages.
 
 ##### 1.1 Files structure
 
-Below you can see the module filesystem tree structure where the **XYZ** folder refers to a Vendor name and the **XYZ/Skeleton** to the module name.
+Below you can see the module filesystem tree structure where the **Gambio** folder refers to a Vendor name and the **Gambio/StoreModuleSkeleton** to the module name.
 
 ```
 ├── .assets
@@ -17,8 +17,8 @@ Below you can see the module filesystem tree structure where the **XYZ** folder 
 │   └── en
 │       ├── description.html
 ├── GXModules
-│   └── XYZ
-│       └── Skeleton
+│   └── Gambio
+│       └── StoreModuleSkeleton
 │           ├── Admin
 │           │   ├── Controllers
 │           │   │   ├── index.html
@@ -65,18 +65,18 @@ Below you can see the module filesystem tree structure where the **XYZ** folder 
 - **.assets/en/description.html** - The english Description for the Module. If this file exists, the description key in the store.json will be ignored.
 - **store.json** - Gambio Store configuration file.
 - **README.md** - this file
-- **GXModules/XYZ/Skeleton/GXModule.json** - the file enables the automatic integration of your module into the Module Center and the generation of a configuration page based on a JSON configuration file.
-- **GXModules/XYZ/Skeleton/Admin/TextPhrases/english/skeleton_module.lang.inc.php** - File containing English language translation strings
-- **GXModules/XYZ/Skeleton/Admin/TextPhrases/german/skeleton_module.lang.inc.php** - File containing German language translation strings
-- **GXModules/XYZ/Skeleton/Admin/Javascript/timer.js** - contains javascript logic of the plugin.
-- **GXModules/XYZ/Skeleton/Admin/Html/skeleton_module.html** - HTML template file, using for rendering the main page of the module
-- **GXModules/XYZ/Skeleton/Admin/Html/skeleton_configuration.html** - HTML template file, using for rendering the configuration page of the module
-- **GXModules/XYZ/Skeleton/Admin/Core/SkeletonConfiguration.php** - Core functionality file. Responsible for the plugin configuration.
-- **GXModules/XYZ/Skeleton/Admin/Core/SkeletonTimeManager.php** - Core functionality file. Contains main logic of the module.
-- **GXModules/XYZ/Skeleton/Admin/Controllers/SkeletonModuleAjaxController.inc.php** - Controller for handling ajax requests of the module.
-- **GXModules/XYZ/Skeleton/Admin/Controllers/SkeletonModuleController.inc.php** - Controller for managing and rendering the module pages.
-- **GXModules/XYZ/Skeleton/Admin/Menu/menu_skeleton.xml** - Menu configuration for the module.
-- **GXModules/XYZ/Skeleton/Admin/Styles/skeleton_module.css** - CSS asset file for the module.
+- **GXModules/Gambio/StoreModuleSkeleton/GXModule.json** - the file enables the automatic integration of your module into the Module Center and the generation of a configuration page based on a JSON configuration file.
+- **GXModules/Gambio/StoreModuleSkeleton/Admin/TextPhrases/english/skeleton_module.lang.inc.php** - File containing English language translation strings
+- **GXModules/Gambio/StoreModuleSkeleton/Admin/TextPhrases/german/skeleton_module.lang.inc.php** - File containing German language translation strings
+- **GXModules/Gambio/StoreModuleSkeleton/Admin/Javascript/timer.js** - contains javascript logic of the plugin.
+- **GXModules/Gambio/StoreModuleSkeleton/Admin/Html/skeleton_module.html** - HTML template file, using for rendering the main page of the module
+- **GXModules/Gambio/StoreModuleSkeleton/Admin/Html/skeleton_configuration.html** - HTML template file, using for rendering the configuration page of the module
+- **GXModules/Gambio/StoreModuleSkeleton/Admin/Core/SkeletonConfiguration.php** - Core functionality file. Responsible for the plugin configuration.
+- **GXModules/Gambio/StoreModuleSkeleton/Admin/Core/SkeletonTimeManager.php** - Core functionality file. Contains main logic of the module.
+- **GXModules/Gambio/StoreModuleSkeleton/Admin/Controllers/SkeletonModuleAjaxController.inc.php** - Controller for handling ajax requests of the module.
+- **GXModules/Gambio/StoreModuleSkeleton/Admin/Controllers/SkeletonModuleController.inc.php** - Controller for managing and rendering the module pages.
+- **GXModules/Gambio/StoreModuleSkeleton/Admin/Menu/menu_skeleton.xml** - Menu configuration for the module.
+- **GXModules/Gambio/StoreModuleSkeleton/Admin/Styles/skeleton_module.css** - CSS asset file for the module.
 
 # 2. Module Description
 You can use your own Screenshots to be injected in the Description inside of the store.json.
@@ -103,8 +103,8 @@ It is possible to add custom javascript and css files to your module. To do that
 For example:
 ```$xslt
         $assets            = new AssetCollection([
-            new Asset('../GXModules/XYZ/Skeleton/Admin/Javascript/timer.js'),
-            new Asset('../GXModules/XYZ/Skeleton/Admin/Styles/skeleton_module.css'),
+            new Asset('../GXModules/Gambio/StoreModuleSkeleton/Admin/Javascript/timer.js'),
+            new Asset('../GXModules/Gambio/StoreModuleSkeleton/Admin/Styles/skeleton_module.css'),
         ]);
 ```
 
