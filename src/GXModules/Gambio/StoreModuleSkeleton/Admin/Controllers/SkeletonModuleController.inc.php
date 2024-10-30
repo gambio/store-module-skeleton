@@ -63,8 +63,8 @@ class SkeletonModuleController extends AdminHttpViewController
         $template          = new ExistingFile(new NonEmptyStringType(__DIR__ . '/../Html/skeleton_module.html'));
 
         $assets            = new AssetCollection([
-            new Asset('../GXModules/XYZ/Skeleton/Admin/Javascript/timer.js'),
-            new Asset('../GXModules/XYZ/Skeleton/Admin/Styles/skeleton_module.css'),
+            new Asset('../GXModules/Gambio/StoreModuleSkeleton/Admin/Javascript/timer.js'),
+            new Asset('../GXModules/Gambio/StoreModuleSkeleton/Admin/Styles/skeleton_module.css'),
         ]);
 
         $data              = new KeyValueCollection([
