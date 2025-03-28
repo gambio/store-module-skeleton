@@ -20,7 +20,7 @@ jobs:
         run: "composer install --no-dev --optimize-autoloader"
 
       - name: Archive Release with dependencies
-        run: zip -r ${{ github.event.repository.name }}.zip .assets src
+        run: cd src && zip -r ../${{ github.event.repository.name }}.zip ./
 
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v4
