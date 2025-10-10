@@ -1,5 +1,5 @@
 {
-  "name": "xyz/skeleton",
+  "name": "gambio/store-module-skeleton",
   "description": "Your Package Description for composer",
   "require": {
     "php": ">=8.0"
