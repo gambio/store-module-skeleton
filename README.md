@@ -16,7 +16,7 @@ Below you can see the module filesystem tree structure where the **Gambio** fold
 │       ├── description.html
 │   └── en
 │       ├── description.html
-├── GXModules
+├── src/GXModules
 │   └── Gambio
 │       └── StoreModuleSkeleton
 │           ├── Admin
