@@ -1,6 +1,6 @@
 {
   "branches": [
-    "develop"
+    "*"
   ],
   "tagFormat": "${version}",
   "plugins": [
@@ -8,14 +8,6 @@
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
     "@semantic-release/github",
-    [
-      "@semantic-release/git",
-      {
-        "assets": [
-          "composer.json", "package.json", "store.json"
-        ],
-        "message": "chore(release): Package.json and Store.json ${nextRelease.version} [skip ci] \n\n${nextRelease.notes}"
-      },
-    ],
+    "@semantic-release/git"
   ]
 }
