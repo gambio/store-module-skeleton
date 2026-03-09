@@ -1,0 +1,2863 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://gambio.github.io/store-module-skeleton/en/smarty-blocks-reference/">
+      
+      
+        <link rel="prev" href="../release-checklist/">
+      
+      
+        <link rel="next" href="../../de/modulentwicklung-anleitung/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+    
+    
+      
+        <title>Smarty Blocks Reference - Store Module Skeleton</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="gambio" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#smarty-template-blocks-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Store Module Skeleton" class="md-header__button md-logo" aria-label="Store Module Skeleton" data-md-component="logo">
+      
+  <img src="../../logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Store Module Skeleton
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Smarty Blocks Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="gambio" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="gambio" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../module-development-guide/" class="md-tabs__link">
+          
+  
+  
+  English
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../de/modulentwicklung-anleitung/" class="md-tabs__link">
+          
+  
+  
+  Deutsch
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Store Module Skeleton" class="md-nav__button md-logo" aria-label="Store Module Skeleton" data-md-component="logo">
+      
+  <img src="../../logo.svg" alt="logo">
+
+    </a>
+    Store Module Skeleton
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    English
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    English
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module-development-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Development Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gxmodule-json-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GXModule.json Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../store-json-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    store.json Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../local-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Local Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../publishing-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publishing Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Release Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Smarty Blocks Reference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Smarty Blocks Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-block-extending-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Block Extending Works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How Block Extending Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommended-append-or-prepend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended: append or prepend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#not-recommended-full-replacement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Not recommended: full replacement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#block-reference-by-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Block Reference by Area
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Block Reference by Area">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#layout-base-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layout: Base Template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layout-html-head" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layout: HTML Head
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layout-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layout: Header
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layout-topbar-and-secondary-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layout: Topbar and Secondary Navigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layout-footer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layout: Footer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layout-breadcrumb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layout: Breadcrumb
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layout-sidebar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layout: Sidebar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layout-miscellaneous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layout: Miscellaneous
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#homepage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Homepage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#product-detail-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Product Detail Page
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#product-listing-category" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Product Listing / Category
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shopping-cart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shopping Cart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checkout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customer-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer Account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#login-logout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Login / Logout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-boxes-sidebar-widgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Content Boxes (Sidebar Widgets)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Content Pages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reviews" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reviews
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contact-newsletter-recommend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contact / Newsletter / Recommend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cookie-consent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cookie Consent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#popups-and-modals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Popups and Modals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-slider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image Slider
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#product-modifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Product Modifiers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miscellaneous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Miscellaneous
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deutsch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deutsch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../de/modulentwicklung-anleitung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modulentwicklung Anleitung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../de/gxmodule-json-referenz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GXModule.json Referenz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../de/store-json-referenz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    store.json Referenz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../de/lokal-testen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lokal testen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../de/veroeffentlichung-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Veröffentlichung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../de/release-checkliste/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Release Checkliste
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../de/smarty-blocks-referenz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Smarty Blocks Referenz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="smarty-template-blocks-reference">Smarty Template Blocks Reference<a class="headerlink" href="#smarty-template-blocks-reference" title="Permanent link">&para;</a></h1>
+<p>This reference lists all Smarty template blocks available in the Malibu theme (Gambio GX). You can extend any of these blocks by placing a template file with the same path in your module's <code>Shop/Themes/All/</code> directory.</p>
+<p>All template files are located in <code>themes/Malibu/html/system/</code> (or the equivalent for other themes). When extending, place your file at:</p>
+<div class="highlight"><pre><span></span><code>Shop/Themes/All/system/{template_file}
+</code></pre></div>
+<p>To target a specific theme only:</p>
+<div class="highlight"><pre><span></span><code>Shop/Themes/Malibu/system/{template_file}
+</code></pre></div>
+<h2 id="how-block-extending-works">How Block Extending Works<a class="headerlink" href="#how-block-extending-works" title="Permanent link">&para;</a></h2>
+<p>Gambio uses Smarty's <code>{block}</code> system. Each template defines named blocks that child themes or modules can extend with additional content. The original shop template might look like this:</p>
+<div class="highlight"><pre><span></span><code>{block name=&quot;product_info_price&quot;}
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;price&quot;</span><span class="p">&gt;</span>{$productPrice}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+{/block}
+</code></pre></div>
+<p><strong>Important:</strong> Do not use <code>{extends}</code> in your template files. The Gambio theme system automatically detects the parent template based on the directory structure. Just place your file at the matching path and only define the blocks you want to extend.</p>
+<h3 id="recommended-append-or-prepend">Recommended: append or prepend<a class="headerlink" href="#recommended-append-or-prepend" title="Permanent link">&para;</a></h3>
+<p>The safest way to extend a block is with <code>append</code> or <code>prepend</code>. This keeps the original content intact and simply adds your markup before or after it:</p>
+<div class="highlight"><pre><span></span><code>{block name=&quot;product_info_price&quot; append}
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;skeleton-badge&quot;</span><span class="p">&gt;</span>Sale<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+{/block}
+</code></pre></div>
+<p><code>prepend</code> works the same way but inserts your content before the original block:</p>
+<div class="highlight"><pre><span></span><code>{block name=&quot;product_info_price&quot; prepend}
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;skeleton-announcement&quot;</span><span class="p">&gt;</span>New!<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+{/block}
+</code></pre></div>
+<h3 _smarty.block.parent="$smarty.block.parent" id="recommended">Recommended:<a class="headerlink" href="#recommended" title="Permanent link">&para;</a></h3>
+<p>If you need more control over where the original content appears, use <code>{$smarty.block.parent}</code>. This lets you wrap the original content or place your additions at a specific position:</p>
+<div class="highlight"><pre><span></span><code>{block name=&quot;product_info_price&quot;}
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;skeleton-price-wrapper&quot;</span><span class="p">&gt;</span>
+        {$smarty.block.parent}
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;skeleton-extra-info&quot;</span><span class="p">&gt;</span>Custom content below price<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+{/block}
+</code></pre></div>
+<h3 id="not-recommended-full-replacement">Not recommended: full replacement<a class="headerlink" href="#not-recommended-full-replacement" title="Permanent link">&para;</a></h3>
+<p>Omitting both <code>append</code>/<code>prepend</code> and <code>{$smarty.block.parent}</code> replaces the entire block. Avoid this whenever possible, because it removes the original shop content and can break other modules or future updates:</p>
+<div class="highlight"><pre><span></span><code>{* Avoid this pattern unless absolutely necessary *}
+{block name=&quot;product_info_price&quot;}
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;completely-custom-price&quot;</span><span class="p">&gt;</span>{$productPrice}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+{/block}
+</code></pre></div>
+<h2 id="block-reference-by-area">Block Reference by Area<a class="headerlink" href="#block-reference-by-area" title="Permanent link">&para;</a></h2>
+<p>The "Total Blocks" column shows how many overridable blocks exist within each template file. The "Main Block" is the primary/outermost block.</p>
+<h3 id="layout-base-template">Layout: Base Template<a class="headerlink" href="#layout-base-template" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>index.html</code></td>
+<td><code>index_head</code></td>
+<td>17</td>
+</tr>
+</tbody>
+</table>
+<h3 id="layout-html-head">Layout: HTML Head<a class="headerlink" href="#layout-html-head" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>layout_head.html</code></td>
+<td><code>layout_head</code></td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+<h3 id="layout-header">Layout: Header<a class="headerlink" href="#layout-header" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>layout_header.html</code></td>
+<td><code>index_outer_wrapper_header_topbar</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>layout_header_cart.html</code></td>
+<td><code>layout_header_cart</code></td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>layout_header_cart_dropdown.html</code></td>
+<td><code>box_car_dropdown_product</code></td>
+<td>20</td>
+</tr>
+<tr>
+<td><code>layout_header_custom_content.html</code></td>
+<td><code>layout_header_custom_content</code></td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>layout_header_navbar_buttons.html</code></td>
+<td><code>layout_header_navbar_buttons</code></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="layout-topbar-and-secondary-navigation">Layout: Topbar and Secondary Navigation<a class="headerlink" href="#layout-topbar-and-secondary-navigation" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>topbar.html</code></td>
+<td><code>topbar</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>layout_topbar_secondary_navigation.html</code></td>
+<td><code>layout_topbar_secondary_navigation</code></td>
+<td>70</td>
+</tr>
+<tr>
+<td><code>layout_secondary_navigation.html</code></td>
+<td><code>layout_secondary_navigation</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>layout_secondary_navigation_search.html</code></td>
+<td><code>layout_secondary_navigation_search</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>layout_secondary_navigation_countries_dropdown.html</code></td>
+<td><code>layout_secondary_navigation_countries_dropdown</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>layout_secondary_navigation_currencies_dropdown.html</code></td>
+<td><code>layout_secondary_navigation_currencies_dropdown</code></td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="layout-footer">Layout: Footer<a class="headerlink" href="#layout-footer" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>layout_footer.html</code></td>
+<td><code>layout_footer_inside_content1</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>layout_footer_links.html</code></td>
+<td><code>layout_footer_links</code></td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+<h3 id="layout-breadcrumb">Layout: Breadcrumb<a class="headerlink" href="#layout-breadcrumb" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>layout_breadcrumb.html</code></td>
+<td><code>layout_breadcrumb</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>layout_breadcrumb_content.html</code></td>
+<td><code>layout_breadcrumb_content</code></td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="layout-sidebar">Layout: Sidebar<a class="headerlink" href="#layout-sidebar" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sidebar.html</code></td>
+<td><code>index_inner_wrapper_left_aside</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>layout_left_categories.html</code></td>
+<td><code>layout_left_categories</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>layout_left_categories_static.html</code></td>
+<td><code>layout_left_categories_static</code></td>
+<td>11</td>
+</tr>
+</tbody>
+</table>
+<h3 id="layout-miscellaneous">Layout: Miscellaneous<a class="headerlink" href="#layout-miscellaneous" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>layout_bottom.html</code></td>
+<td><code>layout_bottom</code></td>
+<td>6</td>
+</tr>
+<tr>
+<td><code>layout_box_top.html</code></td>
+<td><code>layout_box_top</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>layout_box_bottom.html</code></td>
+<td><code>layout_box_bottom</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>layout_box_headline_link_top.html</code></td>
+<td><code>layout_box_headline_link_top</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>layout_box_headline_link_bottom.html</code></td>
+<td><code>layout_box_headline_link_bottom</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>layout_box_list_buttons_top.html</code></td>
+<td><code>layout_box_list_buttons_top</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>layout_box_list_buttons_bottom.html</code></td>
+<td><code>layout_box_list_buttons_bottom</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>layout_box_no_headline_top.html</code></td>
+<td><code>layout_box_no_headline_top</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>layout_box_no_headline_bottom.html</code></td>
+<td><code>layout_box_no_headline_bottom</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>layout_page_up.html</code></td>
+<td><code>layout_page_up</code></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="navigation">Navigation<a class="headerlink" href="#navigation" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>megadropdown.html</code></td>
+<td><code>megadropdown</code></td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>gm_navigation.html</code></td>
+<td><code>gm_navigation</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>gm_mega_flyover.html</code></td>
+<td><code>gm_mega_flyover</code></td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="homepage">Homepage<a class="headerlink" href="#homepage" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>home.html</code></td>
+<td><code>home</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>home_new_products.html</code></td>
+<td><code>home_new_products_title</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>home_offered_products.html</code></td>
+<td><code>home_offered_products</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>home_recommended_products_default.html</code></td>
+<td><code>home_recommended_products_default</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>home_recommended_products_overview.html</code></td>
+<td><code>home_recommended_products_overview</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>home_upcoming_products.html</code></td>
+<td><code>home_upcoming_products</code></td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="product-detail-page">Product Detail Page<a class="headerlink" href="#product-detail-page" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>product_info_template_standard.html</code></td>
+<td><code>product_info_template_standard</code></td>
+<td>29</td>
+</tr>
+<tr>
+<td><code>product_info_product_description.html</code></td>
+<td><code>product_info_product_description</code></td>
+<td>31</td>
+</tr>
+<tr>
+<td><code>product_info_gallery.html</code></td>
+<td><code>product_info_template_standard_images</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>product_info_gallery_main.html</code></td>
+<td><code>product_info_gallery_image</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>product_info_gallery_modal.html</code></td>
+<td><code>product_info_gallery_modal</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>product_info_gallery_swiper.html</code></td>
+<td><code>product_info_gallery_swiper</code></td>
+<td>20</td>
+</tr>
+<tr>
+<td><code>product_info_gallery_swiper_slide.html</code></td>
+<td><code>product_info_gallery_swiper_slide</code></td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>product_info_price.html</code></td>
+<td><code>product_info_price</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>product_info_shipping_time.html</code></td>
+<td><code>product_info_shipping_time_label</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>product_info_model.html</code></td>
+<td><code>product_info_model</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>product_info_product_box_bottom.html</code></td>
+<td><code>product_info_product_box_bottom</code></td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>product_info_product_lists.html</code></td>
+<td><code>product_info_product_lists</code></td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>product_info_graduated_price.html</code></td>
+<td><code>product_info_graduated_price</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>product_info_navigator.html</code></td>
+<td><code>product_info_navigator</code></td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>product_info_cross_selling.html</code></td>
+<td><code>product_info_cross_selling</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>product_info_reverse_cross_selling.html</code></td>
+<td><code>product_info_reverse_cross_selling</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>product_info_related_products.html</code></td>
+<td><code>product_info_related_products</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>product_info_social_share.html</code></td>
+<td><code>product_info_social_share</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>product_info_media.html</code></td>
+<td><code>product_info_media</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>product_info_legal_age.html</code></td>
+<td><code>product_info_legal_age</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>product_info_print.html</code></td>
+<td><code>product_info_print</code></td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>product_info_customizer.html</code></td>
+<td><code>product_info_customizer</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>product_info_customizer_position.html</code></td>
+<td><code>product_info_customizer_position</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>product_info_option_template_product_options_dropdown.html</code></td>
+<td><code>product_info_option_template_product_options_dropdown</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>product_info_option_template_product_options_selection.html</code></td>
+<td><code>product_info_option_template_product_options_selection</code></td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>product_info_option_template_table_listing.html</code></td>
+<td><code>product_info_option_template_table_listing</code></td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>product_info_property_template_combis_table.html</code></td>
+<td><code>product_info_property_template_combis_table</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>product_images_attribute_images.html</code></td>
+<td><code>product_images_attribute_images</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>gm_product_images.html</code></td>
+<td><code>gm_product_images</code></td>
+<td>6</td>
+</tr>
+<tr>
+<td><code>gm_graduated_price.html</code></td>
+<td><code>gm_graduated_prices</code></td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="product-listing-category">Product Listing / Category<a class="headerlink" href="#product-listing-category" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>product_listing.html</code></td>
+<td><code>product_listing</code></td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>product_listing_main.html</code></td>
+<td><code>product_listing_main</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>product_listing_product.html</code></td>
+<td><code>product_listing_product_price</code></td>
+<td>64</td>
+</tr>
+<tr>
+<td><code>product_listing_filter.html</code></td>
+<td><code>product_listing_filter</code></td>
+<td>16</td>
+</tr>
+<tr>
+<td><code>product_listing_ribbon.html</code></td>
+<td><code>product_listing_ribbon</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>product_listing_swiper.html</code></td>
+<td><code>product_listing_swiper</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>product_listing_hidden_fields.html</code></td>
+<td><code>product_listing_hidden_fields</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>product_listing_manufacturer.html</code></td>
+<td><code>product_listing_manufacturer</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>product_listing_template_product_listing_v1.html</code></td>
+<td><code>product_listing_template_product_listing_v1</code></td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>product_listing_option_template_product_options_dropdown.html</code></td>
+<td><code>product_listing_option_template_product_options_dropdown</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>product_listing_option_template_product_options_selection.html</code></td>
+<td><code>product_listing_option_template_product_options_selection</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>category_description_top.html</code></td>
+<td><code>category_description_top</code></td>
+<td>18</td>
+</tr>
+<tr>
+<td><code>category_description_bottom.html</code></td>
+<td><code>category_description_bottom</code></td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>category_subcategories.html</code></td>
+<td><code>category_subcategories</code></td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>category_listing_template_categorie_listing.html</code></td>
+<td><code>module_categorie_listing</code></td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+<h3 id="shopping-cart">Shopping Cart<a class="headerlink" href="#shopping-cart" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cart.html</code></td>
+<td><code>cart</code></td>
+<td>15</td>
+</tr>
+<tr>
+<td><code>cart_empty.html</code></td>
+<td><code>cart_empty</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>cart_messages.html</code></td>
+<td><code>cart_messages</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>cart_totals.html</code></td>
+<td><code>cart_totals</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>cart_order_preview.html</code></td>
+<td><code>cart_order_preview</code></td>
+<td>23</td>
+</tr>
+<tr>
+<td><code>cart_order_preview_item.html</code></td>
+<td><code>cart_order_preview_item</code></td>
+<td>70</td>
+</tr>
+<tr>
+<td><code>cart_order_preview_total.html</code></td>
+<td><code>cart_order_preview_total</code></td>
+<td>14</td>
+</tr>
+<tr>
+<td><code>cart_order_item_properties.html</code></td>
+<td><code>cart_order_item_properties</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>cart_order_coupon.html</code></td>
+<td><code>snippets_shopping_cart_button_redeemgiftcouponcode</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>cart_share.html</code></td>
+<td><code>cart_share</code></td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>cart_shipping_costs_selection.html</code></td>
+<td><code>cart_shipping_costs_selection</code></td>
+<td>19</td>
+</tr>
+<tr>
+<td><code>cart_shipping_costs_shipping_module_selection.html</code></td>
+<td><code>cart_shipping_costs_shipping_module_selection</code></td>
+<td>6</td>
+</tr>
+<tr>
+<td><code>cart_shipping_costs_shipping_weight_information.html</code></td>
+<td><code>cart_shipping_costs_shipping_weight_information</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>cart_voucher.html</code></td>
+<td><code>cart_voucher</code></td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>cart_voucher_modal.html</code></td>
+<td><code>cart_voucher_modal</code></td>
+<td>12</td>
+</tr>
+<tr>
+<td><code>offcanvas_cart.html</code></td>
+<td><code>index_outer_wrapper_header_inside_offcanvas_cart</code></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="checkout">Checkout<a class="headerlink" href="#checkout" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>checkout_shipping.html</code></td>
+<td><code>checkout_shipping</code></td>
+<td>22</td>
+</tr>
+<tr>
+<td><code>checkout_shipping_address.html</code></td>
+<td><code>checkout_shipping_address</code></td>
+<td>22</td>
+</tr>
+<tr>
+<td><code>checkout_shipping_modules.html</code></td>
+<td><code>checkout_shipping_modules</code></td>
+<td>49</td>
+</tr>
+<tr>
+<td><code>checkout_payment.html</code></td>
+<td><code>checkout_payment</code></td>
+<td>74</td>
+</tr>
+<tr>
+<td><code>checkout_payment_address.html</code></td>
+<td><code>checkout_payment_address</code></td>
+<td>21</td>
+</tr>
+<tr>
+<td><code>checkout_payment_modules.html</code></td>
+<td><code>checkout_payment_modules</code></td>
+<td>16</td>
+</tr>
+<tr>
+<td><code>checkout_payment_information.html</code></td>
+<td><code>checkout_payment_information</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>checkout_payment_instruction.html</code></td>
+<td><code>checkout_payment_instruction</code></td>
+<td>11</td>
+</tr>
+<tr>
+<td><code>checkout_payment_instruction_paypal_pui.html</code></td>
+<td><code>checkout_payment_instruction_paypal_pui</code></td>
+<td>12</td>
+</tr>
+<tr>
+<td><code>checkout_payment_ipayment.html</code></td>
+<td><code>checkout_payment_ipayment</code></td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>checkout_payment_sepa_mandate.html</code></td>
+<td><code>checkout_payment_sepa_mandate</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>checkout_payment_vrepay_dialog.html</code></td>
+<td><code>checkout_payment_vrepay_dialog</code></td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>checkout_paypal_plus_payment_modules.html</code></td>
+<td><code>checkout_paypal_plus_payment_modules</code></td>
+<td>19</td>
+</tr>
+<tr>
+<td><code>checkout_confirmation.html</code></td>
+<td><code>checkout_confirmation</code></td>
+<td>61</td>
+</tr>
+<tr>
+<td><code>checkout_confirmation_products.html</code></td>
+<td><code>checkout_confirmation_products</code></td>
+<td>22</td>
+</tr>
+<tr>
+<td><code>checkout_confirmation_order_total.html</code></td>
+<td><code>checkout_confirmation_order_total</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>checkout_new_address.html</code></td>
+<td><code>checkout_new_address</code></td>
+<td>86</td>
+</tr>
+<tr>
+<td><code>checkout_process_funnel.html</code></td>
+<td><code>checkout_process_funnel</code></td>
+<td>6</td>
+</tr>
+<tr>
+<td><code>checkout_product_info.html</code></td>
+<td><code>checkout_product_info</code></td>
+<td>17</td>
+</tr>
+<tr>
+<td><code>checkout_success.html</code></td>
+<td><code>checkout_success</code></td>
+<td>24</td>
+</tr>
+<tr>
+<td><code>checkout_success_giftvouchersstatus.html</code></td>
+<td><code>checkout_success_giftvouchersstatus</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>checkout_print_order.html</code></td>
+<td><code>checkout_print_order</code></td>
+<td>52</td>
+</tr>
+</tbody>
+</table>
+<h3 id="customer-account">Customer Account<a class="headerlink" href="#customer-account" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account.html</code></td>
+<td><code>account</code></td>
+<td>48</td>
+</tr>
+<tr>
+<td><code>account_edit.html</code></td>
+<td><code>account_edit</code></td>
+<td>84</td>
+</tr>
+<tr>
+<td><code>account_register.html</code></td>
+<td><code>account_register</code></td>
+<td>183</td>
+</tr>
+<tr>
+<td><code>account_register_guest.html</code></td>
+<td><code>checkout_started_if</code></td>
+<td>164</td>
+</tr>
+<tr>
+<td><code>account_change_password.html</code></td>
+<td><code>account_change_password</code></td>
+<td>12</td>
+</tr>
+<tr>
+<td><code>account_delete.html</code></td>
+<td><code>account_delete</code></td>
+<td>12</td>
+</tr>
+<tr>
+<td><code>account_history.html</code></td>
+<td><code>account_history</code></td>
+<td>18</td>
+</tr>
+<tr>
+<td><code>account_history_info.html</code></td>
+<td><code>account_history_info</code></td>
+<td>58</td>
+</tr>
+<tr>
+<td><code>account_history_order.html</code></td>
+<td><code>account_history_order</code></td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>account_password_double_opt_in.html</code></td>
+<td><code>account_password_double_opt_in</code></td>
+<td>17</td>
+</tr>
+<tr>
+<td><code>account_password_set_new_password.html</code></td>
+<td><code>account_password_set_new_password</code></td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>address_book.html</code></td>
+<td><code>address_book</code></td>
+<td>24</td>
+</tr>
+<tr>
+<td><code>address_book_details.html</code></td>
+<td><code>address_book_details</code></td>
+<td>108</td>
+</tr>
+<tr>
+<td><code>address_book_process.html</code></td>
+<td><code>address_book_process</code></td>
+<td>14</td>
+</tr>
+<tr>
+<td><code>address_book_parcelshopfinder.html</code></td>
+<td><code>address_book_parcelshopfinder</code></td>
+<td>31</td>
+</tr>
+<tr>
+<td><code>address_book_parcelshopfinder_result.html</code></td>
+<td><code>address_book_parcelshopfinder_result</code></td>
+<td>34</td>
+</tr>
+</tbody>
+</table>
+<h3 id="login-logout">Login / Logout<a class="headerlink" href="#login-logout" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>login.html</code></td>
+<td><code>login</code></td>
+<td>21</td>
+</tr>
+<tr>
+<td><code>logout.html</code></td>
+<td><code>logout</code></td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="filters">Filters<a class="headerlink" href="#filters" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>filter.html</code></td>
+<td><code>filter</code></td>
+<td>6</td>
+</tr>
+<tr>
+<td><code>filter_selection_template_checkboxes.html</code></td>
+<td><code>filter_selection_template_checkboxes</code></td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>filter_selection_template_dropdown.html</code></td>
+<td><code>filter_selection_template_dropdown</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>filter_selection_template_links.html</code></td>
+<td><code>filter_selection_template_links</code></td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>filter_selection_template_multiselect.html</code></td>
+<td><code>filter_selection_template_multiselect</code></td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<h3 id="search">Search<a class="headerlink" href="#search" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>search.html</code></td>
+<td><code>search</code></td>
+<td>34</td>
+</tr>
+<tr>
+<td><code>header_live_search.html</code></td>
+<td><code>header_live_search</code></td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+<h3 id="content-boxes-sidebar-widgets">Content Boxes (Sidebar Widgets)<a class="headerlink" href="#content-boxes-sidebar-widgets" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>box_add_a_quickie.html</code></td>
+<td><code>box_add_a_quickie</code></td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>box_admin.html</code></td>
+<td><code>box_admin</code></td>
+<td>15</td>
+</tr>
+<tr>
+<td><code>box_best_sellers.html</code></td>
+<td><code>box_best_sellers</code></td>
+<td>15</td>
+</tr>
+<tr>
+<td><code>box_content_top.html</code></td>
+<td><code>box_content_top</code></td>
+<td>17</td>
+</tr>
+<tr>
+<td><code>box_extrabox.html</code></td>
+<td><code>box_extrabox</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>box_filter.html</code></td>
+<td><code>box_filter</code></td>
+<td>9</td>
+</tr>
+<tr>
+<td><code>box_filter_form_content.html</code></td>
+<td><code>box_filter_form_content</code></td>
+<td>17</td>
+</tr>
+<tr>
+<td><code>box_infobox_dropdown.html</code></td>
+<td><code>box_infobox_dropdown</code></td>
+<td>9</td>
+</tr>
+<tr>
+<td><code>box_information.html</code></td>
+<td><code>box_information</code></td>
+<td>6</td>
+</tr>
+<tr>
+<td><code>box_language_dropdown.html</code></td>
+<td><code>box_language_dropdown</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>box_login.html</code></td>
+<td><code>box_login</code></td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>box_login_dropdown.html</code></td>
+<td><code>box_login_dropdown</code></td>
+<td>11</td>
+</tr>
+<tr>
+<td><code>box_manufacturers.html</code></td>
+<td><code>box_manufacturers</code></td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>box_manufacturers_info.html</code></td>
+<td><code>box_manufacturers_info</code></td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>box_newsletter.html</code></td>
+<td><code>box_newsletter</code></td>
+<td>9</td>
+</tr>
+<tr>
+<td><code>box_order_history.html</code></td>
+<td><code>box_order_history</code></td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>box_recently_viewed.html</code></td>
+<td><code>box_recently_viewed</code></td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>box_search.html</code></td>
+<td><code>box_search</code></td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>box_specials.html</code></td>
+<td><code>box_specials</code></td>
+<td>9</td>
+</tr>
+<tr>
+<td><code>box_whats_new.html</code></td>
+<td><code>box_whats_new</code></td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<h3 id="content-pages">Content Pages<a class="headerlink" href="#content-pages" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>content.html</code></td>
+<td><code>content</code></td>
+<td>11</td>
+</tr>
+<tr>
+<td><code>content_download.html</code></td>
+<td><code>content_download</code></td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="reviews">Reviews<a class="headerlink" href="#reviews" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>product_reviews.html</code></td>
+<td><code>product_reviews</code></td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>product_reviews_write.html</code></td>
+<td><code>product_reviews_write</code></td>
+<td>30</td>
+</tr>
+<tr>
+<td><code>products_reviews.html</code></td>
+<td><code>products_reviews</code></td>
+<td>20</td>
+</tr>
+<tr>
+<td><code>product_question.html</code></td>
+<td><code>product_question</code></td>
+<td>32</td>
+</tr>
+<tr>
+<td><code>rating_stars.html</code></td>
+<td><code>rating_stars</code></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="contact-newsletter-recommend">Contact / Newsletter / Recommend<a class="headerlink" href="#contact-newsletter-recommend" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>contact.html</code></td>
+<td><code>contact</code></td>
+<td>21</td>
+</tr>
+<tr>
+<td><code>newsletter.html</code></td>
+<td><code>newsletter</code></td>
+<td>29</td>
+</tr>
+<tr>
+<td><code>recommend.html</code></td>
+<td><code>recommend</code></td>
+<td>23</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cookie-consent">Cookie Consent<a class="headerlink" href="#cookie-consent" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cookie_bar.html</code></td>
+<td><code>cookie_bar</code></td>
+<td>6</td>
+</tr>
+<tr>
+<td><code>cookie_usage.html</code></td>
+<td><code>cookie_usage</code></td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<h3 id="popups-and-modals">Popups and Modals<a class="headerlink" href="#popups-and-modals" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>modal.html</code></td>
+<td><code>modal</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>lightbox_gallery.html</code></td>
+<td><code>lightbox_gallery</code></td>
+<td>6</td>
+</tr>
+<tr>
+<td><code>popup_content.html</code></td>
+<td><code>popup_content</code></td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>popup_coupon_help.html</code></td>
+<td><code>popup_coupon_help</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>popup_image.html</code></td>
+<td><code>popup_image</code></td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>popup_notification.html</code></td>
+<td><code>popup_notification</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>popup_search_help.html</code></td>
+<td><code>popup_search_help</code></td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="image-slider">Image Slider<a class="headerlink" href="#image-slider" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>image_slider.html</code></td>
+<td><code>image_slider</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>image_slider_scripts.html</code></td>
+<td><code>image_slider_scripts</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>slider.html</code></td>
+<td><code>slider_if</code></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="product-modifiers">Product Modifiers<a class="headerlink" href="#product-modifiers" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>product_modifiers_template_group.html</code></td>
+<td><code>product_modifiers_template_group</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>modifier_group_type_boxedtext.html</code></td>
+<td><code>modifier_group_type_boxedtext</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>modifier_group_type_dropdown.html</code></td>
+<td><code>modifier_group_type_dropdown</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>modifier_group_type_image.html</code></td>
+<td><code>modifier_group_type_image</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>modifier_group_type_radio.html</code></td>
+<td><code>modifier_group_type_radio</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>modifier_group_type_text.html</code></td>
+<td><code>modifier_group_type_text</code></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="miscellaneous">Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Main Block</th>
+<th>Total Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>banner.html</code></td>
+<td><code>banner</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>alert_message.html</code></td>
+<td><code>alert_message</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>error_message.html</code></td>
+<td><code>error_message</code></td>
+<td>11</td>
+</tr>
+<tr>
+<td><code>downloads.html</code></td>
+<td><code>downloads</code></td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>offers.html</code></td>
+<td><code>offers</code></td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>pagination.html</code></td>
+<td><code>pagination</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>pagination_info.html</code></td>
+<td><code>pagination_info</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>seen_cheaper.html</code></td>
+<td><code>seen_cheaper</code></td>
+<td>53</td>
+</tr>
+<tr>
+<td><code>shipping_and_payment_matrix.html</code></td>
+<td><code>shipping_and_payment_matrix</code></td>
+<td>15</td>
+</tr>
+<tr>
+<td><code>sitemap.html</code></td>
+<td><code>sitemap</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>voucher_send.html</code></td>
+<td><code>voucher_send</code></td>
+<td>40</td>
+</tr>
+<tr>
+<td><code>wish_list.html</code></td>
+<td><code>wish_list</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>wish_list_order_details.html</code></td>
+<td><code>wish_list_order_details</code></td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>withdrawal_pdf_form.html</code></td>
+<td><code>withdrawal_pdf_form</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>withdrawal_web_form.html</code></td>
+<td><code>withdrawal_web_form</code></td>
+<td>89</td>
+</tr>
+<tr>
+<td><code>callback_service.html</code></td>
+<td><code>callback_service</code></td>
+<td>37</td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>The Malibu theme contains <strong>242 template files</strong> with a total of <strong>3,121 overridable Smarty blocks</strong>.</p>
+<p>The templates with the most blocks (and therefore the most granular override options):</p>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account_register.html</code></td>
+<td>183</td>
+</tr>
+<tr>
+<td><code>account_register_guest.html</code></td>
+<td>164</td>
+</tr>
+<tr>
+<td><code>address_book_details.html</code></td>
+<td>108</td>
+</tr>
+<tr>
+<td><code>withdrawal_web_form.html</code></td>
+<td>89</td>
+</tr>
+<tr>
+<td><code>checkout_new_address.html</code></td>
+<td>86</td>
+</tr>
+<tr>
+<td><code>account_edit.html</code></td>
+<td>84</td>
+</tr>
+<tr>
+<td><code>checkout_payment.html</code></td>
+<td>74</td>
+</tr>
+<tr>
+<td><code>layout_topbar_secondary_navigation.html</code></td>
+<td>70</td>
+</tr>
+<tr>
+<td><code>cart_order_preview_item.html</code></td>
+<td>70</td>
+</tr>
+<tr>
+<td><code>product_listing_product.html</code></td>
+<td>64</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Gambio GmbH
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://www.gambio-support.de" target="_blank" rel="noopener" title="Gambio Kundenportal" class="md-social__link">
+      <svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><style>.cls-1{fill:#fff;}</style></defs><path class="cls-1" d="M63.37,52.59a19.56,19.56,0,0,0,6.86-14.84,14.42,14.42,0,0,0-.77-4.57A19,19,0,0,0,67.05,28l.12.11,4.09-4.46L64,17l-4.09,4.46.06.06a21.23,21.23,0,0,0-9.78-2.61l-.27,0H49.7c-10.62.08-20.49,6.67-20.49,19.53,0,11.86,8.14,19.31,20.71,19.31,6.9,0,9.3,2.86,9.3,6.59,0,4.73-4.5,7.77-9.46,7.77-5.19,0-9.23-2-9.61-7H29.76c-.24,11,6.66,16.88,20,16.88,10.47,0,20.78-5.86,20.78-17.26A12.62,12.62,0,0,0,63.37,52.59ZM40,38.37c0-6.2,4.27-9.61,9.93-9.61a9.46,9.46,0,0,1,9.61,9.61c0,6.13-4.58,9.15-9.61,9.15C44.26,47.52,40,44,40,38.37Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/gambio/store-module-skeleton" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/gambio-gmbh" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["toc.autohide", "navigation.tabs", "navigation.expand", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
