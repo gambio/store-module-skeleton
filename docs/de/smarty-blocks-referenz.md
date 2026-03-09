@@ -24,13 +24,13 @@ Gambio verwendet das `{block}` System von Smarty. Jedes Template definiert benan
 {/block}
 ```
 
+**Wichtig:** Verwende kein `{extends}` in deinen Template-Dateien. Das Gambio Theme-System erkennt das Parent-Template automatisch anhand der Ordnerstruktur. Platziere deine Datei einfach unter dem passenden Pfad und definiere nur die Blocks, die du erweitern willst.
+
 ### Empfohlen: append oder prepend
 
 Der sicherste Weg einen Block zu erweitern ist mit `append` oder `prepend`. Damit bleibt der originale Inhalt erhalten und dein Markup wird einfach davor oder dahinter eingefuegt:
 
 ```html
-{extends file="parent:system/product_info_price.html"}
-
 {block name="product_info_price" append}
     <div class="skeleton-badge">Sale</div>
 {/block}
@@ -39,8 +39,6 @@ Der sicherste Weg einen Block zu erweitern ist mit `append` oder `prepend`. Dami
 `prepend` funktioniert genauso, fuegt deinen Inhalt aber vor dem Original-Block ein:
 
 ```html
-{extends file="parent:system/product_info_price.html"}
-
 {block name="product_info_price" prepend}
     <div class="skeleton-announcement">Neu!</div>
 {/block}
@@ -51,8 +49,6 @@ Der sicherste Weg einen Block zu erweitern ist mit `append` oder `prepend`. Dami
 Wenn du mehr Kontrolle darueber brauchst, wo der originale Inhalt erscheint, verwende `{$smarty.block.parent}`. Damit kannst du den Original-Inhalt umschliessen oder deine Ergaenzungen an einer bestimmten Stelle platzieren:
 
 ```html
-{extends file="parent:system/product_info_price.html"}
-
 {block name="product_info_price"}
     <div class="skeleton-price-wrapper">
         {$smarty.block.parent}
