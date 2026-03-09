@@ -1393,6 +1393,10 @@
 <li><code>$cacheControl</code>: DataCache for cache clearing</li>
 </ul>
 <p>If no <code>uninstall</code> hook is defined, all configuration values are automatically deleted on uninstall.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Gambio does not have an automatic database migration system. If your module needs custom tables, create them in the <code>install</code> hook and drop them in the <code>uninstall</code> hook using SQL queries. See the <a href="../module-development-guide/#example-creating-database-tables-in-lifecycle-hooks">Module Development Guide</a> for a complete example with both MainFactory and DI container variants.</p>
+</div>
 <h3 id="save">save<a class="headerlink" href="#save" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;save&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>

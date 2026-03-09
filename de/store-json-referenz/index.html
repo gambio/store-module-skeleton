@@ -1127,7 +1127,7 @@
 <td><code>migrations</code></td>
 <td>object</td>
 <td>Nein</td>
-<td>Datenbank-Migrationsscripte</td>
+<td>Datenbank-Migrationsscripte (noch nicht unterstützt, siehe Hinweis unten)</td>
 </tr>
 <tr>
 <td><code>requirements</code></td>
@@ -1156,7 +1156,12 @@
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="migrations">migrations<a class="headerlink" href="#migrations" title="Permanent link">&para;</a></h3>
-<p>Datenbank-Migrationsscripte, die bei Installation (up) und Deinstallation (down) ausgeführt werden:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Das <code>migrations</code> Feld mit <code>up</code>/<code>down</code> wird vom Gambio Store System <strong>noch nicht unterstützt</strong>. Es ist für zukünftige Nutzung reserviert.</p>
+</div>
+<p>Um Datenbanktabellen zu erstellen oder SQL bei der Installation auszuführen, verwende stattdessen <strong>Lifecycle Hooks</strong> in deiner <code>GXModule.json</code>. Deine Install/Uninstall PHP-Methoden erhalten eine Datenbankinstanz und können beliebige SQL-Abfragen direkt ausführen. Siehe die <a href="../modulentwicklung-anleitung/#lifecycle-hooks-hinzufugen-optional">Modulentwicklung Anleitung</a> für ein vollständiges Beispiel.</p>
+<p><strong>Geplantes Format (noch nicht funktional):</strong></p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;migrations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;up&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>

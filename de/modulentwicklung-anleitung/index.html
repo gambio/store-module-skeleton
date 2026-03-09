@@ -779,6 +779,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#beispiel-datenbanktabellen-in-lifecycle-hooks-erstellen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beispiel: Datenbanktabellen in Lifecycle Hooks erstellen
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1273,6 +1284,90 @@
 <li><code>$cacheControl</code>: DataCache zum Cache leeren</li>
 </ul>
 <p>Die Save-Methode erhält <code>($db, $configurationStorage, $languageTextManager, $cacheControl)</code>. Nutze sie für Cache-Invalidierung oder Validierung nach Konfigurationsänderungen.</p>
+<h3 id="beispiel-datenbanktabellen-in-lifecycle-hooks-erstellen">Beispiel: Datenbanktabellen in Lifecycle Hooks erstellen<a class="headerlink" href="#beispiel-datenbanktabellen-in-lifecycle-hooks-erstellen" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Gambio hat kein automatisches Migrationssystem mit <code>up</code>/<code>down</code>. Wenn dein Modul eigene Datenbanktabellen braucht, musst du sie selbst in den Install- und Uninstall-Hooks erstellen und löschen.</p>
+</div>
+<p>Hier ein vollständiges Beispiel einer Install/Uninstall Action-Klasse (MainFactory Variante):</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Admin/Actions/InstallAction.php</span>
+
+<span class="k">namespace</span> <span class="nx">GXModules\AcmeCorp\MeinModul\Admin\Actions</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">InstallAction</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">onInstall</span><span class="p">(</span><span class="nv">$db</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$moduleData</span><span class="p">,</span> <span class="nv">$languageTextManager</span><span class="p">,</span> <span class="nv">$cacheControl</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="c1">// Eigene Tabelle für das Modul erstellen</span>
+        <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;</span>
+<span class="s2">            CREATE TABLE IF NOT EXISTS mein_modul_daten (</span>
+<span class="s2">                id INT PRIMARY KEY AUTO_INCREMENT,</span>
+<span class="s2">                order_id INT NOT NULL,</span>
+<span class="s2">                external_ref VARCHAR(255) NOT NULL DEFAULT &#39;&#39;,</span>
+<span class="s2">                sync_status ENUM(&#39;pending&#39;, &#39;synced&#39;, &#39;error&#39;) NOT NULL DEFAULT &#39;pending&#39;,</span>
+<span class="s2">                created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,</span>
+<span class="s2">                INDEX idx_order_id (order_id),</span>
+<span class="s2">                INDEX idx_sync_status (sync_status)</span>
+<span class="s2">            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4</span>
+<span class="s2">        &quot;</span><span class="p">);</span>
+
+        <span class="c1">// Optional: Standarddaten einfügen</span>
+        <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;</span>
+<span class="s2">            INSERT IGNORE INTO mein_modul_daten (order_id, external_ref, sync_status)</span>
+<span class="s2">            VALUES (0, &#39;initial&#39;, &#39;synced&#39;)</span>
+<span class="s2">        &quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">onUninstall</span><span class="p">(</span><span class="nv">$db</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$moduleData</span><span class="p">,</span> <span class="nv">$languageTextManager</span><span class="p">,</span> <span class="nv">$cacheControl</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="c1">// Aufräumen: eigene Tabelle löschen</span>
+        <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;DROP TABLE IF EXISTS mein_modul_daten&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Wenn deine Klasse über den <strong>DI-Container</strong> aufgelöst wird (im ServiceProvider registriert), nutze stattdessen <code>Doctrine\DBAL\Connection</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// Admin/Actions/InstallAction.php</span>
+
+<span class="k">namespace</span> <span class="nx">GXModules\AcmeCorp\MeinModul\Admin\Actions</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Doctrine\DBAL\Connection</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">InstallAction</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="nx">Connection</span> <span class="nv">$connection</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">Connection</span> <span class="nv">$connection</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">connection</span> <span class="o">=</span> <span class="nv">$connection</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">onInstall</span><span class="p">(</span><span class="k">array</span> <span class="nv">$gxModulesJsonData</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">connection</span><span class="o">-&gt;</span><span class="na">executeStatement</span><span class="p">(</span><span class="s2">&quot;</span>
+<span class="s2">            CREATE TABLE IF NOT EXISTS mein_modul_daten (</span>
+<span class="s2">                id INT PRIMARY KEY AUTO_INCREMENT,</span>
+<span class="s2">                order_id INT NOT NULL,</span>
+<span class="s2">                external_ref VARCHAR(255) NOT NULL DEFAULT &#39;&#39;,</span>
+<span class="s2">                sync_status ENUM(&#39;pending&#39;, &#39;synced&#39;, &#39;error&#39;) NOT NULL DEFAULT &#39;pending&#39;,</span>
+<span class="s2">                created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,</span>
+<span class="s2">                INDEX idx_order_id (order_id),</span>
+<span class="s2">                INDEX idx_sync_status (sync_status)</span>
+<span class="s2">            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4</span>
+<span class="s2">        &quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">onUninstall</span><span class="p">(</span><span class="k">array</span> <span class="nv">$gxModulesJsonData</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">connection</span><span class="o">-&gt;</span><span class="na">executeStatement</span><span class="p">(</span><span class="s2">&quot;DROP TABLE IF EXISTS mein_modul_daten&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Verwende immer <code>CREATE TABLE IF NOT EXISTS</code> und <code>DROP TABLE IF EXISTS</code>, damit Install/Uninstall idempotent sind. Das verhindert Fehler, wenn das Modul erneut installiert wird oder der Hook mehrfach ausgeführt wird.</p>
+</div>
 <h2 id="schritt-3-ubersetzungen-hinzufugen">Schritt 3: Übersetzungen hinzufügen<a class="headerlink" href="#schritt-3-ubersetzungen-hinzufugen" title="Permanent link">&para;</a></h2>
 <p>Erstelle Sprachdateien, damit deine Modul-Labels übersetzbar sind:</p>
 <div class="highlight"><pre><span></span><code>Admin/TextPhrases/german/mein_modul.lang.inc.php

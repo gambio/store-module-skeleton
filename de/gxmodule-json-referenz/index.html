@@ -1393,6 +1393,10 @@
 <li><code>$cacheControl</code>: DataCache zum Cache leeren</li>
 </ul>
 <p>Wenn kein <code>uninstall</code> Hook definiert ist, werden bei der Deinstallation automatisch alle Konfigurationswerte gelöscht.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Gambio hat kein automatisches Datenbank-Migrationssystem. Wenn dein Modul eigene Tabellen braucht, erstelle sie im <code>install</code> Hook und lösche sie im <code>uninstall</code> Hook per SQL-Abfragen. Siehe die <a href="../modulentwicklung-anleitung/#beispiel-datenbanktabellen-in-lifecycle-hooks-erstellen">Modulentwicklung Anleitung</a> für ein vollständiges Beispiel mit MainFactory- und DI-Container-Variante.</p>
+</div>
 <h3 id="save">save<a class="headerlink" href="#save" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;save&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
