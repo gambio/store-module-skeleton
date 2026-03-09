@@ -1,6 +1,6 @@
 # GXModule.json Referenz
 
-Die `GXModule.json` Datei ist das zentrale Manifest fuer jedes Gambio Modul. Sie registriert das Modul im Module Center und kann automatisch eine Konfigurationsseite generieren, ohne HTML oder Controller.
+Die `GXModule.json` Datei ist das zentrale Manifest für jedes Gambio Modul. Sie registriert das Modul im Module Center und kann automatisch eine Konfigurationsseite generieren, ohne HTML oder Controller.
 
 ## Speicherort
 
@@ -19,15 +19,15 @@ src/GXModules/{Vendor}/{Modul}/GXModule.json
 
 Das reicht aus, damit das Modul im Module Center erscheint.
 
-## Vollstaendiges Schema
+## Vollständiges Schema
 
-| Schluessel | Typ | Beschreibung |
-|------------|-----|--------------|
-| `title` | string | Uebersetzungsschluessel fuer den Modultitel |
-| `description` | string | Uebersetzungsschluessel fuer die Modulbeschreibung |
+| Schlüssel | Typ | Beschreibung |
+|-----------|-----|--------------|
+| `title` | string | Übersetzungsschlüssel für den Modultitel |
+| `description` | string | Übersetzungsschlüssel für die Modulbeschreibung |
 | `sortOrder` | number | Position in der Module Center Liste (Standard: 0) |
 | `forceIncludingFiles` | boolean | Moduldateien auch laden wenn nicht installiert (Standard: false) |
-| `config_url` | string | Eigene URL fuer die Konfigurationsseite (ueberschreibt die automatisch generierte) |
+| `config_url` | string | Eigene URL für die Konfigurationsseite (überschreibt die automatisch generierte) |
 | `install` | object | PHP-Hook beim Installieren |
 | `uninstall` | object | PHP-Hook beim Deinstallieren |
 | `save` | object | PHP-Hook nach dem Speichern der Konfiguration |
@@ -50,9 +50,9 @@ Das reicht aus, damit das Modul im Module Center erscheint.
 }
 ```
 
-**Aufloesungsreihenfolge:**
+**Auflösungsreihenfolge:**
 1. Die Klasse wird zuerst im DI-Container gesucht (wenn per ServiceProvider registriert)
-2. Fallback: Aufloesung ueber MainFactory
+2. Fallback: Auflösung über MainFactory
 
 **Methodensignatur (MainFactory Fallback):**
 ```php
@@ -61,10 +61,10 @@ public function onInstall($db, array $moduleData, $languageTextManager, $cacheCo
 
 - `$db`: CI_DB_query_builder Datenbankinstanz
 - `$moduleData`: Geparstes GXModule.json als Array
-- `$languageTextManager`: LanguageTextManager fuer Uebersetzungen
+- `$languageTextManager`: LanguageTextManager für Übersetzungen
 - `$cacheControl`: DataCache zum Cache leeren
 
-Wenn kein `uninstall` Hook definiert ist, werden bei der Deinstallation automatisch alle Konfigurationswerte geloescht.
+Wenn kein `uninstall` Hook definiert ist, werden bei der Deinstallation automatisch alle Konfigurationswerte gelöscht.
 
 ### save
 
@@ -106,10 +106,10 @@ Das `configuration` Array definiert Sektionen mit Formularfeldern. Jede Sektion 
 
 ### Sektionseigenschaften
 
-| Schluessel | Typ | Beschreibung |
-|------------|-----|--------------|
-| `title` | string | Uebersetzungsschluessel fuer die Sektionsueberschrift |
-| `tab` | string | Uebersetzungsschluessel fuer einen Tab-Namen (gruppiert Sektionen in Tabs) |
+| Schlüssel | Typ | Beschreibung |
+|-----------|-----|--------------|
+| `title` | string | Übersetzungsschlüssel für die Sektionsüberschrift |
+| `tab` | string | Übersetzungsschlüssel für einen Tab-Namen (gruppiert Sektionen in Tabs) |
 | `fields` | object | Key-Value Map mit Felddefinitionen |
 
 ### Tabs
@@ -203,7 +203,7 @@ Numerische Eingabe mit optionalem Bereich und Schrittweite.
 
 ### color
 
-Farbwaehlfeld.
+Farbwählfeld.
 
 ```json
 {
@@ -249,7 +249,7 @@ Datei-Upload-Feld.
 ```
 
 - `folder`: Upload-Zielverzeichnis relativ zum Shop-Root
-- `accept`: MIME-Typ-Filter fuer den Dateiauswahldialog
+- `accept`: MIME-Typ-Filter für den Dateiauswahldialog
 
 ### textarea
 
@@ -274,7 +274,7 @@ Rich-Text-Editor (WYSIWYG).
 }
 ```
 
-Wenn `languageDependent` auf `true` steht, wird ein separater Eingabe-Tab fuer jede Shop-Sprache angezeigt.
+Wenn `languageDependent` auf `true` steht, wird ein separater Eingabe-Tab für jede Shop-Sprache angezeigt.
 
 ### select
 
@@ -308,7 +308,7 @@ Mehrfachauswahl.
 
 ### customer_group
 
-Dropdown vorbefuellt mit den Kundengruppen des Shops.
+Dropdown vorbefüllt mit den Kundengruppen des Shops.
 
 ```json
 {
@@ -319,7 +319,7 @@ Dropdown vorbefuellt mit den Kundengruppen des Shops.
 
 ### order_status
 
-Dropdown vorbefuellt mit den Bestellstatus des Shops.
+Dropdown vorbefüllt mit den Bestellstatus des Shops.
 
 ```json
 {
@@ -330,7 +330,7 @@ Dropdown vorbefuellt mit den Bestellstatus des Shops.
 
 ### countries
 
-Dropdown vorbefuellt mit der Laenderliste des Shops.
+Dropdown vorbefüllt mit der Länderliste des Shops.
 
 ```json
 {
@@ -341,7 +341,7 @@ Dropdown vorbefuellt mit der Laenderliste des Shops.
 
 ### languages
 
-Dropdown vorbefuellt mit den aktiven Sprachen des Shops.
+Dropdown vorbefüllt mit den aktiven Sprachen des Shops.
 
 ```json
 {
@@ -352,7 +352,7 @@ Dropdown vorbefuellt mit den aktiven Sprachen des Shops.
 
 ### button
 
-Ein Aktionsbutton, der einen AJAX-Aufruf ausloest.
+Ein Aktionsbutton, der einen AJAX-Aufruf auslöst.
 
 ```json
 {
@@ -371,9 +371,9 @@ Ein Aktionsbutton, der einen AJAX-Aufruf ausloest.
 - `color`: Buttonfarbe (`primary`, `warning`, `danger`, `success`)
 - `action.controller`: PHP-Klasse (muss `GXModuleController` erweitern)
 - `action.method`: Methodenname
-- `action.message`: Uebersetzungsschluessel fuer die Erfolgsmeldung
+- `action.message`: Übersetzungsschlüssel für die Erfolgsmeldung
 
-Ein Button kann auch ein Modal anstatt einer direkten Aktion ausloesen:
+Ein Button kann auch ein Modal anstatt einer direkten Aktion auslösen:
 
 ```json
 {
@@ -385,11 +385,11 @@ Ein Button kann auch ein Modal anstatt einer direkten Aktion ausloesen:
 }
 ```
 
-Der `modal` Wert muss einem Feldschluessel vom Typ `modal` in derselben Sektion entsprechen.
+Der `modal` Wert muss einem Feldschlüssel vom Typ `modal` in derselben Sektion entsprechen.
 
 ### modal
 
-Ein Bestaetigungsdialog, der von einem Button ausgeloest wird.
+Ein Bestätigungsdialog, der von einem Button ausgelöst wird.
 
 ```json
 {
@@ -414,15 +414,15 @@ Ein Bestaetigungsdialog, der von einem Button ausgeloest wird.
 
 ## Allgemeine Feldeigenschaften
 
-Diese Eigenschaften koennen bei den meisten Feldtypen verwendet werden:
+Diese Eigenschaften können bei den meisten Feldtypen verwendet werden:
 
 | Eigenschaft | Typ | Beschreibung |
 |-------------|-----|--------------|
-| `label` | string | Uebersetzungsschluessel fuer das Feldlabel |
+| `label` | string | Übersetzungsschlüssel für das Feldlabel |
 | `required` | boolean | Macht das Feld zum Pflichtfeld |
-| `default_value` | string | Standardwert fuer das Feld |
+| `default_value` | string | Standardwert für das Feld |
 | `languageDependent` | boolean | Zeigt pro Sprache einen eigenen Eingabe-Tab an |
-| `tooltip` | object | Fuegt einen Info- oder Warnungs-Tooltip hinzu |
+| `tooltip` | object | Fügt einen Info- oder Warnungs-Tooltip hinzu |
 
 ### Tooltips
 
@@ -436,8 +436,8 @@ Diese Eigenschaften koennen bei den meisten Feldtypen verwendet werden:
 ```
 
 - `type`: `info` (blau) oder `warning` (gelb)
-- `text`: Uebersetzungsschluessel fuer den Tooltip-Text
+- `text`: Übersetzungsschlüssel für den Tooltip-Text
 
-## Vollstaendiges Beispiel
+## Vollständiges Beispiel
 
-Siehe die `GXModule.json` des Skeletons fuer ein funktionierendes Beispiel, das alle Feldtypen, Tabs, Tooltips, Buttons, Modals und Lifecycle Hooks demonstriert.
+Siehe die `GXModule.json` des Skeletons für ein funktionierendes Beispiel, das alle Feldtypen, Tabs, Tooltips, Buttons, Modals und Lifecycle Hooks demonstriert.

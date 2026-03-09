@@ -47,7 +47,7 @@ Verify these items before creating a GitHub release.
 
 ## Final Steps
 
-- [ ] Developer mode disabled (`dev-environment` file removed)
+- [ ] Developer mode disabled (`.dev-environment` file removed)
 - [ ] All changes committed and pushed
 - [ ] Version tag follows semantic versioning (`vX.Y.Z`)
 - [ ] GitHub release created with release notes

@@ -1,6 +1,6 @@
 # Lokal testen
 
-Wie du dein Modul in einem lokalen Gambio Shop installierst und testest, bevor du es veroeffentlichst.
+Wie du dein Modul in einem lokalen Gambio Shop installierst und testest, bevor du es veröffentlichst.
 
 ## Installation
 
@@ -12,7 +12,7 @@ Wie du dein Modul in einem lokalen Gambio Shop installierst und testest, bevor d
 
 2. Shop-Cache leeren:
    - Admin > Toolbox > Cache > Alles leeren
-   - Oder den Inhalt des `cache/` Verzeichnisses manuell loeschen
+   - Oder den Inhalt des `cache/` Verzeichnisses manuell löschen
 
 3. Gehe zu **Admin > Module > Module Center** und finde dein Modul in der Liste.
 
@@ -20,10 +20,10 @@ Wie du dein Modul in einem lokalen Gambio Shop installierst und testest, bevor d
 
 ## Entwicklermodus
 
-Erstelle eine leere Datei namens `dev-environment` im Shop-Root, um den Entwicklermodus zu aktivieren:
+Erstelle eine leere Datei namens `.dev-environment` im Shop-Root, um den Entwicklermodus zu aktivieren:
 
 ```bash
-touch /var/www/gambio-shop/dev-environment
+touch /var/www/gambio-shop/.dev-environment
 ```
 
 Der Entwicklermodus:
@@ -31,10 +31,10 @@ Der Entwicklermodus:
 - Deaktiviert Template-Caching
 - Aktiviert Debug-Ausgaben
 
-Zum Deaktivieren die Datei loeschen:
+Zum Deaktivieren die Datei löschen:
 
 ```bash
-rm /var/www/gambio-shop/dev-environment
+rm /var/www/gambio-shop/.dev-environment
 ```
 
 **Wichtig:** Deaktiviere den Entwicklermodus immer, bevor du ein Release erstellst oder das Modul in Produktion einsetzt.
@@ -44,8 +44,8 @@ rm /var/www/gambio-shop/dev-environment
 ### Module Center
 - [ ] Modul erscheint in der Module Center Liste
 - [ ] Titel und Beschreibung werden korrekt angezeigt
-- [ ] Modul laesst sich ohne Fehler installieren
-- [ ] Modul laesst sich ohne Fehler deinstallieren
+- [ ] Modul lässt sich ohne Fehler installieren
+- [ ] Modul lässt sich ohne Fehler deinstallieren
 - [ ] Neuinstallation funktioniert (installieren > deinstallieren > installieren)
 
 ### Konfigurationsseite
@@ -54,17 +54,17 @@ rm /var/www/gambio-shop/dev-environment
 - [ ] Konfiguration speichern funktioniert
 - [ ] Standardwerte werden bei der Erstinstallation angewendet
 - [ ] Tooltips werden angezeigt
-- [ ] Buttons loesen die richtigen Aktionen aus
-- [ ] Modals oeffnen und schliessen sich korrekt
+- [ ] Buttons lösen die richtigen Aktionen aus
+- [ ] Modals öffnen und schließen sich korrekt
 
-### Uebersetzungen
-- [ ] Deutsche Uebersetzungen erscheinen wenn Shopsprache Deutsch ist
-- [ ] Englische Uebersetzungen erscheinen wenn Shopsprache Englisch ist
-- [ ] Keine fehlenden Uebersetzungsschluessel (erkennbar an Rohschluesseln wie `mein_modul.LABEL_XYZ`)
+### Übersetzungen
+- [ ] Deutsche Übersetzungen erscheinen wenn Shopsprache Deutsch ist
+- [ ] Englische Übersetzungen erscheinen wenn Shopsprache Englisch ist
+- [ ] Keine fehlenden Übersetzungsschlüssel (erkennbar an Rohschlüsseln wie `mein_modul.LABEL_XYZ`)
 
 ### Storefront (falls zutreffend)
 - [ ] CSS wird auf den richtigen Seiten geladen
-- [ ] JavaScript wird ohne Konsolenfehler ausgefuehrt
+- [ ] JavaScript wird ohne Konsolenfehler ausgeführt
 - [ ] Template-Overrides werden korrekt gerendert
 - [ ] Modul funktioniert mit dem Malibu Theme
 - [ ] Modul funktioniert mit dem Honeygrid Theme (wenn "All" als Ziel)
@@ -75,33 +75,33 @@ rm /var/www/gambio-shop/dev-environment
 
 ### Cronjobs (falls zutreffend)
 - [ ] Cronjob erscheint unter Admin > Toolbox > Cronjobs
-- [ ] Cronjob wird ohne Fehler ausgefuehrt
+- [ ] Cronjob wird ohne Fehler ausgeführt
 - [ ] Logs werden korrekt geschrieben
 
-## Haeufige Probleme
+## Häufige Probleme
 
 ### Modul erscheint nicht im Module Center
-- Pruefe ob `GXModule.json` existiert und gueltiges JSON ist
+- Prüfe ob `GXModule.json` existiert und gültiges JSON ist
 - Shop-Cache leeren
-- Dateiberechtigungen pruefen (Webserver muss die Dateien lesen koennen)
+- Dateiberechtigungen prüfen (Webserver muss die Dateien lesen können)
 
-### Uebersetzungen werden als Rohschluessel angezeigt
-- Pruefe ob der Dateiname zum Sektionspraefix passt (z.B. `mein_modul.lang.inc.php` fuer Schluessel wie `mein_modul.PAGE_TITLE`)
-- Pruefe auf PHP-Syntaxfehler in der Sprachdatei
+### Übersetzungen werden als Rohschlüssel angezeigt
+- Prüfe ob der Dateiname zum Sektionspräfix passt (z.B. `mein_modul.lang.inc.php` für Schlüssel wie `mein_modul.PAGE_TITLE`)
+- Prüfe auf PHP-Syntaxfehler in der Sprachdatei
 - Shop-Cache leeren
 
 ### Overloads funktionieren nicht
-- Pruefe ob der Verzeichnisname exakt dem Zielklassennamen entspricht
-- Pruefe ob deine Klasse `{KlassenName}_parent` erweitert
-- Pruefe ob die Datei die Endung `.inc.php` hat
+- Prüfe ob der Verzeichnisname exakt dem Zielklassennamen entspricht
+- Prüfe ob deine Klasse `{KlassenName}_parent` erweitert
+- Prüfe ob die Datei die Endung `.inc.php` hat
 - Shop-Cache leeren
 
-### Theme-Aenderungen nicht sichtbar
-- Shop-Cache leeren (Gambio baut Themes in ein temporaeres Verzeichnis)
-- Pruefe ob die Dateien im korrekten `Shop/Themes/All/` Pfad liegen
-- Pruefe ob Verzeichnisnamen fuer JavaScript exakt dem Seitennamen entsprechen
+### Theme-Änderungen nicht sichtbar
+- Shop-Cache leeren (Gambio baut Themes in ein temporäres Verzeichnis)
+- Prüfe ob die Dateien im korrekten `Shop/Themes/All/` Pfad liegen
+- Prüfe ob Verzeichnisnamen für JavaScript exakt dem Seitennamen entsprechen
 
-## Naechste Schritte
+## Nächste Schritte
 
-- [Veroeffentlichung](./veroeffentlichung-guide.md): Dein getestetes Modul im Store einreichen
-- [Release Checkliste](./release-checkliste.md): Alles vor dem Release pruefen
+- [Veröffentlichung](./veroeffentlichung-guide.md): Dein getestetes Modul im Store einreichen
+- [Release Checkliste](./release-checkliste.md): Alles vor dem Release prüfen

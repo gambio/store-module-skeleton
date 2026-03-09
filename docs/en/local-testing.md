@@ -20,10 +20,10 @@ How to install and test your module in a local Gambio shop before publishing.
 
 ## Developer Mode
 
-Create an empty file named `dev-environment` in the shop root to enable developer mode:
+Create an empty file named `.dev-environment` in the shop root to enable developer mode:
 
 ```bash
-touch /var/www/gambio-shop/dev-environment
+touch /var/www/gambio-shop/.dev-environment
 ```
 
 Developer mode:
@@ -34,7 +34,7 @@ Developer mode:
 To disable developer mode, delete the file:
 
 ```bash
-rm /var/www/gambio-shop/dev-environment
+rm /var/www/gambio-shop/.dev-environment
 ```
 
 **Important:** Always disable developer mode before deploying to production or creating a release.

@@ -1,19 +1,19 @@
 # Modulentwicklung Anleitung
 
-Diese Anleitung zeigt Schritt fuer Schritt, wie du ein Gambio GX Modul mit dem [Store Module Skeleton](https://github.com/gambio/store-module-skeleton) erstellst.
+Diese Anleitung zeigt Schritt für Schritt, wie du ein Gambio GX Modul mit dem [Store Module Skeleton](https://github.com/gambio/store-module-skeleton) erstellst.
 
 ## Voraussetzungen
 
 - Eine Gambio Shop Installation (lokal oder Testsystem)
 - PHP >= 8.0
 - Grundkenntnisse in PHP, HTML, CSS und JavaScript
-- Ein GitHub Account (fuer die Veroeffentlichung im Store)
+- Ein GitHub Account (für die Veröffentlichung im Store)
 
 ## Wie Gambio Module funktionieren
 
 Jedes Gambio Modul liegt in `src/GXModules/{Vendor}/{ModuleName}/`. Der `{Vendor}` Ordner ist dein Firmen- oder Entwicklername, `{ModuleName}` ist der Name deines Moduls.
 
-Die einzige **Pflichtdatei** ist `GXModule.json`. Diese Datei registriert dein Modul im Module Center, wo Shop-Administratoren es installieren und deinstallieren koennen. Alles andere ist optional und haengt davon ab, was dein Modul tun soll.
+Die einzige **Pflichtdatei** ist `GXModule.json`. Diese Datei registriert dein Modul im Module Center, wo Shop-Administratoren es installieren und deinstallieren können. Alles andere ist optional und hängt davon ab, was dein Modul tun soll.
 
 ## Schritt 1: Modulverzeichnis erstellen
 
@@ -34,11 +34,11 @@ Dies ist die einzige Pflichtdatei. Das Minimum:
 }
 ```
 
-Damit erscheint dein Modul im Module Center. Die Werte verweisen auf Uebersetzungsschluessel aus den TextPhrases-Dateien.
+Damit erscheint dein Modul im Module Center. Die Werte verweisen auf Übersetzungsschlüssel aus den TextPhrases-Dateien.
 
-### Konfigurationsfelder hinzufuegen
+### Konfigurationsfelder hinzufügen
 
-Um Administratoren eine Einstellungsseite zu geben, fuege das `configuration` Array hinzu:
+Um Administratoren eine Einstellungsseite zu geben, füge das `configuration` Array hinzu:
 
 ```json
 {
@@ -63,13 +63,13 @@ Um Administratoren eine Einstellungsseite zu geben, fuege das `configuration` Ar
 }
 ```
 
-Gambio generiert die Konfigurationsseite automatisch aus diesem JSON. Keine HTML-Templates oder Controller noetig.
+Gambio generiert die Konfigurationsseite automatisch aus diesem JSON. Keine HTML-Templates oder Controller nötig.
 
-Die vollstaendige Feldtyp-Referenz findest du in der [GXModule.json Referenz](./gxmodule-json-referenz.md).
+Die vollständige Feldtyp-Referenz findest du in der [GXModule.json Referenz](./gxmodule-json-referenz.md).
 
-### Lifecycle Hooks hinzufuegen
+### Lifecycle Hooks hinzufügen
 
-Du kannst eigenen PHP-Code ausfuehren, wenn das Modul installiert, deinstalliert oder wenn Einstellungen gespeichert werden:
+Du kannst eigenen PHP-Code ausführen, wenn das Modul installiert, deinstalliert oder wenn Einstellungen gespeichert werden:
 
 ```json
 {
@@ -88,33 +88,33 @@ Du kannst eigenen PHP-Code ausfuehren, wenn das Modul installiert, deinstalliert
 }
 ```
 
-Die Install-Methode erhaelt `($db, $moduleData, $languageTextManager, $cacheControl)`. Nutze sie fuer Datenbanktabellen-Erstellung oder initiale Daten.
+Die Install-Methode erhält `($db, $moduleData, $languageTextManager, $cacheControl)`. Nutze sie für Datenbanktabellen-Erstellung oder initiale Daten.
 
-Die Save-Methode erhaelt `($db, $configurationStorage, $languageTextManager, $cacheControl)`. Nutze sie fuer Cache-Invalidierung oder Validierung nach Konfigurationsaenderungen.
+Die Save-Methode erhält `($db, $configurationStorage, $languageTextManager, $cacheControl)`. Nutze sie für Cache-Invalidierung oder Validierung nach Konfigurationsänderungen.
 
-## Schritt 3: Uebersetzungen hinzufuegen
+## Schritt 3: Übersetzungen hinzufügen
 
-Erstelle Sprachdateien, damit deine Modul-Labels uebersetzbar sind:
+Erstelle Sprachdateien, damit deine Modul-Labels übersetzbar sind:
 
 ```
 Admin/TextPhrases/german/mein_modul.lang.inc.php
 Admin/TextPhrases/english/mein_modul.lang.inc.php
 ```
 
-Jede Datei gibt ein Key-Value Array zurueck:
+Jede Datei gibt ein Key-Value Array zurück:
 
 ```php
 <?php
 $t_language_text_section_content_array = [
     'PAGE_TITLE'            => 'Mein Modul',
-    'DESCRIPTION'           => 'Dieses Modul macht etwas Nuetzliches.',
+    'DESCRIPTION'           => 'Dieses Modul macht etwas Nützliches.',
     'SECTION_EINSTELLUNGEN' => 'Einstellungen',
     'LABEL_AKTIVIEREN'      => 'Feature aktivieren',
-    'LABEL_API_KEY'         => 'API-Schluessel',
+    'LABEL_API_KEY'         => 'API-Schlüssel',
 ];
 ```
 
-Der Sektionsname ergibt sich aus dem Dateinamen (ohne `.lang.inc.php`). Verweise auf Schluessel in GXModule.json mit dem Muster `{sektion}.{KEY}`, z.B. `mein_modul.PAGE_TITLE`.
+Der Sektionsname ergibt sich aus dem Dateinamen (ohne `.lang.inc.php`). Verweise auf Schlüssel in GXModule.json mit dem Muster `{sektion}.{KEY}`, z.B. `mein_modul.PAGE_TITLE`.
 
 In Smarty Templates: `{load_language_text section="mein_modul"}` dann `{$txt.KEY}`
 
@@ -122,7 +122,7 @@ In Smarty Templates: `{load_language_text section="mein_modul"}` dann `{$txt.KEY
 
 ### CSS
 
-Platziere CSS-Dateien in `Shop/Themes/All/Css/`, um sie auf jeder Storefront-Seite fuer alle Themes zu laden:
+Platziere CSS-Dateien in `Shop/Themes/All/Css/`, um sie auf jeder Storefront-Seite für alle Themes zu laden:
 
 ```
 Shop/Themes/All/Css/mein_modul.css
@@ -147,17 +147,17 @@ Shop/Themes/All/Javascript/index/mein_modul.js               Startseite
 
 ### Smarty Template Overrides
 
-Ueberschreibe Smarty Template-Snippets, indem du die Theme-Verzeichnisstruktur spiegelst:
+Erweitere Smarty Template-Blocks, indem du die Theme-Verzeichnisstruktur spiegelst:
 
 ```
 Shop/Themes/All/snippets/footer/footer.html
 ```
 
-Dies ersetzt das Standard-Footer-Template fuer alle Themes.
+Dies erweitert das Standard-Footer-Template für alle Themes. Siehe die [Smarty Blocks Referenz](./smarty-blocks-referenz.md) für alle verfügbaren Blocks.
 
-## Schritt 5: Admin-Menueeintrag hinzufuegen (Optional)
+## Schritt 5: Admin-Menüeintrag hinzufügen (Optional)
 
-Erstelle `Admin/Menu/mein_modul.menu.json`, um einen Eintrag in der Admin-Seitenleiste hinzuzufuegen:
+Erstelle `Admin/Menu/mein_modul.menu.json`, um einen Eintrag in der Admin-Seitenleiste hinzuzufügen:
 
 ```json
 [{
@@ -174,9 +174,9 @@ Erstelle `Admin/Menu/mein_modul.menu.json`, um einen Eintrag in der Admin-Seiten
 }]
 ```
 
-Dies ersetzt das veraltete XML-Menueformat (`menu_*.xml`).
+Dies ersetzt das veraltete XML-Menüformat (`menu_*.xml`).
 
-## Schritt 6: Bestehende Funktionalitaet mit Overloads erweitern (Optional)
+## Schritt 6: Bestehende Funktionalität mit Overloads erweitern (Optional)
 
 Overloads erlauben dir, jede Klasse zu erweitern, die von Gambios MainFactory verwaltet wird.
 
@@ -197,9 +197,9 @@ class MeinModulOrderExtender extends MeinModulOrderExtender_parent
 }
 ```
 
-Haeufig verwendete Admin-Overload-Ziele:
+Häufig verwendete Admin-Overload-Ziele:
 - `OrderExtenderComponent`: Bestelldetailseite
-- `AdminApplicationTopExtenderComponent`: Jede Admin-Seite (frueh)
+- `AdminApplicationTopExtenderComponent`: Jede Admin-Seite (früh)
 - `AdminEditProductExtenderComponent`: Produktbearbeitungsseite
 - `PDFOrderExtenderComponent`: PDF-Rechnungserstellung
 
@@ -215,17 +215,17 @@ class MeinModulAppTop extends MeinModulAppTop_parent
     public function proceed()
     {
         parent::proceed();
-        // Wird bei jedem Storefront-Seitenaufruf ausgefuehrt
+        // Wird bei jedem Storefront-Seitenaufruf ausgeführt
     }
 }
 ```
 
 Regeln:
-1. Deine Klasse **muss** `{KlassenName}_parent` erweitern (eine Pseudo-Klasse, die von MainFactory aufgeloest wird)
+1. Deine Klasse **muss** `{KlassenName}_parent` erweitern (eine Pseudo-Klasse, die von MainFactory aufgelöst wird)
 2. Rufe **immer** die Elternmethode auf, um die Overload-Kette zu erhalten
 3. Die Datei **muss** die Endung `.inc.php` verwenden
 
-## Schritt 7: ServiceProvider fuer Dependency Injection (Optional)
+## Schritt 7: ServiceProvider für Dependency Injection (Optional)
 
 Erstelle `MeinModulServiceProvider.php` im Modulwurzelverzeichnis, um Services im DI-Container zu registrieren:
 
@@ -263,11 +263,11 @@ class MeinModulServiceProvider extends AbstractModuleBootableServiceProvider
 }
 ```
 
-Verwende `AbstractModuleBootableServiceProvider` wenn du `boot()` brauchst (fuer Event Listener). Verwende `AbstractModuleServiceProvider` wenn du nur `register()` brauchst.
+Verwende `AbstractModuleBootableServiceProvider` wenn du `boot()` brauchst (für Event Listener). Verwende `AbstractModuleServiceProvider` wenn du nur `register()` brauchst.
 
-## Schritt 8: Modul-Klasse fuer Events und Middleware (Optional)
+## Schritt 8: Modul-Klasse für Events und Middleware (Optional)
 
-Erstelle `MeinModulModule.php` im Modulwurzelverzeichnis. Die Datei wird automatisch erkannt, wenn sie `*Module.php` heisst:
+Erstelle `MeinModulModule.php` im Modulwurzelverzeichnis. Die Datei wird automatisch erkannt, wenn sie `*Module.php` heißt:
 
 ```php
 <?php
@@ -307,9 +307,9 @@ class MeinModulModule extends AbstractModule
 }
 ```
 
-## Schritt 9: HTTP-Routen hinzufuegen (Optional)
+## Schritt 9: HTTP-Routen hinzufügen (Optional)
 
-Erstelle `routes.php` im Modulwurzelverzeichnis fuer eigene HTTP-Endpunkte:
+Erstelle `routes.php` im Modulwurzelverzeichnis für eigene HTTP-Endpunkte:
 
 ```php
 <?php
@@ -328,9 +328,9 @@ return static function (RouteCollector $routeCollector) {
 };
 ```
 
-Handler-Klassen muessen PSR-15 `RequestHandlerInterface` implementieren und sollten im ServiceProvider registriert werden.
+Handler-Klassen müssen PSR-15 `RequestHandlerInterface` implementieren und sollten im ServiceProvider registriert werden.
 
-## Schritt 10: Cronjob hinzufuegen (Optional)
+## Schritt 10: Cronjob hinzufügen (Optional)
 
 Registriere einen geplanten Task mit 4 Dateien in `Admin/CronjobConfiguration/`:
 
@@ -361,7 +361,7 @@ Registriere einen geplanten Task mit 4 Dateien in `Admin/CronjobConfiguration/`:
 }
 ```
 
-**MeinCronjobTask.inc.php** (Ausfuehrungslogik):
+**MeinCronjobTask.inc.php** (Ausführungslogik):
 ```php
 class MeinCronjobTask extends AbstractCronjobTask
 {
@@ -374,11 +374,11 @@ class MeinCronjobTask extends AbstractCronjobTask
 }
 ```
 
-**MeinCronjobDependencies.inc.php** (Abhaengigkeiten):
+**MeinCronjobDependencies.inc.php** (Abhängigkeiten):
 ```php
 class MeinCronjobDependencies extends AbstractCronjobDependencies
 {
-    // Getter-Methoden fuer Services, die der Task braucht
+    // Getter-Methoden für Services, die der Task braucht
 }
 ```
 
@@ -390,9 +390,9 @@ class MeinCronjobLogger extends AbstractCronjobLogger
 }
 ```
 
-Fuege Uebersetzungen in `Admin/TextPhrases/{sprache}/mein_cronjob.lang.inc.php` hinzu.
+Füge Übersetzungen in `Admin/TextPhrases/{sprache}/mein_cronjob.lang.inc.php` hinzu.
 
-## Schritt 11: index.html Dateien hinzufuegen
+## Schritt 11: index.html Dateien hinzufügen
 
 Platziere eine leere `<html></html>` Datei namens `index.html` in **jedem Verzeichnis** deines Moduls. Dies ist eine Gambio-Konvention, um Directory Listing auf Webservern zu verhindern:
 
@@ -400,25 +400,25 @@ Platziere eine leere `<html></html>` Datei namens `index.html` in **jedem Verzei
 <html></html>
 ```
 
-## Minimales vs. vollstaendiges Modul
+## Minimales vs. vollständiges Modul
 
 Nicht jedes Modul braucht alle Extension Points. Hier einige Beispiele:
 
-**Reines CSS-Modul** (nur Stilaenderungen):
+**Reines CSS-Modul** (nur Stiländerungen):
 ```
 GXModules/AcmeCorp/PinkButtons/
     GXModule.json
     Shop/Themes/All/Css/pink_buttons.css
 ```
 
-**JavaScript-Erweiterung** (kein PHP noetig):
+**JavaScript-Erweiterung** (kein PHP nötig):
 ```
 GXModules/AcmeCorp/ProduktErweiterung/
     GXModule.json
     Shop/Themes/All/Javascript/product_info/erweiterung.js
 ```
 
-**Vollstaendiges Modul** (alle Extension Points):
+**Vollständiges Modul** (alle Extension Points):
 ```
 GXModules/AcmeCorp/MeinModul/
     GXModule.json
@@ -434,9 +434,9 @@ GXModules/AcmeCorp/MeinModul/
     Shop/Themes/All/...
 ```
 
-## Naechste Schritte
+## Nächste Schritte
 
-- [GXModule.json Referenz](./gxmodule-json-referenz.md): Vollstaendige Feldtyp-Dokumentation
+- [GXModule.json Referenz](./gxmodule-json-referenz.md): Vollständige Feldtyp-Dokumentation
 - [Lokal testen](./lokal-testen.md): Dein Modul testen
 - [store.json Referenz](./store-json-referenz.md): Store-Metadaten-Format
-- [Veroeffentlichung](./veroeffentlichung-guide.md): Modul im Gambio Store einreichen
+- [Veröffentlichung](./veroeffentlichung-guide.md): Modul im Gambio Store einreichen

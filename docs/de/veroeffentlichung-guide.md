@@ -1,4 +1,4 @@
-# Veroeffentlichung im Gambio Store
+# Veröffentlichung im Gambio Store
 
 Wie du dein Modul im Gambio App Store einreichst.
 
@@ -6,7 +6,7 @@ Wie du dein Modul im Gambio App Store einreichst.
 
 - Ein getestetes, funktionierendes Modul (siehe [Lokal testen](./lokal-testen.md))
 - Ein GitHub Account oder eine Organisation
-- Eine gueltige `store.json` im Projekt-Root (siehe [store.json Referenz](./store-json-referenz.md))
+- Eine gültige `store.json` im Projekt-Root (siehe [store.json Referenz](./store-json-referenz.md))
 - Store-Assets in `.assets/` (Logos, Beschreibung)
 
 ## Schritt 1: Developer Account erstellen
@@ -33,8 +33,8 @@ Installiere die [Gambio Store GitHub App](https://github.com/apps/gambio-store) 
 1. Gehe zu deinem Repository auf GitHub
 2. Klicke auf **Releases > Create a new release**
 3. Erstelle einen Versions-Tag (z.B. `v1.0.0`)
-4. Fuege Release Notes mit Beschreibung des Moduls hinzu
-5. Release veroeffentlichen
+4. Füge Release Notes mit Beschreibung des Moduls hinzu
+5. Release veröffentlichen
 
 Der Versions-Tag sollte [Semantic Versioning](https://semver.org/) folgen (z.B. `v1.0.0`, `v1.1.0`, `v2.0.0`).
 
@@ -47,21 +47,21 @@ Der Versions-Tag sollte [Semantic Versioning](https://semver.org/) folgen (z.B. 
 
 ## Schritt 6: Freigabe abwarten
 
-Gambio prueft eingereichte Module, bevor sie im Store erscheinen. Die Pruefung umfasst:
+Gambio prüft eingereichte Module, bevor sie im Store erscheinen. Die Prüfung umfasst:
 
 - Modul installiert und deinstalliert sich sauber
 - Keine Sicherheitsprobleme
-- Store-Metadaten sind vollstaendig und korrekt
+- Store-Metadaten sind vollständig und korrekt
 - Modul funktioniert wie beschrieben
 
 Nach der Freigabe erscheint dein Modul im Gambio App Store.
 
 ## Modul aktualisieren
 
-Um ein Update zu veroeffentlichen:
+Um ein Update zu veröffentlichen:
 
-1. Aenderungen vornehmen und zum Repository pushen
-2. Ein neues GitHub Release mit erhoehtem Versions-Tag erstellen
+1. Änderungen vornehmen und zum Repository pushen
+2. Ein neues GitHub Release mit erhöhtem Versions-Tag erstellen
 3. Das Developer Portal erkennt das neue Release automatisch
 
 ## Store-Assets
@@ -77,8 +77,8 @@ Um ein Update zu veroeffentlichen:
 
 | Datei | Beschreibung |
 |-------|--------------|
-| `.assets/de/description.html` | Deutsche HTML-Beschreibung (ueberschreibt store.json) |
-| `.assets/en/description.html` | Englische HTML-Beschreibung (ueberschreibt store.json) |
+| `.assets/de/description.html` | Deutsche HTML-Beschreibung (überschreibt store.json) |
+| `.assets/en/description.html` | Englische HTML-Beschreibung (überschreibt store.json) |
 | `.assets/screenshot.png` | Screenshots, referenziert in der Beschreibungs-HTML |
 
 ### Bilder in Beschreibungen referenzieren
@@ -89,6 +89,6 @@ Verwende eckige Klammern, um Bilder aus `.assets/` in der Beschreibungs-HTML ein
 <img src="[screenshot.png]" class="img-fluid w-100">
 ```
 
-## Naechste Schritte
+## Nächste Schritte
 
-- [Release Checkliste](./release-checkliste.md): Alles vor dem Release pruefen
+- [Release Checkliste](./release-checkliste.md): Alles vor dem Release prüfen

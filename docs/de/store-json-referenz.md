@@ -1,6 +1,6 @@
 # store.json Referenz
 
-Die `store.json` Datei definiert die Metadaten fuer dein Modul im Gambio App Store. Sie muss im **Projekt-Root** liegen (nicht in `src/`).
+Die `store.json` Datei definiert die Metadaten für dein Modul im Gambio App Store. Sie muss im **Projekt-Root** liegen (nicht in `src/`).
 
 ## Minimales Beispiel
 
@@ -35,11 +35,11 @@ Die `store.json` Datei definiert die Metadaten fuer dein Modul im Gambio App Sto
 | `name` | string | Ja | Interner Paketname |
 | `code` | string | Ja | Eindeutiger Modulcode (intern verwendet) |
 | `type` | string | Ja | Pakettyp, immer `"module"` |
-| `title` | object | Ja | Anzeigetitel mit `en` und `de` Schluesseln |
-| `description` | object | Nein | HTML-Beschreibung mit `en` und `de` Schluesseln |
+| `title` | object | Ja | Anzeigetitel mit `en` und `de` Schlüsseln |
+| `description` | object | Nein | HTML-Beschreibung mit `en` und `de` Schlüsseln |
 | `vendor` | object | Ja | Anbieterinformationen |
-| `displayImage` | object | Nein | Vorschaubild-Pfade mit `en` und `de` Schluesseln |
-| `highlights` | array | Nein | Feature-Stichpunkte fuer die Store-Seite |
+| `displayImage` | object | Nein | Vorschaubild-Pfade mit `en` und `de` Schlüsseln |
+| `highlights` | array | Nein | Feature-Stichpunkte für die Store-Seite |
 | `migrations` | object | Nein | Datenbank-Migrationsscripte |
 | `requirements` | object | Ja | Versionsanforderungen |
 
@@ -70,7 +70,7 @@ Bis zu 3 kurze Feature-Beschreibungen auf der Store-Seite:
 
 ### migrations
 
-Datenbank-Migrationsscripte, die bei Installation (up) und Deinstallation (down) ausgefuehrt werden:
+Datenbank-Migrationsscripte, die bei Installation (up) und Deinstallation (down) ausgeführt werden:
 
 ```json
 {
@@ -105,13 +105,13 @@ Datenbank-Migrationsscripte, die bei Installation (up) und Deinstallation (down)
 }
 ```
 
-- **needed**: Anforderungen, die erfuellt sein muessen, damit das Modul installierbar ist
+- **needed**: Anforderungen, die erfüllt sein müssen, damit das Modul installierbar ist
 - **hidden**: Versionen, bei denen das Modul im Store nicht angezeigt wird
-- **shopVersions**: Gambio Shop Versionsbeschraenkungen (z.B. `>=5.0.0.0`, `<=5.5.0.0`)
-- **phpVersions**: PHP Versionsbeschraenkungen
-- **mysqlVersions**: MySQL Versionsbeschraenkungen
-- **themes**: Erforderliche Themes (leer lassen fuer themeunabhaengige Module)
-- **receiptFiles**: Erforderliche Dateien, die im Shop existieren muessen
+- **shopVersions**: Gambio Shop Versionsbeschränkungen (z.B. `>=5.0.0.0`, `<=5.5.0.0`)
+- **phpVersions**: PHP Versionsbeschränkungen
+- **mysqlVersions**: MySQL Versionsbeschränkungen
+- **themes**: Erforderliche Themes (leer lassen für themeunabhängige Module)
+- **receiptFiles**: Erforderliche Dateien, die im Shop existieren müssen
 
 ## Beschreibungsbilder
 
@@ -121,9 +121,9 @@ Du kannst Bilder in die Store-Beschreibungs-HTML einbetten. Platziere Bilddateie
 <img src="[screenshot.png]" class="img-fluid w-100">
 ```
 
-Der `[screenshot.png]` Platzhalter wird vom Store-System durch die tatsaechliche gehostete URL ersetzt.
+Der `[screenshot.png]` Platzhalter wird vom Store-System durch die tatsächliche gehostete URL ersetzt.
 
-## Beschreibungen mit HTML-Dateien ueberschreiben
+## Beschreibungen mit HTML-Dateien überschreiben
 
 Statt HTML in `store.json` zu schreiben, kannst du separate Dateien erstellen:
 
@@ -132,9 +132,9 @@ Statt HTML in `store.json` zu schreiben, kannst du separate Dateien erstellen:
 .assets/en/description.html
 ```
 
-Wenn diese Dateien existieren, ueberschreiben sie das `description` Feld in `store.json`.
+Wenn diese Dateien existieren, überschreiben sie das `description` Feld in `store.json`.
 
-## Naechste Schritte
+## Nächste Schritte
 
 - [Modulentwicklung Anleitung](./modulentwicklung-anleitung.md): Dein Modul bauen
-- [Veroeffentlichung](./veroeffentlichung-guide.md): Im Gambio Store einreichen
+- [Veröffentlichung](./veroeffentlichung-guide.md): Im Gambio Store einreichen

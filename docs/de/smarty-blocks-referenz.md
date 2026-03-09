@@ -1,8 +1,8 @@
 # Smarty Template Blocks Referenz
 
-Diese Referenz listet alle Smarty Template-Blocks auf, die im Malibu Theme (Gambio GX) verfuegbar sind. Du kannst jeden dieser Blocks erweitern, indem du eine Template-Datei mit dem gleichen Pfad im `Shop/Themes/All/` Verzeichnis deines Moduls platzierst.
+Diese Referenz listet alle Smarty Template-Blocks auf, die im Malibu Theme (Gambio GX) verfügbar sind. Du kannst jeden dieser Blocks erweitern, indem du eine Template-Datei mit dem gleichen Pfad im `Shop/Themes/All/` Verzeichnis deines Moduls platzierst.
 
-Alle Template-Dateien befinden sich in `themes/Malibu/html/system/` (oder dem Aequivalent fuer andere Themes). Zum Erweitern platziere deine Datei unter:
+Alle Template-Dateien befinden sich in `themes/Malibu/html/system/` (oder dem Äquivalent für andere Themes). Zum Erweitern platziere deine Datei unter:
 
 ```
 Shop/Themes/All/system/{template_datei}
@@ -16,7 +16,7 @@ Shop/Themes/Malibu/system/{template_datei}
 
 ## Wie Block-Erweiterung funktioniert
 
-Gambio verwendet das `{block}` System von Smarty. Jedes Template definiert benannte Blocks, die von Child-Themes oder Modulen mit eigenem Inhalt erweitert werden koennen. Das Original-Template im Shop sieht zum Beispiel so aus:
+Gambio verwendet das `{block}` System von Smarty. Jedes Template definiert benannte Blocks, die von Child-Themes oder Modulen mit eigenem Inhalt erweitert werden können. Das Original-Template im Shop sieht zum Beispiel so aus:
 
 ```html
 {block name="product_info_price"}
@@ -28,7 +28,7 @@ Gambio verwendet das `{block}` System von Smarty. Jedes Template definiert benan
 
 ### Empfohlen: append oder prepend
 
-Der sicherste Weg einen Block zu erweitern ist mit `append` oder `prepend`. Damit bleibt der originale Inhalt erhalten und dein Markup wird einfach davor oder dahinter eingefuegt:
+Der sicherste Weg einen Block zu erweitern ist mit `append` oder `prepend`. Damit bleibt der originale Inhalt erhalten und dein Markup wird einfach davor oder dahinter eingefügt:
 
 ```html
 {block name="product_info_price" append}
@@ -36,7 +36,7 @@ Der sicherste Weg einen Block zu erweitern ist mit `append` oder `prepend`. Dami
 {/block}
 ```
 
-`prepend` funktioniert genauso, fuegt deinen Inhalt aber vor dem Original-Block ein:
+`prepend` funktioniert genauso, fügt deinen Inhalt aber vor dem Original-Block ein:
 
 ```html
 {block name="product_info_price" prepend}
@@ -46,7 +46,7 @@ Der sicherste Weg einen Block zu erweitern ist mit `append` oder `prepend`. Dami
 
 ### Empfohlen: {$smarty.block.parent}
 
-Wenn du mehr Kontrolle darueber brauchst, wo der originale Inhalt erscheint, verwende `{$smarty.block.parent}`. Damit kannst du den Original-Inhalt umschliessen oder deine Ergaenzungen an einer bestimmten Stelle platzieren:
+Wenn du mehr Kontrolle darüber brauchst, wo der originale Inhalt erscheint, verwende `{$smarty.block.parent}`. Damit kannst du den Original-Inhalt umschließen oder deine Ergänzungen an einer bestimmten Stelle platzieren:
 
 ```html
 {block name="product_info_price"}
@@ -59,10 +59,10 @@ Wenn du mehr Kontrolle darueber brauchst, wo der originale Inhalt erscheint, ver
 
 ### Nicht empfohlen: Komplettes Ersetzen
 
-Wenn du weder `append`/`prepend` noch `{$smarty.block.parent}` verwendest, wird der gesamte Block ersetzt. Vermeide das wenn moeglich, denn es entfernt den originalen Shop-Inhalt und kann andere Module oder zukuenftige Updates beeintraechtigen:
+Wenn du weder `append`/`prepend` noch `{$smarty.block.parent}` verwendest, wird der gesamte Block ersetzt. Vermeide das wenn möglich, denn es entfernt den originalen Shop-Inhalt und kann andere Module oder zukünftige Updates beeinträchtigen:
 
 ```html
-{* Vermeide dieses Muster wenn nicht unbedingt noetig *}
+{* Vermeide dieses Muster wenn nicht unbedingt nötig *}
 {block name="product_info_price"}
     <div class="completely-custom-price">{$productPrice}</div>
 {/block}
@@ -70,7 +70,7 @@ Wenn du weder `append`/`prepend` noch `{$smarty.block.parent}` verwendest, wird 
 
 ## Block-Referenz nach Bereich
 
-Die Spalte "Total Blocks" zeigt, wie viele ueberschreibbare Blocks in jeder Template-Datei existieren. "Main Block" ist der primaere/aeusserste Block.
+Die Spalte "Total Blocks" zeigt, wie viele überschreibbare Blocks in jeder Template-Datei existieren. "Main Block" ist der primäre/äußerste Block.
 
 ### Layout: Basis-Template
 
@@ -94,7 +94,7 @@ Die Spalte "Total Blocks" zeigt, wie viele ueberschreibbare Blocks in jeder Temp
 | `layout_header_custom_content.html` | `layout_header_custom_content` | 5 |
 | `layout_header_navbar_buttons.html` | `layout_header_navbar_buttons` | 1 |
 
-### Layout: Topbar und sekundaere Navigation
+### Layout: Topbar und sekundäre Navigation
 
 | Template | Main Block | Total Blocks |
 |----------|------------|--------------|
@@ -105,7 +105,7 @@ Die Spalte "Total Blocks" zeigt, wie viele ueberschreibbare Blocks in jeder Temp
 | `layout_secondary_navigation_countries_dropdown.html` | `layout_secondary_navigation_countries_dropdown` | 2 |
 | `layout_secondary_navigation_currencies_dropdown.html` | `layout_secondary_navigation_currencies_dropdown` | 3 |
 
-### Layout: Fusszeile
+### Layout: Fußzeile
 
 | Template | Main Block | Total Blocks |
 |----------|------------|--------------|
@@ -420,9 +420,9 @@ Die Spalte "Total Blocks" zeigt, wie viele ueberschreibbare Blocks in jeder Temp
 
 ## Zusammenfassung
 
-Das Malibu Theme enthaelt **242 Template-Dateien** mit insgesamt **3.121 ueberschreibbaren Smarty Blocks**.
+Das Malibu Theme enthält **242 Template-Dateien** mit insgesamt **3.121 überschreibbaren Smarty Blocks**.
 
-Die Templates mit den meisten Blocks (und damit den feinsten Override-Moeglichkeiten):
+Die Templates mit den meisten Blocks (und damit den feinsten Override-Möglichkeiten):
 
 | Template | Blocks |
 |----------|--------|

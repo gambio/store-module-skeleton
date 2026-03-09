@@ -18,10 +18,10 @@ Developer documentation for creating, testing, and publishing Gambio GX modules 
 
 | Dokument | Beschreibung |
 |----------|--------------|
-| [Modulentwicklung Anleitung](./de/modulentwicklung-anleitung.md) | Schritt-fuer-Schritt-Tutorial zur Modulerstellung |
+| [Modulentwicklung Anleitung](./de/modulentwicklung-anleitung.md) | Schritt-für-Schritt-Tutorial zur Modulerstellung |
 | [GXModule.json Referenz](./de/gxmodule-json-referenz.md) | Alle Konfigurationsfelder, Hooks und Features |
 | [store.json Referenz](./de/store-json-referenz.md) | Store-Paket-Metadaten-Format |
 | [Lokal testen](./de/lokal-testen.md) | Module lokal installieren und testen |
-| [Veroeffentlichung](./de/veroeffentlichung-guide.md) | Module im Gambio Store einreichen |
-| [Release Checkliste](./de/release-checkliste.md) | Checkliste vor der Veroeffentlichung |
-| [Smarty Blocks Referenz](./de/smarty-blocks-referenz.md) | Alle 3.121 ueberschreibbaren Smarty Blocks im Malibu Theme |
+| [Veröffentlichung](./de/veroeffentlichung-guide.md) | Module im Gambio Store einreichen |
+| [Release Checkliste](./de/release-checkliste.md) | Checkliste vor der Veröffentlichung |
+| [Smarty Blocks Referenz](./de/smarty-blocks-referenz.md) | Alle 3.121 überschreibbare Smarty Blocks im Malibu Theme |
