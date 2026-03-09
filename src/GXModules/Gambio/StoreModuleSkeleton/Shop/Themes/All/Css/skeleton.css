@@ -1,0 +1,32 @@
+/**
+ * Skeleton Module - Shop Theme CSS Override
+ *
+ * This file is automatically loaded in the storefront when placed at:
+ *   Shop/Themes/All/Css/<filename>.css
+ *
+ * Use "All" to target every theme. To target a specific theme, replace "All"
+ * with the theme name, e.g.: Shop/Themes/Malibu/Css/skeleton.css
+ *
+ * IMPORTANT: This file is loaded AFTER the theme's own styles, so your rules
+ * will override theme defaults without needing !important in most cases.
+ */
+
+/* Example: Style a custom product badge added by the module */
+.skeleton-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--skeleton-primary-color, #002337);
+    border-radius: 3px;
+}
+
+/* Example: Style a custom widget container */
+.skeleton-widget {
+    margin: 16px 0;
+    padding: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #fafafa;
+}

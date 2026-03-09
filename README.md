@@ -1,121 +1,255 @@
 # Store Module Skeleton
 
-Skeleton project for new Gambio Store packages.
+A comprehensive skeleton project for building Gambio GX5 modules that are ready for the [Gambio App Store](https://store.gambio.com/).
 
-# 1. Module structure description
+This skeleton demonstrates **all major extension points** available to third-party module developers, including declarative configuration, event handling, HTTP routing, middleware, overloads, cronjobs, and theme extensions.
 
-##### 1.1 Files structure
+## Quick Start
 
-Below you can see the module filesystem tree structure where the **Gambio** folder refers to a Vendor name and the **Gambio/StoreModuleSkeleton** to the module name.
+1. **Fork or clone** this repository
+2. **Rename** the vendor namespace from `Gambio/StoreModuleSkeleton` to `YourVendor/YourModule`
+3. **Update** `store.json` with your module information
+4. **Replace** the `XYZ` namespace placeholder in PHP files with your vendor name
+5. **Implement** your module logic using the patterns demonstrated in the skeleton files
+6. **Package** and submit to the Gambio Store
+
+> The `XYZ` namespace used throughout the PHP files (e.g. `GXModules\XYZ\Skeleton`) is a placeholder for the third-party developer's vendor name.
+
+## File Structure
 
 ```
-├── .assets
-│   └── vendor_logo(.png|.jpg|.svg)
-│   └── module_logo(.png|.jpg|.svg)
-│   └── de
-│       ├── description.html
-│   └── en
-│       ├── description.html
-├── src/GXModules
-│   └── Gambio
-│       └── StoreModuleSkeleton
-│           ├── Admin
-│           │   ├── Controllers
-│           │   │   ├── index.html
-│           │   │   ├── SkeletonModuleAjaxController.inc.php
-│           │   │   └── SkeletonModuleController.inc.php
-│           │   ├── Core
-│           │   │   ├── index.html
-│           │   │   ├── SkeletonConfiguration.php
-│           │   │   └── SkeletonTimeManager.php
-│           │   ├── Html
-│           │   │   ├── index.html
-│           │   │   ├── skeleton_configuration.html
-│           │   │   └── skeleton_module.html
-│           │   ├── Javascript
-│           │   │   ├── index.html
-│           │   │   └── timer.js
-│           │   ├── Menu
-│           │   │   ├── index.html
-│           │   │   └── menu_skeleton.xml
-│           │   ├── Styles
-│           │   │   ├── index.html
-│           │   │   └── skeleton_module.css
-│           │   └── TextPhrases
-│           │       ├── english
-│           │       │   ├── index.html
-│           │       │   └── skeleton_module.lang.inc.php
-│           │       ├── german
-│           │       │   ├── index.html
-│           │       │   └── skeleton_module.lang.inc.php
-│           │       └── index.html
-│           ├── SkeletonServiceProvider.php
-│           ├── composer.json
-│           ├── GXModule.json
-│           └── index.html
-├── README.md
-├── store.json
+store-module-skeleton/
+├── .assets/                                  Gambio Store assets
+│   ├── vendor_logo(.png|.jpg|.svg)            Vendor logo for Store listing
+│   ├── module_logo(.png|.jpg|.svg)            Module logo for Store listing
+│   ├── de/description.html                    German Store description (overrides store.json)
+│   └── en/description.html                    English Store description (overrides store.json)
+├── src/GXModules/Gambio/StoreModuleSkeleton/
+│   ├── GXModule.json                         ★ Module Center integration + configuration UI
+│   ├── SkeletonServiceProvider.php           ★ Dependency injection + event listeners
+│   ├── SkeletonModule.php                    ★ Events, middleware, module dependencies
+│   ├── routes.php                            ★ HTTP route registration (FastRoute)
+│   ├── Admin/
+│   │   ├── Actions/
+│   │   │   ├── SkeletonInstallAction.php      Install/uninstall lifecycle hooks
+│   │   │   ├── SkeletonSaveAction.php         After-save configuration hook
+│   │   │   └── SkeletonCacheAction.php        Button action handler (AJAX)
+│   │   ├── CronjobConfiguration/
+│   │   │   ├── SkeletonCronjob.json           Cronjob config (interval, active state)
+│   │   │   ├── SkeletonCronjobTask.inc.php    Cronjob execution logic
+│   │   │   ├── SkeletonCronjobDependencies.inc.php  Cronjob DI dependencies
+│   │   │   └── SkeletonCronjobLogger.inc.php  Cronjob logging
+│   │   ├── Menu/
+│   │   │   └── skeleton.menu.json             Admin menu entry (JSON format)
+│   │   ├── Overloads/
+│   │   │   └── OrderExtenderComponent/
+│   │   │       └── SkeletonOrderExtender.inc.php  Admin order page overload
+│   │   └── TextPhrases/
+│   │       ├── german/
+│   │       │   ├── skeleton_module.lang.inc.php    German module translations
+│   │       │   └── cronjob_skeleton.lang.inc.php   German cronjob translations
+│   │       └── english/
+│   │           ├── skeleton_module.lang.inc.php    English module translations
+│   │           └── cronjob_skeleton.lang.inc.php   English cronjob translations
+│   ├── Shop/
+│   │   ├── Overloads/
+│   │   │   └── ApplicationTopExtenderComponent/
+│   │   │       └── SkeletonApplicationTopExtender.inc.php  Storefront overload
+│   │   └── Themes/All/
+│   │       ├── Css/skeleton.css                Storefront CSS (loaded on all themes)
+│   │       └── Javascript/product_info/skeleton.js  JS for product detail pages
+│   └── App/                                   Application-level code (services, etc.)
+├── composer.json                              Optional: Composer dependencies
+├── store.json                                 Gambio Store package manifest
+├── package.json                               npm/semantic-release config
+└── README.md                                  This file
 ```
 
-##### 1.2 The files description
+## Extension Points
 
-- **.assets/module_logo(.png|.jpg|.svg)** - The Module Logo. Supported are PNG, JPG and SVG Files.
-- **.assets/vendor_logo(.png|.jpg|.svg)** - The Vendor Logo. Supported are PNG, JPG and SVG Files.
-- **.assets/de/description.html** - The german Description for the Module. If this file exists, the description key in the store.json will be ignored.
-- **.assets/en/description.html** - The english Description for the Module. If this file exists, the description key in the store.json will be ignored.
-- **store.json** - Gambio Store configuration file.
-- **README.md** - this file
-- **GXModules/Gambio/StoreModuleSkeleton/GXModule.json** - the file enables the automatic integration of your module into the Module Center and the generation of a configuration page based on a JSON configuration file.
-- **GXModules/Gambio/StoreModuleSkeleton/Admin/TextPhrases/english/skeleton_module.lang.inc.php** - File containing English language translation strings
-- **GXModules/Gambio/StoreModuleSkeleton/Admin/TextPhrases/german/skeleton_module.lang.inc.php** - File containing German language translation strings
-- **GXModules/Gambio/StoreModuleSkeleton/Admin/Javascript/timer.js** - contains javascript logic of the plugin.
-- **GXModules/Gambio/StoreModuleSkeleton/Admin/Html/skeleton_module.html** - HTML template file, using for rendering the main page of the module
-- **GXModules/Gambio/StoreModuleSkeleton/Admin/Html/skeleton_configuration.html** - HTML template file, using for rendering the configuration page of the module
-- **GXModules/Gambio/StoreModuleSkeleton/Admin/Core/SkeletonConfiguration.php** - Core functionality file. Responsible for the plugin configuration.
-- **GXModules/Gambio/StoreModuleSkeleton/Admin/Core/SkeletonTimeManager.php** - Core functionality file. Contains main logic of the module.
-- **GXModules/Gambio/StoreModuleSkeleton/Admin/Controllers/SkeletonModuleAjaxController.inc.php** - Controller for handling ajax requests of the module.
-- **GXModules/Gambio/StoreModuleSkeleton/Admin/Controllers/SkeletonModuleController.inc.php** - Controller for managing and rendering the module pages.
-- **GXModules/Gambio/StoreModuleSkeleton/Admin/Menu/menu_skeleton.xml** - Menu configuration for the module.
-- **GXModules/Gambio/StoreModuleSkeleton/Admin/Styles/skeleton_module.css** - CSS asset file for the module.
+### 1. GXModule.json — Module Center Configuration
 
-# 2. Module Description
-You can use your own Screenshots to be injected in the Description inside of the store.json.
-In the .assets Folder is an example placeholder.png File. To get it injected in the Description, you have to wrap the Filename inside Brackets, e.g. [placeholder.png]
-This Placeholder will be replaced by our System to provide URLs to the processed asset File.
+The `GXModule.json` file is the central manifest that integrates your module into the Gambio Module Center. It replaces the deprecated `ModuleCenterModuleController` pattern entirely.
 
-# 3. The GX Module
-This module is an example of a GX Module that demonstrates the features of the GXModules system and has the appropriate file structure. You can read more about creating GXModules module at [https://developers.gambio.de/](https://developers.gambio.de/).
+**What it provides:**
+- Automatic registration in Module Center (no controller needed)
+- Auto-generated configuration page with form fields
+- Install/uninstall lifecycle hooks
+- After-save hook for configuration changes
+- Button actions with AJAX callbacks and confirmation modals
 
-# 4. Module controllers.
-The controllers are provided for processing requests and performing any actions by the module.
-There are two PHP scripts that can manage controllers actions - ```shop.php``` and ```admin/admin.php```.
-Each controller inherits the HttpViewController (or its successor, for example, ``AdminHttpViewController`` in this module).
-To perform an action within the controller, the address must contain the parameter ```do```.
-The value of the parameter with the key ```do``` specifies the controller and action method.
-The part of the value before the slash will be used to form the controller name by appending the "Controller" word, whereas the part after the slash will be prepended the "action" word.
-For example, admin/admin.php?do=SkeletonModule/Configuration trigger method ```actionConfiguration``` of the ```SkeletonModuleController``` class.
-You can read more about controllers in GXModules module at [https://developers.gambio.de/](https://developers.gambio.de/).
+**Available field types (18):**
+`checkbox`, `text`, `password`, `email`, `number`, `color`, `date`, `datetime`, `file`, `textarea`, `editor`, `select`, `multiselect`, `customer_group`, `order_status`, `countries`, `languages`, `button`, `modal`
 
-# 5. Adding custom assets and translations.
+**Key features:**
+- `tab` — Groups configuration sections into tabs
+- `languageDependent: true` — Renders per-language input tabs for a field
+- `tooltip` — Adds info/warning tooltips to fields
+- `required` — Marks fields as required
+- `default_value` — Sets field defaults
+- `button` + `modal` — Creates interactive buttons with AJAX actions and confirmation dialogs
 
-##### 5.1 Assets.
-It is possible to add custom javascript and css files to your module. To do that you would have to provide assets collection with provided asset files.
-For example:
-```$xslt
-        $assets            = new AssetCollection([
-            new Asset('../GXModules/Gambio/StoreModuleSkeleton/Admin/Javascript/timer.js'),
-            new Asset('../GXModules/Gambio/StoreModuleSkeleton/Admin/Styles/skeleton_module.css'),
-        ]);
+See the skeleton's `GXModule.json` for a complete example covering all field types and features.
+
+### 2. ServiceProvider — Dependency Injection
+
+`SkeletonServiceProvider.php` extends `AbstractModuleBootableServiceProvider` and provides:
+
+- **`provides()`** — Declares which services this provider can register
+- **`register()`** — Registers services in the DI container (`registerShared()` for singletons, `register()` for transient)
+- **`boot()`** — Runs after ALL providers are registered; use for event listener attachment and inflections
+
+For simple modules without `boot()`, extend `AbstractModuleServiceProvider` instead.
+
+### 3. Module Class — Events, Middleware, Dependencies
+
+`SkeletonModule.php` extends `AbstractModule` and is auto-detected when named `*Module.php` at the module root. It provides a declarative alternative (or complement) to the ServiceProvider:
+
+- **`eventListeners()`** — Register PSR-14 event listeners as `[EventClass => [ListenerClass, ...]]`
+- **`shopMiddleware()`** — PSR-15 middleware for storefront requests
+- **`adminMiddleware()`** — PSR-15 middleware for admin requests
+- **`apiMiddleware()`** — PSR-15 middleware for REST API v3 requests
+- **`dependsOn()`** — Declare dependencies on other GXModules
+
+### 4. Routes — HTTP Routing
+
+`routes.php` is auto-detected and uses FastRoute's `RouteCollector`:
+
+```php
+return static function (RouteCollector $routeCollector) {
+    $routeCollector->get('/admin/skeleton', OverviewAction::class);
+    $routeCollector->group('/admin/api/skeleton', function (RouteCollector $group) {
+        $group->get('', FetchAllAction::class);
+        $group->post('', CreateAction::class);
+    });
+};
 ```
 
-To include the assets to the module page the assets collection should be passed as an argument to the ```HttpControllerResponse``` (or its successor, ``AdminHttpViewController`` in this module).
+Handler classes must implement PSR-15 `RequestHandlerInterface`. Register them in the ServiceProvider.
 
+### 5. Admin Menu
 
-##### 5.2 Translations.
+`Admin/Menu/skeleton.menu.json` registers entries in the admin sidebar. This replaces the deprecated XML format (`menu_*.xml`).
 
-You can translate text of your module using language files within the TextPhrases/{language} folder.
-The following naming convention is used when creating a language file: {section_name}.lang.inc.php, e.g. ```skeleton_module.lang.inc.php```
+```json
+[{
+    "id": "BOX_HEADING_SKELETON_MODULE",
+    "sort": 400,
+    "class": "fa fa-puzzle-piece",
+    "title": "skeleton_module.BOX_SKELETON_MODULE",
+    "type": "standalone",
+    "items": [{
+        "sort": 10,
+        "link": "admin.php?do=SkeletonModule",
+        "title": "skeleton_module.BOX_SKELETON_MODULE"
+    }]
+}]
+```
 
-To use the file in a template you have to include the file by its section name: ```{load_language_text section="skeleton_module"}```
+### 6. Overloads — Extend Existing Classes
 
-You can read more about adding assets and translations at [https://developers.gambio.de/](https://developers.gambio.de/).
+Overloads extend any class managed by `MainFactory` using the decorator chain pattern.
+
+**Placement:**
+- Admin overloads: `Admin/Overloads/{ClassName}/{YourFile}.inc.php`
+- Shop overloads: `Shop/Overloads/{ClassName}/{YourFile}.inc.php`
+
+**Rules:**
+1. Your class must extend `{ClassName}_parent` (pseudo-class resolved by MainFactory)
+2. Always call `parent::proceed()` (or the relevant parent method) to preserve the chain
+3. The file must use `.inc.php` extension
+
+**Common admin overloads:**
+- `OrderExtenderComponent` — Add tabs/data to order detail page
+- `AdminApplicationTopExtenderComponent` — Run code on every admin page
+- `AdminEditProductExtenderComponent` — Extend product editing
+- `PDFOrderExtenderComponent` — Extend PDF invoice generation
+
+**Common shop overloads:**
+- `ApplicationTopExtenderComponent` — Run code on every storefront page
+- `ApplicationBottomExtenderComponent` — Post-rendering logic
+- `HeaderExtenderComponent` — Inject into HTML header
+- `CheckoutSuccessExtenderComponent` — Extend checkout success page
+
+### 7. Cronjobs
+
+Register scheduled tasks with 4 companion files in `Admin/CronjobConfiguration/`:
+
+| File | Purpose |
+|------|---------|
+| `SkeletonCronjob.json` | Configuration (interval, active state, sort order) |
+| `SkeletonCronjobTask.inc.php` | Main execution logic (`run()` method) |
+| `SkeletonCronjobDependencies.inc.php` | Dependency injection for the task |
+| `SkeletonCronjobLogger.inc.php` | Log handling (usually default is sufficient) |
+
+The JSON file uses the `cronjob_skeleton` text section for UI translations.
+
+### 8. Theme Overrides — Storefront CSS & JavaScript
+
+Add CSS and JavaScript files to the storefront by placing them in `Shop/Themes/`:
+
+```
+Shop/Themes/All/Css/skeleton.css               → Loaded on ALL themes
+Shop/Themes/All/Javascript/product_info/skeleton.js → Loaded on product detail page
+
+Shop/Themes/Malibu/Css/skeleton.css             → Loaded only on Malibu theme
+Shop/Themes/Honeygrid/Javascript/index/skeleton.js  → Loaded only on Honeygrid homepage
+```
+
+**JavaScript directory names determine the page:**
+`product_info/`, `product_listing/`, `checkout_*/`, `shopping_cart/`, `index/`
+
+You can also override Smarty templates by placing `.html` files in `Shop/Themes/All/` mirroring the theme's directory structure.
+
+### 9. TextPhrases — Translations
+
+Language files use the naming convention `{section_name}.lang.inc.php`:
+
+```
+Admin/TextPhrases/german/skeleton_module.lang.inc.php
+Admin/TextPhrases/english/skeleton_module.lang.inc.php
+```
+
+Reference phrases in `GXModule.json`, `.menu.json`, or Smarty templates using the pattern:
+`{section}.{KEY}` — e.g. `skeleton_module.PAGE_TITLE`
+
+In Smarty templates: `{load_language_text section="skeleton_module"}` then `{$txt.KEY}`
+
+## Store Metadata
+
+### store.json
+
+The `store.json` file configures your module's Gambio Store listing:
+
+| Field | Description |
+|-------|-------------|
+| `name` | Internal package name |
+| `code` | Unique module code |
+| `type` | Package type (`module`) |
+| `title` | Display title (multilingual) |
+| `description` | HTML description (multilingual), overridden by `.assets/{lang}/description.html` |
+| `vendor` | Vendor information (name, URL, avatar) |
+| `highlights` | Feature bullet points for Store listing |
+| `migrations` | Database migration scripts (up/down) |
+| `requirements` | PHP, MySQL, and shop version requirements |
+
+### .assets Directory
+
+| File | Description |
+|------|-------------|
+| `module_logo(.png\|.jpg\|.svg)` | Module logo for Store listing |
+| `vendor_logo(.png\|.jpg\|.svg)` | Vendor logo for Store listing |
+| `de/description.html` | German description (overrides store.json) |
+| `en/description.html` | English description (overrides store.json) |
+| `placeholder.png` | Use `[placeholder.png]` in description HTML to reference store-hosted images |
+
+## Requirements
+
+- **Gambio GX5** (shop version >= 5.0.0.0)
+- **PHP** >= 8.0
+- **MySQL** >= 5.5
+
+## Further Reading
+
+- [Gambio Developer Documentation](https://developers.gambio.de/)
+- [Gambio Store Documentation](https://developers.gambio.de/)
