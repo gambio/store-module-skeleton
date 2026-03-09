@@ -1,8 +1,8 @@
 # Smarty Template Blocks Referenz
 
-Diese Referenz listet alle Smarty Template-Blocks auf, die im Malibu Theme (Gambio GX) verfuegbar sind. Du kannst jeden dieser Blocks ueberschreiben, indem du eine Template-Datei mit dem gleichen Pfad im `Shop/Themes/All/` Verzeichnis deines Moduls platzierst.
+Diese Referenz listet alle Smarty Template-Blocks auf, die im Malibu Theme (Gambio GX) verfuegbar sind. Du kannst jeden dieser Blocks erweitern, indem du eine Template-Datei mit dem gleichen Pfad im `Shop/Themes/All/` Verzeichnis deines Moduls platzierst.
 
-Alle Template-Dateien befinden sich in `themes/Malibu/html/system/` (oder dem Aequivalent fuer andere Themes). Zum Ueberschreiben platziere deine Datei unter:
+Alle Template-Dateien befinden sich in `themes/Malibu/html/system/` (oder dem Aequivalent fuer andere Themes). Zum Erweitern platziere deine Datei unter:
 
 ```
 Shop/Themes/All/system/{template_datei}
@@ -14,9 +14,9 @@ Um nur ein bestimmtes Theme anzusprechen:
 Shop/Themes/Malibu/system/{template_datei}
 ```
 
-## Wie Block-Overriding funktioniert
+## Wie Block-Erweiterung funktioniert
 
-Gambio verwendet das `{block}` System von Smarty. Jedes Template definiert benannte Blocks, die von Child-Themes oder Modulen ueberschrieben werden koennen:
+Gambio verwendet das `{block}` System von Smarty. Jedes Template definiert benannte Blocks, die von Child-Themes oder Modulen mit eigenem Inhalt erweitert werden koennen. Das Original-Template im Shop sieht zum Beispiel so aus:
 
 ```html
 {block name="product_info_price"}
@@ -24,23 +24,51 @@ Gambio verwendet das `{block}` System von Smarty. Jedes Template definiert benan
 {/block}
 ```
 
-In deinem Modul kannst du einen bestimmten Block ueberschreiben, ohne das gesamte Template zu ersetzen:
+### Empfohlen: append oder prepend
+
+Der sicherste Weg einen Block zu erweitern ist mit `append` oder `prepend`. Damit bleibt der originale Inhalt erhalten und dein Markup wird einfach davor oder dahinter eingefuegt:
+
+```html
+{extends file="parent:system/product_info_price.html"}
+
+{block name="product_info_price" append}
+    <div class="skeleton-badge">Sale</div>
+{/block}
+```
+
+`prepend` funktioniert genauso, fuegt deinen Inhalt aber vor dem Original-Block ein:
+
+```html
+{extends file="parent:system/product_info_price.html"}
+
+{block name="product_info_price" prepend}
+    <div class="skeleton-announcement">Neu!</div>
+{/block}
+```
+
+### Empfohlen: {$smarty.block.parent}
+
+Wenn du mehr Kontrolle darueber brauchst, wo der originale Inhalt erscheint, verwende `{$smarty.block.parent}`. Damit kannst du den Original-Inhalt umschliessen oder deine Ergaenzungen an einer bestimmten Stelle platzieren:
 
 ```html
 {extends file="parent:system/product_info_price.html"}
 
 {block name="product_info_price"}
-    <div class="price custom-price">{$productPrice}</div>
-    <div class="skeleton-badge">Sale</div>
+    <div class="skeleton-price-wrapper">
+        {$smarty.block.parent}
+        <div class="skeleton-extra-info">Eigener Inhalt unter dem Preis</div>
+    </div>
 {/block}
 ```
 
-Verwende `{$smarty.block.parent}`, um den Original-Block-Inhalt einzubinden und zu ergaenzen:
+### Nicht empfohlen: Komplettes Ersetzen
+
+Wenn du weder `append`/`prepend` noch `{$smarty.block.parent}` verwendest, wird der gesamte Block ersetzt. Vermeide das wenn moeglich, denn es entfernt den originalen Shop-Inhalt und kann andere Module oder zukuenftige Updates beeintraechtigen:
 
 ```html
+{* Vermeide dieses Muster wenn nicht unbedingt noetig *}
 {block name="product_info_price"}
-    {$smarty.block.parent}
-    <div class="skeleton-extra-info">Eigener Inhalt unter dem Preis</div>
+    <div class="completely-custom-price">{$productPrice}</div>
 {/block}
 ```
 
