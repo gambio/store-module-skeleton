@@ -1,9 +1,9 @@
 <?php
 
 /**
- * GX4 Module class for the Skeleton Module.
+ * Module class for the Skeleton Module.
  *
- * This file is auto-detected by the GX4ModuleProcessor when named *Module.php
+ * This file is auto-detected by the ModuleProcessor when named *Module.php
  * at the module root level. It provides a declarative way to register:
  *
  * - Event listeners (PSR-14)

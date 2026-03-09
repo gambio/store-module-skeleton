@@ -1,6 +1,6 @@
 # Store Module Skeleton
 
-A comprehensive skeleton project for building Gambio GX5 modules that are ready for the [Gambio App Store](https://store.gambio.com/).
+A comprehensive skeleton project for building Gambio GX modules that are ready for the [Gambio App Store](https://store.gambio.com/).
 
 This skeleton demonstrates **all major extension points** available to third-party module developers, including declarative configuration, event handling, HTTP routing, middleware, overloads, cronjobs, and theme extensions.
 
@@ -299,7 +299,7 @@ The `store.json` file configures your module's Gambio Store listing:
 
 ## Requirements
 
-- **Gambio GX5** (shop version >= 5.0.0.0)
+- **Gambio GX** (shop version >= 5.0.0.0)
 - **PHP** >= 8.0
 - **MySQL** >= 5.5
 
