@@ -110,6 +110,95 @@ public function onInstall($db, array $moduleData, $languageTextManager, $cacheCo
 
 The save method receives `($db, $configurationStorage, $languageTextManager, $cacheControl)`. Use it for cache invalidation or validation after config changes.
 
+### Example: Creating Database Tables in Lifecycle Hooks
+
+!!! note
+    Gambio does not have an automatic migration system with `up`/`down`. If your module needs its own database tables, you must create and drop them yourself inside the install and uninstall hooks.
+
+Here is a complete example of an install/uninstall action class (MainFactory variant):
+
+```php
+<?php
+// Admin/Actions/InstallAction.php
+
+namespace GXModules\AcmeCorp\MyModule\Admin\Actions;
+
+class InstallAction
+{
+    public function onInstall($db, array $moduleData, $languageTextManager, $cacheControl): void
+    {
+        // Create a custom table for the module
+        $db->query("
+            CREATE TABLE IF NOT EXISTS my_module_data (
+                id INT PRIMARY KEY AUTO_INCREMENT,
+                order_id INT NOT NULL,
+                external_ref VARCHAR(255) NOT NULL DEFAULT '',
+                sync_status ENUM('pending', 'synced', 'error') NOT NULL DEFAULT 'pending',
+                created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                INDEX idx_order_id (order_id),
+                INDEX idx_sync_status (sync_status)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+        ");
+
+        // Optionally seed default data
+        $db->query("
+            INSERT IGNORE INTO my_module_data (order_id, external_ref, sync_status)
+            VALUES (0, 'initial', 'synced')
+        ");
+    }
+
+    public function onUninstall($db, array $moduleData, $languageTextManager, $cacheControl): void
+    {
+        // Clean up: drop the custom table
+        $db->query("DROP TABLE IF EXISTS my_module_data");
+    }
+}
+```
+
+If your class is resolved via the **DI container** (registered in ServiceProvider), inject `Doctrine\DBAL\Connection` instead:
+
+```php
+<?php
+// Admin/Actions/InstallAction.php
+
+namespace GXModules\AcmeCorp\MyModule\Admin\Actions;
+
+use Doctrine\DBAL\Connection;
+
+class InstallAction
+{
+    private Connection $connection;
+
+    public function __construct(Connection $connection)
+    {
+        $this->connection = $connection;
+    }
+
+    public function onInstall(array $gxModulesJsonData): void
+    {
+        $this->connection->executeStatement("
+            CREATE TABLE IF NOT EXISTS my_module_data (
+                id INT PRIMARY KEY AUTO_INCREMENT,
+                order_id INT NOT NULL,
+                external_ref VARCHAR(255) NOT NULL DEFAULT '',
+                sync_status ENUM('pending', 'synced', 'error') NOT NULL DEFAULT 'pending',
+                created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                INDEX idx_order_id (order_id),
+                INDEX idx_sync_status (sync_status)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+        ");
+    }
+
+    public function onUninstall(array $gxModulesJsonData): void
+    {
+        $this->connection->executeStatement("DROP TABLE IF EXISTS my_module_data");
+    }
+}
+```
+
+!!! tip
+    Always use `CREATE TABLE IF NOT EXISTS` and `DROP TABLE IF EXISTS` to make your install/uninstall idempotent. This prevents errors if the module is reinstalled or the hook runs multiple times.
+
 ## Step 3: Add Translations
 
 Create language files so your module labels are translatable:

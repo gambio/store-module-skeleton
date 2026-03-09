@@ -40,7 +40,7 @@ Die `store.json` Datei definiert die Metadaten für dein Modul im Gambio App Sto
 | `vendor` | object | Ja | Anbieterinformationen |
 | `displayImage` | object | Nein | Vorschaubild-Pfade mit `en` und `de` Schlüsseln |
 | `highlights` | array | Nein | Feature-Stichpunkte für die Store-Seite |
-| `migrations` | object | Nein | Datenbank-Migrationsscripte |
+| `migrations` | object | Nein | Datenbank-Migrationsscripte (noch nicht unterstützt, siehe Hinweis unten) |
 | `requirements` | object | Ja | Versionsanforderungen |
 
 ### vendor
@@ -70,7 +70,12 @@ Bis zu 3 kurze Feature-Beschreibungen auf der Store-Seite:
 
 ### migrations
 
-Datenbank-Migrationsscripte, die bei Installation (up) und Deinstallation (down) ausgeführt werden:
+!!! warning
+    Das `migrations` Feld mit `up`/`down` wird vom Gambio Store System **noch nicht unterstützt**. Es ist für zukünftige Nutzung reserviert.
+
+Um Datenbanktabellen zu erstellen oder SQL bei der Installation auszuführen, verwende stattdessen **Lifecycle Hooks** in deiner `GXModule.json`. Deine Install/Uninstall PHP-Methoden erhalten eine Datenbankinstanz und können beliebige SQL-Abfragen direkt ausführen. Siehe die [Modulentwicklung Anleitung](./modulentwicklung-anleitung.md#lifecycle-hooks-hinzufugen-optional) für ein vollständiges Beispiel.
+
+**Geplantes Format (noch nicht funktional):**
 
 ```json
 {

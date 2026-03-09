@@ -80,6 +80,9 @@ public function onInstall($db, array $moduleData, $languageTextManager, $cacheCo
 
 If no `uninstall` hook is defined, all configuration values are automatically deleted on uninstall.
 
+!!! info
+    Gambio does not have an automatic database migration system. If your module needs custom tables, create them in the `install` hook and drop them in the `uninstall` hook using SQL queries. See the [Module Development Guide](./module-development-guide.md#example-creating-database-tables-in-lifecycle-hooks) for a complete example with both MainFactory and DI container variants.
+
 ### save
 
 ```json

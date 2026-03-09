@@ -80,6 +80,9 @@ public function onInstall($db, array $moduleData, $languageTextManager, $cacheCo
 
 Wenn kein `uninstall` Hook definiert ist, werden bei der Deinstallation automatisch alle Konfigurationswerte gelöscht.
 
+!!! info
+    Gambio hat kein automatisches Datenbank-Migrationssystem. Wenn dein Modul eigene Tabellen braucht, erstelle sie im `install` Hook und lösche sie im `uninstall` Hook per SQL-Abfragen. Siehe die [Modulentwicklung Anleitung](./modulentwicklung-anleitung.md#beispiel-datenbanktabellen-in-lifecycle-hooks-erstellen) für ein vollständiges Beispiel mit MainFactory- und DI-Container-Variante.
+
 ### save
 
 ```json
