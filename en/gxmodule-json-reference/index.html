@@ -519,15 +519,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lifecycle-hooks" class="md-nav__link">
+  <a href="#lifecycle-hooks-optional" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Lifecycle Hooks
+        Lifecycle Hooks (Optional)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Lifecycle Hooks">
+    <nav class="md-nav" aria-label="Lifecycle Hooks (Optional)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1339,17 +1339,17 @@
 <tr>
 <td><code>install</code></td>
 <td>object</td>
-<td>PHP hook called on module installation</td>
+<td><em>(Optional)</em> PHP hook called on module installation</td>
 </tr>
 <tr>
 <td><code>uninstall</code></td>
 <td>object</td>
-<td>PHP hook called on module uninstallation</td>
+<td><em>(Optional)</em> PHP hook called on module uninstallation</td>
 </tr>
 <tr>
 <td><code>save</code></td>
 <td>object</td>
-<td>PHP hook called after configuration is saved</td>
+<td><em>(Optional)</em> PHP hook called after configuration is saved</td>
 </tr>
 <tr>
 <td><code>configuration</code></td>
@@ -1358,7 +1358,11 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lifecycle-hooks">Lifecycle Hooks<a class="headerlink" href="#lifecycle-hooks" title="Permanent link">&para;</a></h2>
+<h2 id="lifecycle-hooks-optional">Lifecycle Hooks (Optional)<a class="headerlink" href="#lifecycle-hooks-optional" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lifecycle hooks are <strong>completely optional</strong>. If your module only needs a simple configuration page, you do not need to define <code>install</code>, <code>uninstall</code>, or <code>save</code> hooks. Gambio stores and reads configuration values automatically. Only add hooks if your module needs custom logic (e.g. creating database tables, clearing caches, or validating input).</p>
+</div>
 <h3 id="install-uninstall">install / uninstall<a class="headerlink" href="#install-uninstall" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;install&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>

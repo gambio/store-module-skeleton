@@ -514,10 +514,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#adding-lifecycle-hooks" class="md-nav__link">
+  <a href="#adding-lifecycle-hooks-optional" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Adding Lifecycle Hooks
+        Adding Lifecycle Hooks (Optional)
       
     </span>
   </a>
@@ -1222,7 +1222,11 @@
 </code></pre></div>
 <p>Gambio automatically generates the configuration page from this JSON. No HTML templates or controllers needed.</p>
 <p>For the complete field type reference, see <a href="../gxmodule-json-reference/">GXModule.json Reference</a>.</p>
-<h3 id="adding-lifecycle-hooks">Adding Lifecycle Hooks<a class="headerlink" href="#adding-lifecycle-hooks" title="Permanent link">&para;</a></h3>
+<h3 id="adding-lifecycle-hooks-optional">Adding Lifecycle Hooks (Optional)<a class="headerlink" href="#adding-lifecycle-hooks-optional" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lifecycle hooks are <strong>completely optional</strong>. If your module only needs a simple configuration (checkboxes, text fields, selects, etc.), you do not need any PHP action files. Gambio handles storing and reading configuration values automatically. You only need hooks if your module requires custom logic during installation, uninstallation, or when saving settings (e.g. creating database tables, clearing caches, or validating input).</p>
+</div>
 <p>You can run custom PHP code when the module is installed, uninstalled, or when settings are saved:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;install&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>

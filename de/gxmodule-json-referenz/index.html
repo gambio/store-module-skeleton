@@ -774,15 +774,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lifecycle-hooks" class="md-nav__link">
+  <a href="#lifecycle-hooks-optional" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Lifecycle Hooks
+        Lifecycle Hooks (Optional)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Lifecycle Hooks">
+    <nav class="md-nav" aria-label="Lifecycle Hooks (Optional)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1339,17 +1339,17 @@
 <tr>
 <td><code>install</code></td>
 <td>object</td>
-<td>PHP-Hook beim Installieren</td>
+<td><em>(Optional)</em> PHP-Hook beim Installieren</td>
 </tr>
 <tr>
 <td><code>uninstall</code></td>
 <td>object</td>
-<td>PHP-Hook beim Deinstallieren</td>
+<td><em>(Optional)</em> PHP-Hook beim Deinstallieren</td>
 </tr>
 <tr>
 <td><code>save</code></td>
 <td>object</td>
-<td>PHP-Hook nach dem Speichern der Konfiguration</td>
+<td><em>(Optional)</em> PHP-Hook nach dem Speichern der Konfiguration</td>
 </tr>
 <tr>
 <td><code>configuration</code></td>
@@ -1358,7 +1358,11 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lifecycle-hooks">Lifecycle Hooks<a class="headerlink" href="#lifecycle-hooks" title="Permanent link">&para;</a></h2>
+<h2 id="lifecycle-hooks-optional">Lifecycle Hooks (Optional)<a class="headerlink" href="#lifecycle-hooks-optional" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lifecycle Hooks sind <strong>komplett optional</strong>. Wenn dein Modul nur eine einfache Konfigurationsseite braucht, musst du keine <code>install</code>, <code>uninstall</code> oder <code>save</code> Hooks definieren. Gambio speichert und liest Konfigurationswerte automatisch. Füge Hooks nur hinzu, wenn dein Modul eigene Logik benötigt (z.B. Datenbanktabellen anlegen, Caches leeren oder Eingaben validieren).</p>
+</div>
 <h3 id="install-uninstall">install / uninstall<a class="headerlink" href="#install-uninstall" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;install&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
