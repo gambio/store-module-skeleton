@@ -538,6 +538,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Step 3: Add Translations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shop-text-phrases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shop Text Phrases
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -553,10 +570,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#css" class="md-nav__link">
+  <a href="#css-scss" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CSS
+        CSS / SCSS
       
     </span>
   </a>
@@ -1243,7 +1260,18 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>The install method receives <code>($db, $moduleData, $languageTextManager, $cacheControl)</code>. Use it for database table creation or initial data seeding.</p>
+<p><strong>When resolved via DI container</strong> (class registered in ServiceProvider), the install/uninstall method receives only the parsed GXModule.json data:</p>
+<div class="highlight"><pre><span></span><code><span class="x">public function onInstall(array $gxModulesJsonData): void</span>
+</code></pre></div>
+<p><strong>When resolved via MainFactory fallback</strong>, it receives:</p>
+<div class="highlight"><pre><span></span><code><span class="x">public function onInstall($db, array $moduleData, $languageTextManager, $cacheControl): void</span>
+</code></pre></div>
+<ul>
+<li><code>$db</code>: CI_DB_query_builder database instance</li>
+<li><code>$moduleData</code>: Parsed GXModule.json content as array</li>
+<li><code>$languageTextManager</code>: LanguageTextManager for translations</li>
+<li><code>$cacheControl</code>: DataCache for cache clearing</li>
+</ul>
 <p>The save method receives <code>($db, $configurationStorage, $languageTextManager, $cacheControl)</code>. Use it for cache invalidation or validation after config changes.</p>
 <h2 id="step-3-add-translations">Step 3: Add Translations<a class="headerlink" href="#step-3-add-translations" title="Permanent link">&para;</a></h2>
 <p>Create language files so your module labels are translatable:</p>
@@ -1261,13 +1289,30 @@ Admin/TextPhrases/english/my_module.lang.inc.php
 <span class="p">];</span>
 </code></pre></div>
 <p>The section name comes from the filename (without <code>.lang.inc.php</code>). Reference keys in GXModule.json as <code>{section}.{KEY}</code>, e.g. <code>my_module.PAGE_TITLE</code>.</p>
+<h3 id="shop-text-phrases">Shop Text Phrases<a class="headerlink" href="#shop-text-phrases" title="Permanent link">&para;</a></h3>
+<p>If your module needs translations on the storefront (not just in the admin), place language files in <code>Shop/TextPhrases/</code>:</p>
+<div class="highlight"><pre><span></span><code>Shop/TextPhrases/German/my_module.lang.inc.php
+Shop/TextPhrases/English/my_module.lang.inc.php
+</code></pre></div>
+<p>Note that language folder names are capitalized (<code>German</code>, <code>English</code>).</p>
+<p>In Smarty templates, load them with: <code>{load_language_text section="my_module"}</code>, then use <code>{$txt.KEY}</code>.</p>
 <h2 id="step-4-add-storefront-customizations-optional">Step 4: Add Storefront Customizations (Optional)<a class="headerlink" href="#step-4-add-storefront-customizations-optional" title="Permanent link">&para;</a></h2>
-<h3 id="css">CSS<a class="headerlink" href="#css" title="Permanent link">&para;</a></h3>
-<p>Place CSS files in <code>Shop/Themes/All/Css/</code> to load them on every storefront page across all themes:</p>
-<div class="highlight"><pre><span></span><code>Shop/Themes/All/Css/my_module.css
+<h3 id="css-scss">CSS / SCSS<a class="headerlink" href="#css-scss" title="Permanent link">&para;</a></h3>
+<p>Create a <code>main.scss</code> file in <code>Shop/Themes/All/Css/</code> to add styles across all themes:</p>
+<div class="highlight"><pre><span></span><code>Shop/Themes/All/Css/main.scss
+</code></pre></div>
+<p>This file is automatically included when the theme styles are built. You can add your styles directly or import additional SCSS files:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// main.scss</span>
+<span class="k">@import</span><span class="w"> </span><span class="s1">&#39;components/buttons&#39;</span><span class="p">;</span>
+<span class="k">@import</span><span class="w"> </span><span class="s1">&#39;components/badges&#39;</span><span class="p">;</span>
+
+<span class="nc">.my-module-widget</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">border</span><span class="nd">:</span><span class="w"> </span><span class="nt">1px</span><span class="w"> </span><span class="nt">solid</span><span class="w"> </span><span class="nn">#ccc</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">padding</span><span class="nd">:</span><span class="w"> </span><span class="nt">1rem</span><span class="o">;</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>To target a specific theme, replace <code>All</code> with the theme name:</p>
-<div class="highlight"><pre><span></span><code>Shop/Themes/Malibu/Css/my_module.css
+<div class="highlight"><pre><span></span><code>Shop/Themes/Malibu/Css/main.scss
 </code></pre></div>
 <h3 id="javascript">JavaScript<a class="headerlink" href="#javascript" title="Permanent link">&para;</a></h3>
 <p>Place JavaScript files in <code>Shop/Themes/All/Javascript/{page}/</code> where <code>{page}</code> matches the storefront page:</p>
@@ -1291,12 +1336,13 @@ Shop/Themes/All/Javascript/index/my_module.js           : Homepage
 <span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;standalone&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
 <span class="w">        </span><span class="nt">&quot;sort&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;link&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;admin.php?do=MyModule&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;link&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;admin/my-module&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_module.PAGE_TITLE&quot;</span>
 <span class="w">    </span><span class="p">}]</span>
 <span class="p">}]</span>
 </code></pre></div>
-<p>This replaces the deprecated XML menu format (<code>menu_*.xml</code>).</p>
+<p>The <code>link</code> value is relative to the shop root URL (without the domain). Use modern route paths (e.g. <code>admin/my-module</code>) that match your <code>routes.php</code> definitions.</p>
+<p>This replaces the deprecated XML menu format (<code>menu_*.xml</code>). After adding or changing menu entries, clear the module cache in the Gambio Admin (<strong>Toolbox &gt; Caches</strong>).</p>
 <h2 id="step-6-extend-existing-functionality-with-overloads-optional">Step 6: Extend Existing Functionality with Overloads (Optional)<a class="headerlink" href="#step-6-extend-existing-functionality-with-overloads-optional" title="Permanent link">&para;</a></h2>
 <p>Overloads let you extend any class managed by Gambio's MainFactory.</p>
 <h3 id="admin-overloads">Admin Overloads<a class="headerlink" href="#admin-overloads" title="Permanent link">&para;</a></h3>
@@ -1351,20 +1397,15 @@ Shop/Themes/All/Javascript/index/my_module.js           : Homepage
 
     <span class="k">public</span> <span class="k">function</span> <span class="nf">register</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
     <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">application</span><span class="o">-&gt;</span><span class="na">registerShared</span><span class="p">(</span><span class="nx">MyService</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="k">new</span> <span class="nx">MyService</span><span class="p">(</span>
-                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">application</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nx">\Gambio\Core\Configuration\ConfigurationService</span><span class="o">::</span><span class="na">class</span><span class="p">)</span>
-            <span class="p">);</span>
-        <span class="p">});</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">application</span><span class="o">-&gt;</span><span class="na">registerShared</span><span class="p">(</span><span class="nx">MyService</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="nx">MyServiceImpl</span><span class="o">::</span><span class="na">class</span><span class="p">)</span>
+            <span class="o">-&gt;</span><span class="na">addArgument</span><span class="p">(</span><span class="nx">\Gambio\Core\Configuration\ConfigurationService</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
     <span class="p">}</span>
 
     <span class="k">public</span> <span class="k">function</span> <span class="nf">boot</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
     <span class="p">{</span>
-        <span class="c1">// Register event listeners after all providers are loaded</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">application</span><span class="o">-&gt;</span><span class="na">attachEventListener</span><span class="p">(</span>
-            <span class="nx">SomeEvent</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
-            <span class="nx">MyEventListener</span><span class="o">::</span><span class="na">class</span>
-        <span class="p">);</span>
+        <span class="c1">// Register event listeners using inflections</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">application</span><span class="o">-&gt;</span><span class="na">inflect</span><span class="p">(</span><span class="nx">\Gambio\Core\Event\EventListenerProvider</span><span class="o">::</span><span class="na">class</span><span class="p">)</span>
+            <span class="o">-&gt;</span><span class="na">invokeMethod</span><span class="p">(</span><span class="s1">&#39;attachListener&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">SomeEvent</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="nx">MyEventListener</span><span class="o">::</span><span class="na">class</span><span class="p">]);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>

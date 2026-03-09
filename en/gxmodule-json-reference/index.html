@@ -823,22 +823,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-field-properties" class="md-nav__link">
+  <a href="#reading-configuration-values" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common Field Properties
+        Reading Configuration Values
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Common Field Properties">
+    <nav class="md-nav" aria-label="Reading Configuration Values">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tooltips" class="md-nav__link">
+  <a href="#return-types-per-field-type" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tooltips
+        Return types per field type
       
     </span>
   </a>
@@ -1378,9 +1378,14 @@
 <p><strong>Resolution order:</strong>
 1. The class is first looked up in the DI container (if registered via ServiceProvider)
 2. Fallback: resolved via MainFactory</p>
-<p><strong>Method signature (MainFactory fallback):</strong>
+<p><strong>Method signature (DI container):</strong></p>
+<p>When the class is resolved via the DI container, the method receives only the parsed GXModule.json data:</p>
+<div class="highlight"><pre><span></span><code><span class="x">public function onInstall(array $gxModulesJsonData): void</span>
+</code></pre></div>
+<p><strong>Method signature (MainFactory fallback):</strong></p>
+<p>When the class is resolved via MainFactory, the method receives four parameters:</p>
 <div class="highlight"><pre><span></span><code><span class="x">public function onInstall($db, array $moduleData, $languageTextManager, $cacheControl): void</span>
-</code></pre></div></p>
+</code></pre></div>
 <ul>
 <li><code>$db</code>: CI_DB_query_builder database instance</li>
 <li><code>$moduleData</code>: Parsed GXModule.json content as array</li>
@@ -1577,8 +1582,10 @@
 <span class="w">    </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_module.LABEL_OPTIONS&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;values&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Option A&quot;</span><span class="w"> </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Option B&quot;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">    </span><span class="p">]</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Option B&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Option C&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;selected&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;b&quot;</span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="customer_group">customer_group<a class="headerlink" href="#customer_group" title="Permanent link">&para;</a></h3>
@@ -1624,7 +1631,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <ul>
-<li><code>color</code>: Button color: <code>primary</code>, <code>warning</code>, <code>danger</code>, <code>success</code></li>
+<li><code>color</code>: Button color: <code>default</code>, <code>primary</code>, <code>success</code>, <code>info</code>, <code>warning</code>, <code>danger</code>, <code>link</code></li>
 <li><code>action.controller</code>: PHP class to call (must extend <code>GXModuleController</code>)</li>
 <li><code>action.method</code>: Method name to invoke</li>
 <li><code>action.message</code>: Translation key for the success message</li>
@@ -1640,7 +1647,8 @@
 </code></pre></div>
 <p>The <code>modal</code> value must match a field key of type <code>modal</code> in the same section.</p>
 <h3 id="modal">modal<a class="headerlink" href="#modal" title="Permanent link">&para;</a></h3>
-<p>A confirmation dialog triggered by a button.</p>
+<p>A confirmation dialog triggered by a button. Use <code>description</code> for simple text or <code>content</code> for custom HTML.</p>
+<p><strong>Modal with text:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;modal&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_module.MODAL_TITLE&quot;</span><span class="p">,</span>
@@ -1660,56 +1668,96 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="common-field-properties">Common Field Properties<a class="headerlink" href="#common-field-properties" title="Permanent link">&para;</a></h2>
-<p>These properties can be added to most field types:</p>
+<p><strong>Modal with rendered HTML:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;modal&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_module.MODAL_TITLE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AcmeCorp/MyModule/Admin/Html/modal_content.html&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;buttons&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;close&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;buttons.cancel&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;confirm&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_module.BTN_CONFIRM&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;controller&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GXModules\\AcmeCorp\\MyModule\\Admin\\Actions\\SomeAction&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;execute&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_module.MSG_DONE&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The <code>content</code> attribute references an HTML file relative to the GXModules directory that will be rendered inside the modal.
+<div class="highlight"><pre><span></span><code>## Common Field Properties
+
+These properties can be added to most field types:
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `label` | string | Translation key for the field label |
+| `required` | boolean | Makes the field required |
+| `default_value` | string | Default value for the field |
+| `readonly` | boolean | Makes the field read-only (for text, email, number, date, datetime, textarea, editor) |
+| `regex` | string | Validation pattern the input value must match (for text, password, email, number) |
+| `selected` | array | Default selected values for multiselect fields |
+| `languageDependent` | boolean | Render per-language input tabs (works with text-based field types, not just editor) |
+| `tooltip` | object | Add an info or error tooltip |
+
+### Tooltips
+
+```json
+{
+    &quot;tooltip&quot;: {
+        &quot;type&quot;: &quot;info&quot;,
+        &quot;text&quot;: &quot;my_module.TOOLTIP_HELP&quot;
+    }
+}
+</code></pre></div></p>
+<ul>
+<li><code>type</code>: <code>info</code> (blue) or <code>error</code> (red)</li>
+<li><code>text</code>: Translation key for the tooltip text</li>
+</ul>
+<h2 id="reading-configuration-values">Reading Configuration Values<a class="headerlink" href="#reading-configuration-values" title="Permanent link">&para;</a></h2>
+<p>To read saved configuration values in PHP, use the <code>GXModuleConfigurationStorage</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="x">$configurationStorage = MainFactory::create(&#39;GXModuleConfigurationStorage&#39;, &#39;AcmeCorp/MyModule&#39;);</span>
+<span class="x">$isActive = $configurationStorage-&gt;get(&#39;enableFeature&#39;);</span>
+<span class="x">$apiKey = $configurationStorage-&gt;get(&#39;apiKey&#39;);</span>
+</code></pre></div>
+<p>The second argument to <code>MainFactory::create</code> is <code>{Vendor}/{Module}</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If no configuration has been saved yet, <code>GXModuleConfigurationStorage</code> returns the <code>default_value</code> from the <code>GXModule.json</code>.</p>
+</div>
+<h3 id="return-types-per-field-type">Return types per field type<a class="headerlink" href="#return-types-per-field-type" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Property</th>
 <th>Type</th>
-<th>Description</th>
+<th>Return value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>label</code></td>
+<td><code>checkbox</code></td>
+<td>string: <code>"1"</code> for true, <code>"0"</code> for false</td>
+</tr>
+<tr>
+<td><code>text</code>, <code>password</code>, <code>email</code>, <code>number</code>, <code>color</code>, <code>date</code>, <code>datetime</code>, <code>textarea</code>, <code>editor</code></td>
 <td>string</td>
-<td>Translation key for the field label</td>
 </tr>
 <tr>
-<td><code>required</code></td>
-<td>boolean</td>
-<td>Makes the field required</td>
+<td><code>file</code></td>
+<td>string: file path relative to shop root</td>
 </tr>
 <tr>
-<td><code>default_value</code></td>
+<td><code>select</code>, <code>customer_group</code>, <code>order_status</code>, <code>countries</code>, <code>languages</code></td>
 <td>string</td>
-<td>Default value for the field</td>
 </tr>
 <tr>
-<td><code>languageDependent</code></td>
-<td>boolean</td>
-<td>Render per-language input tabs</td>
-</tr>
-<tr>
-<td><code>tooltip</code></td>
-<td>object</td>
-<td>Add an info or warning tooltip</td>
+<td><code>multiselect</code></td>
+<td>array</td>
 </tr>
 </tbody>
 </table>
-<h3 id="tooltips">Tooltips<a class="headerlink" href="#tooltips" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;tooltip&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;info&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_module.TOOLTIP_HELP&quot;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<ul>
-<li><code>type</code>: <code>info</code> (blue) or <code>warning</code> (yellow)</li>
-<li><code>text</code>: Translation key for the tooltip text</li>
-</ul>
 <h2 id="complete-example">Complete Example<a class="headerlink" href="#complete-example" title="Permanent link">&para;</a></h2>
 <p>See the skeleton's <code>GXModule.json</code> for a working example that demonstrates all field types, tabs, tooltips, buttons, modals, and lifecycle hooks.</p>
 
