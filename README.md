@@ -7,13 +7,13 @@ This skeleton demonstrates **all major extension points** available to third-par
 ## Quick Start
 
 1. **Fork or clone** this repository
-2. **Rename** the vendor namespace from `Gambio/StoreModuleSkeleton` to `YourVendor/YourModule`
-3. **Update** `store.json` with your module information
-4. **Replace** the `XYZ` namespace placeholder in PHP files with your vendor name
+2. **Rename** the vendor directory `XYZ` to your vendor name (e.g. `src/GXModules/AcmeCorp/YourModule/`)
+3. **Update** the `XYZ` namespace placeholder in all PHP files to match (e.g. `GXModules\AcmeCorp\YourModule`)
+4. **Update** `store.json` with your module information
 5. **Implement** your module logic using the patterns demonstrated in the skeleton files
 6. **Package** and submit to the Gambio Store
 
-> The `XYZ` namespace used throughout the PHP files (e.g. `GXModules\XYZ\Skeleton`) is a placeholder for the third-party developer's vendor name.
+> **Important:** `XYZ` is used as a placeholder throughout the entire skeleton — both as the directory name (`src/GXModules/XYZ/`) and as the PHP namespace (`GXModules\XYZ\Skeleton`). You **must** replace it with your own vendor name before publishing.
 
 ## File Structure
 
@@ -24,7 +24,7 @@ store-module-skeleton/
 │   ├── module_logo(.png|.jpg|.svg)            Module logo for Store listing
 │   ├── de/description.html                    German Store description (overrides store.json)
 │   └── en/description.html                    English Store description (overrides store.json)
-├── src/GXModules/Gambio/StoreModuleSkeleton/
+├── src/GXModules/XYZ/StoreModuleSkeleton/
 │   ├── GXModule.json                         ★ Module Center integration + configuration UI
 │   ├── SkeletonServiceProvider.php           ★ Dependency injection + event listeners
 │   ├── SkeletonModule.php                    ★ Events, middleware, module dependencies
