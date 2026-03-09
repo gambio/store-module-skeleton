@@ -12,6 +12,7 @@ Developer documentation for creating, testing, and publishing Gambio GX modules 
 | [Local Testing](./en/local-testing.md) | Installing and testing modules locally |
 | [Publishing Guide](./en/publishing-guide.md) | Submitting modules to the Gambio Store |
 | [Release Checklist](./en/release-checklist.md) | Pre-release verification checklist |
+| [Smarty Blocks Reference](./en/smarty-blocks-reference.md) | All 3,121 overridable Smarty blocks in the Malibu theme |
 
 ## Deutsch
 
@@ -23,3 +24,4 @@ Developer documentation for creating, testing, and publishing Gambio GX modules 
 | [Lokal testen](./de/lokal-testen.md) | Module lokal installieren und testen |
 | [Veroeffentlichung](./de/veroeffentlichung-guide.md) | Module im Gambio Store einreichen |
 | [Release Checkliste](./de/release-checkliste.md) | Checkliste vor der Veroeffentlichung |
+| [Smarty Blocks Referenz](./de/smarty-blocks-referenz.md) | Alle 3.121 ueberschreibbaren Smarty Blocks im Malibu Theme |
