@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="de" class="no-js">
+<html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://gambio.github.io/store-module-skeleton/de/modulentwicklung-anleitung/">
+        <link rel="canonical" href="https://gambio.github.io/store-module-skeleton/module-development-guide/">
       
       
         <link rel="prev" href="..">
       
       
-        <link rel="next" href="../gxmodule-json-referenz/">
+        <link rel="next" href="../gxmodule-json-reference/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Modulentwicklung Anleitung - Gambio Store Modul Dokumentation</title>
+        <title>Module Development Guide - Gambio Store Module Documentation</title>
       
     
     
@@ -82,8 +82,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#modulentwicklung-anleitung" class="md-skip">
-          Zum Inhalt
+        <a href="#module-development-guide" class="md-skip">
+          Skip to content
         </a>
       
     </div>
@@ -97,8 +97,8 @@
   
 
 <header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
-    <a href=".." title="Gambio Store Modul Dokumentation" class="md-header__button md-logo" aria-label="Gambio Store Modul Dokumentation" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Gambio Store Module Documentation" class="md-header__button md-logo" aria-label="Gambio Store Module Documentation" data-md-component="logo">
       
   <img src="../logo.svg" alt="logo">
 
@@ -111,13 +111,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Gambio Store Modul Dokumentation
+            Gambio Store Module Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Modulentwicklung Anleitung
+              Module Development Guide
             
           </span>
         </div>
@@ -130,9 +130,9 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="gambio" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Zum Dunkelmodus wechseln"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="gambio" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Zum Dunkelmodus wechseln" for="__palette_1" hidden>
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
       </label>
     
@@ -140,9 +140,9 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="gambio" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Zum Dunkelmodus wechseln"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="gambio" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Zum Dunkelmodus wechseln" for="__palette_2" hidden>
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
@@ -150,9 +150,9 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow"  aria-label="Zum Hellmodus wechseln"  type="radio" name="__palette" id="__palette_2">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
     
-      <label class="md-header__button md-icon" title="Zum Hellmodus wechseln" for="__palette_0" hidden>
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
@@ -167,7 +167,7 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Sprache wechseln">
+    <button class="md-header__button md-icon" aria-label="Select language">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
@@ -201,16 +201,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Suche">
+      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -221,7 +221,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Suche wird initialisiert
+            Initializing search
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -259,12 +259,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Gambio Store Modul Dokumentation" class="md-nav__button md-logo" aria-label="Gambio Store Modul Dokumentation" data-md-component="logo">
+    <a href=".." title="Gambio Store Module Documentation" class="md-nav__button md-logo" aria-label="Gambio Store Module Documentation" data-md-component="logo">
       
   <img src="../logo.svg" alt="logo">
 
     </a>
-    Gambio Store Modul Dokumentation
+    Gambio Store Module Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -283,7 +283,7 @@
   <span class="md-ellipsis">
     
   
-    Startseite
+    Home
   
 
     
@@ -319,7 +319,7 @@
   <span class="md-ellipsis">
     
   
-    Modulentwicklung Anleitung
+    Module Development Guide
   
 
     
@@ -337,7 +337,7 @@
   <span class="md-ellipsis">
     
   
-    Modulentwicklung Anleitung
+    Module Development Guide
   
 
     
@@ -349,7 +349,7 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -358,15 +358,15 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Inhaltsverzeichnis
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#voraussetzungen" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Voraussetzungen
+        Prerequisites
       
     </span>
   </a>
@@ -374,10 +374,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wie-gambio-module-funktionieren" class="md-nav__link">
+  <a href="#how-gambio-modules-work" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wie Gambio Module funktionieren
+        How Gambio Modules Work
       
     </span>
   </a>
@@ -385,10 +385,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#schritt-1-modulverzeichnis-erstellen" class="md-nav__link">
+  <a href="#step-1-create-the-module-directory" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Schritt 1: Modulverzeichnis erstellen
+        Step 1: Create the Module Directory
       
     </span>
   </a>
@@ -396,22 +396,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#schritt-2-gxmodulejson-erstellen" class="md-nav__link">
+  <a href="#step-2-create-gxmodulejson" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Schritt 2: GXModule.json erstellen
+        Step 2: Create GXModule.json
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Schritt 2: GXModule.json erstellen">
+    <nav class="md-nav" aria-label="Step 2: Create GXModule.json">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#konfigurationsfelder-hinzufugen" class="md-nav__link">
+  <a href="#adding-configuration-fields" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Konfigurationsfelder hinzufügen
+        Adding Configuration Fields
       
     </span>
   </a>
@@ -419,10 +419,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#lifecycle-hooks-hinzufugen-optional" class="md-nav__link">
+  <a href="#adding-lifecycle-hooks-optional" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Lifecycle Hooks hinzufügen (Optional)
+        Adding Lifecycle Hooks (Optional)
       
     </span>
   </a>
@@ -430,10 +430,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#beispiel-datenbanktabellen-in-lifecycle-hooks-erstellen" class="md-nav__link">
+  <a href="#example-creating-database-tables-in-lifecycle-hooks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Beispiel: Datenbanktabellen in Lifecycle Hooks erstellen
+        Example: Creating Database Tables in Lifecycle Hooks
       
     </span>
   </a>
@@ -446,15 +446,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#schritt-3-ubersetzungen-hinzufugen" class="md-nav__link">
+  <a href="#step-3-add-translations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Schritt 3: Übersetzungen hinzufügen
+        Step 3: Add Translations
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Schritt 3: Übersetzungen hinzufügen">
+    <nav class="md-nav" aria-label="Step 3: Add Translations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -474,15 +474,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#schritt-4-storefront-anpassungen-optional" class="md-nav__link">
+  <a href="#step-4-add-storefront-customizations-optional" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Schritt 4: Storefront-Anpassungen (Optional)
+        Step 4: Add Storefront Customizations (Optional)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Schritt 4: Storefront-Anpassungen (Optional)">
+    <nav class="md-nav" aria-label="Step 4: Add Storefront Customizations (Optional)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -524,10 +524,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#schritt-5-admin-menueintrag-hinzufugen-optional" class="md-nav__link">
+  <a href="#step-5-add-an-admin-menu-entry-optional" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Schritt 5: Admin-Menüeintrag hinzufügen (Optional)
+        Step 5: Add an Admin Menu Entry (Optional)
       
     </span>
   </a>
@@ -535,15 +535,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#schritt-6-bestehende-funktionalitat-mit-overloads-erweitern-optional" class="md-nav__link">
+  <a href="#step-6-extend-existing-functionality-with-overloads-optional" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Schritt 6: Bestehende Funktionalität mit Overloads erweitern (Optional)
+        Step 6: Extend Existing Functionality with Overloads (Optional)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Schritt 6: Bestehende Funktionalität mit Overloads erweitern (Optional)">
+    <nav class="md-nav" aria-label="Step 6: Extend Existing Functionality with Overloads (Optional)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -574,10 +574,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#schritt-7-serviceprovider-fur-dependency-injection-optional" class="md-nav__link">
+  <a href="#step-7-add-a-serviceprovider-for-dependency-injection-optional" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Schritt 7: ServiceProvider für Dependency Injection (Optional)
+        Step 7: Add a ServiceProvider for Dependency Injection (Optional)
       
     </span>
   </a>
@@ -585,10 +585,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#schritt-8-modul-klasse-fur-events-und-middleware-optional" class="md-nav__link">
+  <a href="#step-8-add-a-module-class-for-events-and-middleware-optional" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Schritt 8: Modul-Klasse für Events und Middleware (Optional)
+        Step 8: Add a Module Class for Events and Middleware (Optional)
       
     </span>
   </a>
@@ -596,10 +596,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#schritt-9-http-routen-hinzufugen-optional" class="md-nav__link">
+  <a href="#step-9-add-http-routes-optional" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Schritt 9: HTTP-Routen hinzufügen (Optional)
+        Step 9: Add HTTP Routes (Optional)
       
     </span>
   </a>
@@ -607,10 +607,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#schritt-10-cronjob-hinzufugen-optional" class="md-nav__link">
+  <a href="#step-10-add-a-cronjob-optional" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Schritt 10: Cronjob hinzufügen (Optional)
+        Step 10: Add a Cronjob (Optional)
       
     </span>
   </a>
@@ -618,10 +618,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#schritt-11-indexhtml-dateien-hinzufugen" class="md-nav__link">
+  <a href="#step-11-add-indexhtml-files" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Schritt 11: index.html Dateien hinzufügen
+        Step 11: Add index.html Files
       
     </span>
   </a>
@@ -629,10 +629,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#minimales-vs-vollstandiges-modul" class="md-nav__link">
+  <a href="#minimal-vs-full-module" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Minimales vs. vollständiges Modul
+        Minimal vs. Full Module
       
     </span>
   </a>
@@ -640,10 +640,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nachste-schritte" class="md-nav__link">
+  <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Nächste Schritte
+        Next Steps
       
     </span>
   </a>
@@ -665,14 +665,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../gxmodule-json-referenz/" class="md-nav__link">
+      <a href="../gxmodule-json-reference/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    GXModule.json Referenz
+    GXModule.json Reference
   
 
     
@@ -692,14 +692,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../store-json-referenz/" class="md-nav__link">
+      <a href="../store-json-reference/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    store.json Referenz
+    store.json Reference
   
 
     
@@ -719,14 +719,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../lokal-testen/" class="md-nav__link">
+      <a href="../local-testing/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Lokal testen
+    Local Testing
   
 
     
@@ -746,14 +746,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../veroeffentlichung-guide/" class="md-nav__link">
+      <a href="../publishing-guide/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Veröffentlichung
+    Publishing Guide
   
 
     
@@ -773,14 +773,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../release-checkliste/" class="md-nav__link">
+      <a href="../release-checklist/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Release Checkliste
+    Release Checklist
   
 
     
@@ -800,14 +800,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../smarty-blocks-referenz/" class="md-nav__link">
+      <a href="../smarty-blocks-reference/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Smarty Blocks Referenz
+    Smarty Blocks Reference
   
 
     
@@ -837,46 +837,46 @@
 
 
 
-<h1 id="modulentwicklung-anleitung">Modulentwicklung Anleitung<a class="headerlink" href="#modulentwicklung-anleitung" title="Permanent link">&para;</a></h1>
-<p>Diese Anleitung zeigt Schritt für Schritt, wie du ein Gambio GX Modul mit dem <a href="https://github.com/gambio/store-module-skeleton">Store Module Skeleton</a> erstellst.</p>
-<h2 id="voraussetzungen">Voraussetzungen<a class="headerlink" href="#voraussetzungen" title="Permanent link">&para;</a></h2>
+<h1 id="module-development-guide">Module Development Guide<a class="headerlink" href="#module-development-guide" title="Permanent link">&para;</a></h1>
+<p>This guide walks you through building a Gambio GX module from scratch using the <a href="https://github.com/gambio/store-module-skeleton">Store Module Skeleton</a>.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Eine Gambio Shop Installation (lokal oder Testsystem)</li>
+<li>A Gambio shop installation (local or test system)</li>
 <li>PHP &gt;= 8.0</li>
-<li>Grundkenntnisse in PHP, HTML, CSS und JavaScript</li>
-<li>Ein GitHub Account (für die Veröffentlichung im Store)</li>
+<li>Basic knowledge of PHP, HTML, CSS, and JavaScript</li>
+<li>A GitHub account (required for Store publishing)</li>
 </ul>
-<h2 id="wie-gambio-module-funktionieren">Wie Gambio Module funktionieren<a class="headerlink" href="#wie-gambio-module-funktionieren" title="Permanent link">&para;</a></h2>
-<p>Jedes Gambio Modul liegt in <code>src/GXModules/{Vendor}/{ModuleName}/</code>. Der <code>{Vendor}</code> Ordner ist dein Firmen- oder Entwicklername, <code>{ModuleName}</code> ist der Name deines Moduls.</p>
-<p>Die einzige <strong>Pflichtdatei</strong> ist <code>GXModule.json</code>. Diese Datei registriert dein Modul im Module Center, wo Shop-Administratoren es installieren und deinstallieren können. Alles andere ist optional und hängt davon ab, was dein Modul tun soll.</p>
-<h2 id="schritt-1-modulverzeichnis-erstellen">Schritt 1: Modulverzeichnis erstellen<a class="headerlink" href="#schritt-1-modulverzeichnis-erstellen" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>src/GXModules/AcmeCorp/MeinModul/
+<h2 id="how-gambio-modules-work">How Gambio Modules Work<a class="headerlink" href="#how-gambio-modules-work" title="Permanent link">&para;</a></h2>
+<p>Every Gambio module lives inside <code>src/GXModules/{Vendor}/{ModuleName}/</code>. The <code>{Vendor}</code> folder is your company or developer name, and <code>{ModuleName}</code> is the name of your module.</p>
+<p>The only <strong>required</strong> file is <code>GXModule.json</code>. This file registers your module in the Module Center, where shop administrators can install and uninstall it. Everything else is optional and depends on what your module needs to do.</p>
+<h2 id="step-1-create-the-module-directory">Step 1: Create the Module Directory<a class="headerlink" href="#step-1-create-the-module-directory" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>src/GXModules/AcmeCorp/MyModule/
 </code></pre></div>
-<p>Ersetze <code>AcmeCorp</code> durch deinen Vendornamen und <code>MeinModul</code> durch den Namen deines Moduls.</p>
-<h2 id="schritt-2-gxmodulejson-erstellen">Schritt 2: GXModule.json erstellen<a class="headerlink" href="#schritt-2-gxmodulejson-erstellen" title="Permanent link">&para;</a></h2>
-<p>Dies ist die einzige Pflichtdatei. Das Minimum:</p>
+<p>Replace <code>AcmeCorp</code> with your vendor name and <code>MyModule</code> with your module name.</p>
+<h2 id="step-2-create-gxmodulejson">Step 2: Create GXModule.json<a class="headerlink" href="#step-2-create-gxmodulejson" title="Permanent link">&para;</a></h2>
+<p>This is the only mandatory file. At minimum:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mein_modul.PAGE_TITLE&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mein_modul.DESCRIPTION&quot;</span>
+<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_module.PAGE_TITLE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_module.DESCRIPTION&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Damit erscheint dein Modul im Module Center. Die Werte verweisen auf Übersetzungsschlüssel aus den TextPhrases-Dateien.</p>
-<h3 id="konfigurationsfelder-hinzufugen">Konfigurationsfelder hinzufügen<a class="headerlink" href="#konfigurationsfelder-hinzufugen" title="Permanent link">&para;</a></h3>
-<p>Um Administratoren eine Einstellungsseite zu geben, füge das <code>configuration</code> Array hinzu:</p>
+<p>This registers your module in the Module Center. The values reference translation keys from your TextPhrases files.</p>
+<h3 id="adding-configuration-fields">Adding Configuration Fields<a class="headerlink" href="#adding-configuration-fields" title="Permanent link">&para;</a></h3>
+<p>To give administrators a settings page, add the <code>configuration</code> array:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mein_modul.PAGE_TITLE&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mein_modul.DESCRIPTION&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_module.PAGE_TITLE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_module.DESCRIPTION&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;configuration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mein_modul.SECTION_EINSTELLUNGEN&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_module.SECTION_SETTINGS&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="nt">&quot;fields&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;featureAktivieren&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;enableFeature&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">                    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;checkbox&quot;</span><span class="p">,</span>
-<span class="w">                    </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mein_modul.LABEL_AKTIVIEREN&quot;</span>
+<span class="w">                    </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_module.LABEL_ENABLE&quot;</span>
 <span class="w">                </span><span class="p">},</span>
-<span class="w">                </span><span class="nt">&quot;apiSchluessel&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">                    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
-<span class="w">                    </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mein_modul.LABEL_API_KEY&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_module.LABEL_API_KEY&quot;</span><span class="p">,</span>
 <span class="w">                    </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="w">                </span><span class="p">}</span>
 <span class="w">            </span><span class="p">}</span>
@@ -884,60 +884,60 @@
 <span class="w">    </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Gambio generiert die Konfigurationsseite automatisch aus diesem JSON. Keine HTML-Templates oder Controller nötig.</p>
-<p>Die vollständige Feldtyp-Referenz findest du in der <a href="../gxmodule-json-referenz/">GXModule.json Referenz</a>.</p>
-<h3 id="lifecycle-hooks-hinzufugen-optional">Lifecycle Hooks hinzufügen (Optional)<a class="headerlink" href="#lifecycle-hooks-hinzufugen-optional" title="Permanent link">&para;</a></h3>
+<p>Gambio automatically generates the configuration page from this JSON. No HTML templates or controllers needed.</p>
+<p>For the complete field type reference, see <a href="../gxmodule-json-reference/">GXModule.json Reference</a>.</p>
+<h3 id="adding-lifecycle-hooks-optional">Adding Lifecycle Hooks (Optional)<a class="headerlink" href="#adding-lifecycle-hooks-optional" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Lifecycle Hooks sind <strong>komplett optional</strong>. Wenn dein Modul nur eine einfache Konfiguration braucht (Checkboxen, Textfelder, Selects usw.), benötigst du keine PHP-Action-Dateien. Gambio speichert und liest Konfigurationswerte automatisch. Hooks brauchst du nur, wenn dein Modul bei der Installation, Deinstallation oder beim Speichern eigene Logik ausführen muss (z.B. Datenbanktabellen anlegen, Caches leeren oder Eingaben validieren).</p>
+<p>Lifecycle hooks are <strong>completely optional</strong>. If your module only needs a simple configuration (checkboxes, text fields, selects, etc.), you do not need any PHP action files. Gambio handles storing and reading configuration values automatically. You only need hooks if your module requires custom logic during installation, uninstallation, or when saving settings (e.g. creating database tables, clearing caches, or validating input).</p>
 </div>
-<p>Du kannst eigenen PHP-Code ausführen, wenn das Modul installiert, deinstalliert oder wenn Einstellungen gespeichert werden:</p>
+<p>You can run custom PHP code when the module is installed, uninstalled, or when settings are saved:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;install&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;controller&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GXModules\\AcmeCorp\\MeinModul\\Admin\\Actions\\InstallAction&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;controller&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GXModules\\AcmeCorp\\MyModule\\Admin\\Actions\\InstallAction&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;onInstall&quot;</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="nt">&quot;uninstall&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;controller&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GXModules\\AcmeCorp\\MeinModul\\Admin\\Actions\\InstallAction&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;controller&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GXModules\\AcmeCorp\\MyModule\\Admin\\Actions\\InstallAction&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;onUninstall&quot;</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="nt">&quot;save&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;controller&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GXModules\\AcmeCorp\\MeinModul\\Admin\\Actions\\SaveAction&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;controller&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GXModules\\AcmeCorp\\MyModule\\Admin\\Actions\\SaveAction&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;onSave&quot;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><strong>Bei Auflösung über den DI-Container</strong> (Klasse im ServiceProvider registriert) erhält die Install/Uninstall-Methode nur die geparsten GXModule.json Daten:</p>
+<p><strong>When resolved via DI container</strong> (class registered in ServiceProvider), the install/uninstall method receives only the parsed GXModule.json data:</p>
 <div class="highlight"><pre><span></span><code><span class="x">public function onInstall(array $gxModulesJsonData): void</span>
 </code></pre></div>
-<p><strong>Bei Auflösung über MainFactory Fallback</strong> erhält sie:</p>
+<p><strong>When resolved via MainFactory fallback</strong>, it receives:</p>
 <div class="highlight"><pre><span></span><code><span class="x">public function onInstall($db, array $moduleData, $languageTextManager, $cacheControl): void</span>
 </code></pre></div>
 <ul>
-<li><code>$db</code>: CI_DB_query_builder Datenbankinstanz</li>
-<li><code>$moduleData</code>: Geparstes GXModule.json als Array</li>
-<li><code>$languageTextManager</code>: LanguageTextManager für Übersetzungen</li>
-<li><code>$cacheControl</code>: DataCache zum Cache leeren</li>
+<li><code>$db</code>: CI_DB_query_builder database instance</li>
+<li><code>$moduleData</code>: Parsed GXModule.json content as array</li>
+<li><code>$languageTextManager</code>: LanguageTextManager for translations</li>
+<li><code>$cacheControl</code>: DataCache for cache clearing</li>
 </ul>
-<p>Die Save-Methode erhält <code>($db, $configurationStorage, $languageTextManager, $cacheControl)</code>. Nutze sie für Cache-Invalidierung oder Validierung nach Konfigurationsänderungen.</p>
-<h3 id="beispiel-datenbanktabellen-in-lifecycle-hooks-erstellen">Beispiel: Datenbanktabellen in Lifecycle Hooks erstellen<a class="headerlink" href="#beispiel-datenbanktabellen-in-lifecycle-hooks-erstellen" title="Permanent link">&para;</a></h3>
+<p>The save method receives <code>($db, $configurationStorage, $languageTextManager, $cacheControl)</code>. Use it for cache invalidation or validation after config changes.</p>
+<h3 id="example-creating-database-tables-in-lifecycle-hooks">Example: Creating Database Tables in Lifecycle Hooks<a class="headerlink" href="#example-creating-database-tables-in-lifecycle-hooks" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Gambio hat kein automatisches Migrationssystem mit <code>up</code>/<code>down</code>. Wenn dein Modul eigene Datenbanktabellen braucht, musst du sie selbst in den Install- und Uninstall-Hooks erstellen und löschen.</p>
+<p>Gambio does not have an automatic migration system with <code>up</code>/<code>down</code>. If your module needs its own database tables, you must create and drop them yourself inside the install and uninstall hooks.</p>
 </div>
-<p>Hier ein vollständiges Beispiel einer Install/Uninstall Action-Klasse (MainFactory Variante):</p>
+<p>Here is a complete example of an install/uninstall action class (MainFactory variant):</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="c1">// Admin/Actions/InstallAction.php</span>
 
-<span class="k">namespace</span> <span class="nx">GXModules\AcmeCorp\MeinModul\Admin\Actions</span><span class="p">;</span>
+<span class="k">namespace</span> <span class="nx">GXModules\AcmeCorp\MyModule\Admin\Actions</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">InstallAction</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">onInstall</span><span class="p">(</span><span class="nv">$db</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$moduleData</span><span class="p">,</span> <span class="nv">$languageTextManager</span><span class="p">,</span> <span class="nv">$cacheControl</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
     <span class="p">{</span>
-        <span class="c1">// Eigene Tabelle für das Modul erstellen</span>
+        <span class="c1">// Create a custom table for the module</span>
         <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;</span>
-<span class="s2">            CREATE TABLE IF NOT EXISTS mein_modul_daten (</span>
+<span class="s2">            CREATE TABLE IF NOT EXISTS my_module_data (</span>
 <span class="s2">                id INT PRIMARY KEY AUTO_INCREMENT,</span>
 <span class="s2">                order_id INT NOT NULL,</span>
 <span class="s2">                external_ref VARCHAR(255) NOT NULL DEFAULT &#39;&#39;,</span>
@@ -948,25 +948,25 @@
 <span class="s2">            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4</span>
 <span class="s2">        &quot;</span><span class="p">);</span>
 
-        <span class="c1">// Optional: Standarddaten einfügen</span>
+        <span class="c1">// Optionally seed default data</span>
         <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;</span>
-<span class="s2">            INSERT IGNORE INTO mein_modul_daten (order_id, external_ref, sync_status)</span>
+<span class="s2">            INSERT IGNORE INTO my_module_data (order_id, external_ref, sync_status)</span>
 <span class="s2">            VALUES (0, &#39;initial&#39;, &#39;synced&#39;)</span>
 <span class="s2">        &quot;</span><span class="p">);</span>
     <span class="p">}</span>
 
     <span class="k">public</span> <span class="k">function</span> <span class="nf">onUninstall</span><span class="p">(</span><span class="nv">$db</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$moduleData</span><span class="p">,</span> <span class="nv">$languageTextManager</span><span class="p">,</span> <span class="nv">$cacheControl</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
     <span class="p">{</span>
-        <span class="c1">// Aufräumen: eigene Tabelle löschen</span>
-        <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;DROP TABLE IF EXISTS mein_modul_daten&quot;</span><span class="p">);</span>
+        <span class="c1">// Clean up: drop the custom table</span>
+        <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;DROP TABLE IF EXISTS my_module_data&quot;</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Wenn deine Klasse über den <strong>DI-Container</strong> aufgelöst wird (im ServiceProvider registriert), nutze stattdessen <code>Doctrine\DBAL\Connection</code>:</p>
+<p>If your class is resolved via the <strong>DI container</strong> (registered in ServiceProvider), inject <code>Doctrine\DBAL\Connection</code> instead:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="c1">// Admin/Actions/InstallAction.php</span>
 
-<span class="k">namespace</span> <span class="nx">GXModules\AcmeCorp\MeinModul\Admin\Actions</span><span class="p">;</span>
+<span class="k">namespace</span> <span class="nx">GXModules\AcmeCorp\MyModule\Admin\Actions</span><span class="p">;</span>
 
 <span class="k">use</span> <span class="nx">Doctrine\DBAL\Connection</span><span class="p">;</span>
 
@@ -982,7 +982,7 @@
     <span class="k">public</span> <span class="k">function</span> <span class="nf">onInstall</span><span class="p">(</span><span class="k">array</span> <span class="nv">$gxModulesJsonData</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
     <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">connection</span><span class="o">-&gt;</span><span class="na">executeStatement</span><span class="p">(</span><span class="s2">&quot;</span>
-<span class="s2">            CREATE TABLE IF NOT EXISTS mein_modul_daten (</span>
+<span class="s2">            CREATE TABLE IF NOT EXISTS my_module_data (</span>
 <span class="s2">                id INT PRIMARY KEY AUTO_INCREMENT,</span>
 <span class="s2">                order_id INT NOT NULL,</span>
 <span class="s2">                external_ref VARCHAR(255) NOT NULL DEFAULT &#39;&#39;,</span>
@@ -996,171 +996,171 @@
 
     <span class="k">public</span> <span class="k">function</span> <span class="nf">onUninstall</span><span class="p">(</span><span class="k">array</span> <span class="nv">$gxModulesJsonData</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
     <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">connection</span><span class="o">-&gt;</span><span class="na">executeStatement</span><span class="p">(</span><span class="s2">&quot;DROP TABLE IF EXISTS mein_modul_daten&quot;</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">connection</span><span class="o">-&gt;</span><span class="na">executeStatement</span><span class="p">(</span><span class="s2">&quot;DROP TABLE IF EXISTS my_module_data&quot;</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Verwende immer <code>CREATE TABLE IF NOT EXISTS</code> und <code>DROP TABLE IF EXISTS</code>, damit Install/Uninstall idempotent sind. Das verhindert Fehler, wenn das Modul erneut installiert wird oder der Hook mehrfach ausgeführt wird.</p>
+<p>Always use <code>CREATE TABLE IF NOT EXISTS</code> and <code>DROP TABLE IF EXISTS</code> to make your install/uninstall idempotent. This prevents errors if the module is reinstalled or the hook runs multiple times.</p>
 </div>
-<h2 id="schritt-3-ubersetzungen-hinzufugen">Schritt 3: Übersetzungen hinzufügen<a class="headerlink" href="#schritt-3-ubersetzungen-hinzufugen" title="Permanent link">&para;</a></h2>
-<p>Erstelle Sprachdateien, damit deine Modul-Labels übersetzbar sind:</p>
-<div class="highlight"><pre><span></span><code>Admin/TextPhrases/german/mein_modul.lang.inc.php
-Admin/TextPhrases/english/mein_modul.lang.inc.php
+<h2 id="step-3-add-translations">Step 3: Add Translations<a class="headerlink" href="#step-3-add-translations" title="Permanent link">&para;</a></h2>
+<p>Create language files so your module labels are translatable:</p>
+<div class="highlight"><pre><span></span><code>Admin/TextPhrases/german/my_module.lang.inc.php
+Admin/TextPhrases/english/my_module.lang.inc.php
 </code></pre></div>
-<p>Jede Datei gibt ein Key-Value Array zurück:</p>
+<p>Each file returns a key-value array:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="nv">$t_language_text_section_content_array</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;PAGE_TITLE&#39;</span>            <span class="o">=&gt;</span> <span class="s1">&#39;Mein Modul&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;DESCRIPTION&#39;</span>           <span class="o">=&gt;</span> <span class="s1">&#39;Dieses Modul macht etwas Nützliches.&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;SECTION_EINSTELLUNGEN&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Einstellungen&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;LABEL_AKTIVIEREN&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;Feature aktivieren&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;LABEL_API_KEY&#39;</span>         <span class="o">=&gt;</span> <span class="s1">&#39;API-Schlüssel&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;PAGE_TITLE&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;My Module&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;DESCRIPTION&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;This module does something useful.&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;SECTION_SETTINGS&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Settings&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;LABEL_ENABLE&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;Enable feature&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;LABEL_API_KEY&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;API Key&#39;</span><span class="p">,</span>
 <span class="p">];</span>
 </code></pre></div>
-<p>Der Sektionsname ergibt sich aus dem Dateinamen (ohne <code>.lang.inc.php</code>). Verweise auf Schlüssel in GXModule.json mit dem Muster <code>{sektion}.{KEY}</code>, z.B. <code>mein_modul.PAGE_TITLE</code>.</p>
-<p>In Smarty Templates: <code>{load_language_text section="mein_modul"}</code> dann <code>{$txt.KEY}</code></p>
+<p>The section name comes from the filename (without <code>.lang.inc.php</code>). Reference keys in GXModule.json as <code>{section}.{KEY}</code>, e.g. <code>my_module.PAGE_TITLE</code>.</p>
 <h3 id="shop-text-phrases">Shop Text Phrases<a class="headerlink" href="#shop-text-phrases" title="Permanent link">&para;</a></h3>
-<p>Wenn dein Modul Übersetzungen auf der Storefront benötigt (nicht nur im Admin), lege Sprachdateien in <code>Shop/TextPhrases/</code> ab:</p>
-<div class="highlight"><pre><span></span><code>Shop/TextPhrases/German/mein_modul.lang.inc.php
-Shop/TextPhrases/English/mein_modul.lang.inc.php
+<p>If your module needs translations on the storefront (not just in the admin), place language files in <code>Shop/TextPhrases/</code>:</p>
+<div class="highlight"><pre><span></span><code>Shop/TextPhrases/German/my_module.lang.inc.php
+Shop/TextPhrases/English/my_module.lang.inc.php
 </code></pre></div>
-<p>Beachte, dass die Sprachordnernamen großgeschrieben werden (<code>German</code>, <code>English</code>).</p>
-<h2 id="schritt-4-storefront-anpassungen-optional">Schritt 4: Storefront-Anpassungen (Optional)<a class="headerlink" href="#schritt-4-storefront-anpassungen-optional" title="Permanent link">&para;</a></h2>
+<p>Note that language folder names are capitalized (<code>German</code>, <code>English</code>).</p>
+<p>In Smarty templates, load them with: <code>{load_language_text section="my_module"}</code>, then use <code>{$txt.KEY}</code>.</p>
+<h2 id="step-4-add-storefront-customizations-optional">Step 4: Add Storefront Customizations (Optional)<a class="headerlink" href="#step-4-add-storefront-customizations-optional" title="Permanent link">&para;</a></h2>
 <h3 id="css-scss">CSS / SCSS<a class="headerlink" href="#css-scss" title="Permanent link">&para;</a></h3>
-<p>Erstelle eine <code>main.scss</code> Datei in <code>Shop/Themes/All/Css/</code>, um Styles für alle Themes hinzuzufügen:</p>
+<p>Create a <code>main.scss</code> file in <code>Shop/Themes/All/Css/</code> to add styles across all themes:</p>
 <div class="highlight"><pre><span></span><code>Shop/Themes/All/Css/main.scss
 </code></pre></div>
-<p>Diese Datei wird automatisch beim Theme-Style-Build eingebunden. Du kannst Styles direkt hinzufügen oder weitere SCSS-Dateien importieren:</p>
+<p>This file is automatically included when the theme styles are built. You can add your styles directly or import additional SCSS files:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// main.scss</span>
 <span class="k">@import</span><span class="w"> </span><span class="s1">&#39;components/buttons&#39;</span><span class="p">;</span>
 <span class="k">@import</span><span class="w"> </span><span class="s1">&#39;components/badges&#39;</span><span class="p">;</span>
 
-<span class="nc">.mein-modul-widget</span><span class="w"> </span><span class="p">{</span>
+<span class="nc">.my-module-widget</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">border</span><span class="nd">:</span><span class="w"> </span><span class="nt">1px</span><span class="w"> </span><span class="nt">solid</span><span class="w"> </span><span class="nn">#ccc</span><span class="o">;</span>
 <span class="w">    </span><span class="nt">padding</span><span class="nd">:</span><span class="w"> </span><span class="nt">1rem</span><span class="o">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Um ein bestimmtes Theme anzusprechen, ersetze <code>All</code> durch den Theme-Namen:</p>
+<p>To target a specific theme, replace <code>All</code> with the theme name:</p>
 <div class="highlight"><pre><span></span><code>Shop/Themes/Malibu/Css/main.scss
 </code></pre></div>
 <h3 id="javascript">JavaScript<a class="headerlink" href="#javascript" title="Permanent link">&para;</a></h3>
-<p>Platziere JavaScript-Dateien in <code>Shop/Themes/All/Javascript/{seite}/</code>, wobei <code>{seite}</code> der Storefront-Seite entspricht:</p>
-<div class="highlight"><pre><span></span><code>Shop/Themes/All/Javascript/product_info/mein_modul.js       Produktdetailseite
-Shop/Themes/All/Javascript/product_listing/mein_modul.js     Kategorieliste
-Shop/Themes/All/Javascript/shopping_cart/mein_modul.js       Warenkorb
-Shop/Themes/All/Javascript/index/mein_modul.js               Startseite
+<p>Place JavaScript files in <code>Shop/Themes/All/Javascript/{page}/</code> where <code>{page}</code> matches the storefront page:</p>
+<div class="highlight"><pre><span></span><code>Shop/Themes/All/Javascript/product_info/my_module.js   : Product detail page
+Shop/Themes/All/Javascript/product_listing/my_module.js : Category listing
+Shop/Themes/All/Javascript/shopping_cart/my_module.js   : Shopping cart
+Shop/Themes/All/Javascript/index/my_module.js           : Homepage
 </code></pre></div>
 <h3 id="smarty-template-overrides">Smarty Template Overrides<a class="headerlink" href="#smarty-template-overrides" title="Permanent link">&para;</a></h3>
-<p>Erweitere Smarty Template-Blocks, indem du die Theme-Verzeichnisstruktur spiegelst:</p>
+<p>Override Smarty template snippets by mirroring the theme directory structure:</p>
 <div class="highlight"><pre><span></span><code>Shop/Themes/All/snippets/footer/footer.html
 </code></pre></div>
-<p>Dies erweitert das Standard-Footer-Template für alle Themes. Siehe die <a href="../smarty-blocks-referenz/">Smarty Blocks Referenz</a> für alle verfügbaren Blocks.</p>
-<h2 id="schritt-5-admin-menueintrag-hinzufugen-optional">Schritt 5: Admin-Menüeintrag hinzufügen (Optional)<a class="headerlink" href="#schritt-5-admin-menueintrag-hinzufugen-optional" title="Permanent link">&para;</a></h2>
-<p>Erstelle <code>Admin/Menu/mein_modul.menu.json</code>, um einen Eintrag in der Admin-Seitenleiste hinzuzufügen:</p>
+<p>This replaces the default footer template across all themes.</p>
+<h2 id="step-5-add-an-admin-menu-entry-optional">Step 5: Add an Admin Menu Entry (Optional)<a class="headerlink" href="#step-5-add-an-admin-menu-entry-optional" title="Permanent link">&para;</a></h2>
+<p>Create <code>Admin/Menu/my_module.menu.json</code> to add an entry to the admin sidebar:</p>
 <div class="highlight"><pre><span></span><code><span class="p">[{</span>
-<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BOX_HEADING_MEIN_MODUL&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BOX_HEADING_MY_MODULE&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;sort&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;class&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fa fa-puzzle-piece&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mein_modul.PAGE_TITLE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_module.PAGE_TITLE&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;standalone&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
 <span class="w">        </span><span class="nt">&quot;sort&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;link&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;admin/mein-modul&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mein_modul.PAGE_TITLE&quot;</span>
+<span class="w">        </span><span class="nt">&quot;link&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;admin/my-module&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_module.PAGE_TITLE&quot;</span>
 <span class="w">    </span><span class="p">}]</span>
 <span class="p">}]</span>
 </code></pre></div>
-<p>Der <code>link</code> Wert ist relativ zur Shop-Root-URL (ohne Domain). Verwende moderne Routen-Pfade (z.B. <code>admin/mein-modul</code>), die zu deinen <code>routes.php</code> Definitionen passen.</p>
-<p>Dies ersetzt das veraltete XML-Menüformat (<code>menu_*.xml</code>). Nach dem Hinzufügen oder Ändern von Menüeinträgen muss der Modul-Cache im Gambio Admin geleert werden (<strong>Toolbox &gt; Cache</strong>).</p>
-<h2 id="schritt-6-bestehende-funktionalitat-mit-overloads-erweitern-optional">Schritt 6: Bestehende Funktionalität mit Overloads erweitern (Optional)<a class="headerlink" href="#schritt-6-bestehende-funktionalitat-mit-overloads-erweitern-optional" title="Permanent link">&para;</a></h2>
-<p>Overloads erlauben dir, jede Klasse zu erweitern, die von Gambios MainFactory verwaltet wird.</p>
+<p>The <code>link</code> value is relative to the shop root URL (without the domain). Use modern route paths (e.g. <code>admin/my-module</code>) that match your <code>routes.php</code> definitions.</p>
+<p>This replaces the deprecated XML menu format (<code>menu_*.xml</code>). After adding or changing menu entries, clear the module cache in the Gambio Admin (<strong>Toolbox &gt; Caches</strong>).</p>
+<h2 id="step-6-extend-existing-functionality-with-overloads-optional">Step 6: Extend Existing Functionality with Overloads (Optional)<a class="headerlink" href="#step-6-extend-existing-functionality-with-overloads-optional" title="Permanent link">&para;</a></h2>
+<p>Overloads let you extend any class managed by Gambio's MainFactory.</p>
 <h3 id="admin-overloads">Admin Overloads<a class="headerlink" href="#admin-overloads" title="Permanent link">&para;</a></h3>
-<p>Dateien in <code>Admin/Overloads/{KlassenName}/</code> platzieren:</p>
-<div class="highlight"><pre><span></span><code><span class="x">// Admin/Overloads/OrderExtenderComponent/MeinModulOrderExtender.inc.php</span>
+<p>Place files in <code>Admin/Overloads/{ClassName}/</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="x">// Admin/Overloads/OrderExtenderComponent/MyModuleOrderExtender.inc.php</span>
 
-<span class="x">class MeinModulOrderExtender extends MeinModulOrderExtender_parent</span>
+<span class="x">class MyModuleOrderExtender extends MyModuleOrderExtender_parent</span>
 <span class="x">{</span>
 <span class="x">    public function proceed()</span>
 <span class="x">    {</span>
 <span class="x">        parent::proceed();</span>
-<span class="x">        // Deine eigene Logik hier</span>
+<span class="x">        // Your custom logic here</span>
 <span class="x">    }</span>
 <span class="x">}</span>
 </code></pre></div>
-<p>Häufig verwendete Admin-Overload-Ziele:
-- <code>OrderExtenderComponent</code>: Bestelldetailseite
-- <code>AdminApplicationTopExtenderComponent</code>: Jede Admin-Seite (früh)
-- <code>AdminEditProductExtenderComponent</code>: Produktbearbeitungsseite
-- <code>PDFOrderExtenderComponent</code>: PDF-Rechnungserstellung</p>
+<p>Common admin overload targets:
+- <code>OrderExtenderComponent</code>: Order detail page
+- <code>AdminApplicationTopExtenderComponent</code>: Every admin page (early)
+- <code>AdminEditProductExtenderComponent</code>: Product editing page
+- <code>PDFOrderExtenderComponent</code>: PDF invoice generation</p>
 <h3 id="shop-overloads">Shop Overloads<a class="headerlink" href="#shop-overloads" title="Permanent link">&para;</a></h3>
-<p>Dateien in <code>Shop/Overloads/{KlassenName}/</code> platzieren:</p>
-<div class="highlight"><pre><span></span><code><span class="x">// Shop/Overloads/ApplicationTopExtenderComponent/MeinModulAppTop.inc.php</span>
+<p>Place files in <code>Shop/Overloads/{ClassName}/</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="x">// Shop/Overloads/ApplicationTopExtenderComponent/MyModuleAppTop.inc.php</span>
 
-<span class="x">class MeinModulAppTop extends MeinModulAppTop_parent</span>
+<span class="x">class MyModuleAppTop extends MyModuleAppTop_parent</span>
 <span class="x">{</span>
 <span class="x">    public function proceed()</span>
 <span class="x">    {</span>
 <span class="x">        parent::proceed();</span>
-<span class="x">        // Wird bei jedem Storefront-Seitenaufruf ausgeführt</span>
+<span class="x">        // Runs on every storefront page load</span>
 <span class="x">    }</span>
 <span class="x">}</span>
 </code></pre></div>
-<p>Regeln:
-1. Deine Klasse <strong>muss</strong> <code>{KlassenName}_parent</code> erweitern (eine Pseudo-Klasse, die von MainFactory aufgelöst wird)
-2. Rufe <strong>immer</strong> die Elternmethode auf, um die Overload-Kette zu erhalten
-3. Die Datei <strong>muss</strong> die Endung <code>.inc.php</code> verwenden</p>
-<h2 id="schritt-7-serviceprovider-fur-dependency-injection-optional">Schritt 7: ServiceProvider für Dependency Injection (Optional)<a class="headerlink" href="#schritt-7-serviceprovider-fur-dependency-injection-optional" title="Permanent link">&para;</a></h2>
-<p>Erstelle <code>MeinModulServiceProvider.php</code> im Modulwurzelverzeichnis, um Services im DI-Container zu registrieren:</p>
+<p>Rules:
+1. Your class <strong>must</strong> extend <code>{ClassName}_parent</code> (a pseudo-class resolved by MainFactory)
+2. <strong>Always</strong> call the parent method to preserve the overload chain
+3. The file <strong>must</strong> use the <code>.inc.php</code> extension</p>
+<h2 id="step-7-add-a-serviceprovider-for-dependency-injection-optional">Step 7: Add a ServiceProvider for Dependency Injection (Optional)<a class="headerlink" href="#step-7-add-a-serviceprovider-for-dependency-injection-optional" title="Permanent link">&para;</a></h2>
+<p>Create <code>MyModuleServiceProvider.php</code> at the module root to register services in the DI container:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
-<span class="k">namespace</span> <span class="nx">GXModules\AcmeCorp\MeinModul</span><span class="p">;</span>
+<span class="k">namespace</span> <span class="nx">GXModules\AcmeCorp\MyModule</span><span class="p">;</span>
 
 <span class="k">use</span> <span class="nx">Gambio\Core\Application\DependencyInjection\AbstractModuleBootableServiceProvider</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">MeinModulServiceProvider</span> <span class="k">extends</span> <span class="nx">AbstractModuleBootableServiceProvider</span>
+<span class="k">class</span> <span class="nc">MyModuleServiceProvider</span> <span class="k">extends</span> <span class="nx">AbstractModuleBootableServiceProvider</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">provides</span><span class="p">()</span><span class="o">:</span> <span class="k">array</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="p">[</span><span class="nx">MeinService</span><span class="o">::</span><span class="na">class</span><span class="p">];</span>
+        <span class="k">return</span> <span class="p">[</span><span class="nx">MyService</span><span class="o">::</span><span class="na">class</span><span class="p">];</span>
     <span class="p">}</span>
 
     <span class="k">public</span> <span class="k">function</span> <span class="nf">register</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
     <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">application</span><span class="o">-&gt;</span><span class="na">registerShared</span><span class="p">(</span><span class="nx">MeinService</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="nx">MeinServiceImpl</span><span class="o">::</span><span class="na">class</span><span class="p">)</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">application</span><span class="o">-&gt;</span><span class="na">registerShared</span><span class="p">(</span><span class="nx">MyService</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="nx">MyServiceImpl</span><span class="o">::</span><span class="na">class</span><span class="p">)</span>
             <span class="o">-&gt;</span><span class="na">addArgument</span><span class="p">(</span><span class="nx">\Gambio\Core\Configuration\ConfigurationService</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
     <span class="p">}</span>
 
     <span class="k">public</span> <span class="k">function</span> <span class="nf">boot</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
     <span class="p">{</span>
-        <span class="c1">// Event Listener über Inflections registrieren</span>
+        <span class="c1">// Register event listeners using inflections</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">application</span><span class="o">-&gt;</span><span class="na">inflect</span><span class="p">(</span><span class="nx">\Gambio\Core\Event\EventListenerProvider</span><span class="o">::</span><span class="na">class</span><span class="p">)</span>
-            <span class="o">-&gt;</span><span class="na">invokeMethod</span><span class="p">(</span><span class="s1">&#39;attachListener&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">EinEvent</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="nx">MeinEventListener</span><span class="o">::</span><span class="na">class</span><span class="p">]);</span>
+            <span class="o">-&gt;</span><span class="na">invokeMethod</span><span class="p">(</span><span class="s1">&#39;attachListener&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">SomeEvent</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="nx">MyEventListener</span><span class="o">::</span><span class="na">class</span><span class="p">]);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Verwende <code>AbstractModuleBootableServiceProvider</code> wenn du <code>boot()</code> brauchst (für Event Listener). Verwende <code>AbstractModuleServiceProvider</code> wenn du nur <code>register()</code> brauchst.</p>
-<h2 id="schritt-8-modul-klasse-fur-events-und-middleware-optional">Schritt 8: Modul-Klasse für Events und Middleware (Optional)<a class="headerlink" href="#schritt-8-modul-klasse-fur-events-und-middleware-optional" title="Permanent link">&para;</a></h2>
-<p>Erstelle <code>MeinModulModule.php</code> im Modulwurzelverzeichnis. Die Datei wird automatisch erkannt, wenn sie <code>*Module.php</code> heißt:</p>
+<p>Use <code>AbstractModuleBootableServiceProvider</code> when you need <code>boot()</code> (for event listeners). Use <code>AbstractModuleServiceProvider</code> if you only need <code>register()</code>.</p>
+<h2 id="step-8-add-a-module-class-for-events-and-middleware-optional">Step 8: Add a Module Class for Events and Middleware (Optional)<a class="headerlink" href="#step-8-add-a-module-class-for-events-and-middleware-optional" title="Permanent link">&para;</a></h2>
+<p>Create <code>MyModuleModule.php</code> at the module root. It is auto-detected when named <code>*Module.php</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
-<span class="k">namespace</span> <span class="nx">GXModules\AcmeCorp\MeinModul</span><span class="p">;</span>
+<span class="k">namespace</span> <span class="nx">GXModules\AcmeCorp\MyModule</span><span class="p">;</span>
 
 <span class="k">use</span> <span class="nx">Gambio\Core\Application\Modules\AbstractModule</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">MeinModulModule</span> <span class="k">extends</span> <span class="nx">AbstractModule</span>
+<span class="k">class</span> <span class="nc">MyModuleModule</span> <span class="k">extends</span> <span class="nx">AbstractModule</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">eventListeners</span><span class="p">()</span><span class="o">:</span> <span class="o">?</span><span class="k">array</span>
     <span class="p">{</span>
         <span class="k">return</span> <span class="p">[</span>
-            <span class="nx">EinEvent</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">MeinListener</span><span class="o">::</span><span class="na">class</span><span class="p">],</span>
+            <span class="nx">SomeEvent</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">MyListener</span><span class="o">::</span><span class="na">class</span><span class="p">],</span>
         <span class="p">];</span>
     <span class="p">}</span>
 
     <span class="k">public</span> <span class="k">function</span> <span class="nf">shopMiddleware</span><span class="p">()</span><span class="o">:</span> <span class="o">?</span><span class="k">array</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="p">[</span><span class="nx">MeinShopMiddleware</span><span class="o">::</span><span class="na">class</span><span class="p">];</span>
+        <span class="k">return</span> <span class="p">[</span><span class="nx">MyShopMiddleware</span><span class="o">::</span><span class="na">class</span><span class="p">];</span>
     <span class="p">}</span>
 
     <span class="k">public</span> <span class="k">function</span> <span class="nf">adminMiddleware</span><span class="p">()</span><span class="o">:</span> <span class="o">?</span><span class="k">array</span>
@@ -1179,111 +1179,111 @@ Shop/Themes/All/Javascript/index/mein_modul.js               Startseite
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="schritt-9-http-routen-hinzufugen-optional">Schritt 9: HTTP-Routen hinzufügen (Optional)<a class="headerlink" href="#schritt-9-http-routen-hinzufugen-optional" title="Permanent link">&para;</a></h2>
-<p>Erstelle <code>routes.php</code> im Modulwurzelverzeichnis für eigene HTTP-Endpunkte:</p>
+<h2 id="step-9-add-http-routes-optional">Step 9: Add HTTP Routes (Optional)<a class="headerlink" href="#step-9-add-http-routes-optional" title="Permanent link">&para;</a></h2>
+<p>Create <code>routes.php</code> at the module root for custom HTTP endpoints:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">Gambio\Core\Application\Routing\RouteCollector</span><span class="p">;</span>
 
 <span class="k">return</span> <span class="k">static</span> <span class="k">function</span> <span class="p">(</span><span class="nx">RouteCollector</span> <span class="nv">$routeCollector</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$routeCollector</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/admin/mein-modul&#39;</span><span class="p">,</span> <span class="nx">UebersichtAction</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+    <span class="nv">$routeCollector</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/admin/my-module&#39;</span><span class="p">,</span> <span class="nx">MyOverviewAction</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
 
-    <span class="nv">$routeCollector</span><span class="o">-&gt;</span><span class="na">group</span><span class="p">(</span><span class="s1">&#39;/admin/api/mein-modul&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">RouteCollector</span> <span class="nv">$group</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$group</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">AlleAbfragenAction</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
-        <span class="nv">$group</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">ErstellenAction</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
-        <span class="nv">$group</span><span class="o">-&gt;</span><span class="na">put</span><span class="p">(</span><span class="s1">&#39;/{id:\d+}&#39;</span><span class="p">,</span> <span class="nx">AktualisierenAction</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
-        <span class="nv">$group</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">(</span><span class="s1">&#39;/{id:\d+}&#39;</span><span class="p">,</span> <span class="nx">LoeschenAction</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+    <span class="nv">$routeCollector</span><span class="o">-&gt;</span><span class="na">group</span><span class="p">(</span><span class="s1">&#39;/admin/api/my-module&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">RouteCollector</span> <span class="nv">$group</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$group</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">FetchAllAction</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+        <span class="nv">$group</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">CreateAction</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+        <span class="nv">$group</span><span class="o">-&gt;</span><span class="na">put</span><span class="p">(</span><span class="s1">&#39;/{id:\d+}&#39;</span><span class="p">,</span> <span class="nx">UpdateAction</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+        <span class="nv">$group</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">(</span><span class="s1">&#39;/{id:\d+}&#39;</span><span class="p">,</span> <span class="nx">DeleteAction</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="p">};</span>
 </code></pre></div>
-<p>Handler-Klassen müssen PSR-15 <code>RequestHandlerInterface</code> implementieren und sollten im ServiceProvider registriert werden.</p>
-<h2 id="schritt-10-cronjob-hinzufugen-optional">Schritt 10: Cronjob hinzufügen (Optional)<a class="headerlink" href="#schritt-10-cronjob-hinzufugen-optional" title="Permanent link">&para;</a></h2>
-<p>Registriere einen geplanten Task mit 4 Dateien in <code>Admin/CronjobConfiguration/</code>:</p>
-<p><strong>MeinCronjob.json</strong> (Konfiguration):
+<p>Handler classes must implement PSR-15 <code>RequestHandlerInterface</code> and should be registered in the ServiceProvider.</p>
+<h2 id="step-10-add-a-cronjob-optional">Step 10: Add a Cronjob (Optional)<a class="headerlink" href="#step-10-add-a-cronjob-optional" title="Permanent link">&para;</a></h2>
+<p>Register a scheduled task with 4 files in <code>Admin/CronjobConfiguration/</code>:</p>
+<p><strong>MyCronjob.json</strong>: Configuration:
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MeinCronjob&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mein_cronjob.TITLE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MyCronjob&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_cronjob.TITLE&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;configuration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;active&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;checkbox&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mein_cronjob.LABEL_AKTIV&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_cronjob.LABEL_ACTIVE&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="nt">&quot;defaultValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
 <span class="w">        </span><span class="p">},</span>
 <span class="w">        </span><span class="nt">&quot;interval&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;interval&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;select&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mein_cronjob.LABEL_INTERVALL&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_cronjob.LABEL_INTERVAL&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="nt">&quot;defaultValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0 * * * *&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="nt">&quot;values&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*/5 * * * *&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mein_cronjob.ALLE_5_MINUTEN&quot;</span><span class="w"> </span><span class="p">},</span>
-<span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0 * * * *&quot;</span><span class="p">,</span><span class="w">   </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mein_cronjob.JEDE_STUNDE&quot;</span><span class="w"> </span><span class="p">},</span>
-<span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0 0 * * *&quot;</span><span class="p">,</span><span class="w">   </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mein_cronjob.TAEGLICH&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*/5 * * * *&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_cronjob.EVERY_5_MINUTES&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0 * * * *&quot;</span><span class="p">,</span><span class="w">   </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_cronjob.EVERY_HOUR&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0 0 * * *&quot;</span><span class="p">,</span><span class="w">   </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_cronjob.EVERY_DAY&quot;</span><span class="w"> </span><span class="p">}</span>
 <span class="w">            </span><span class="p">]</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></p>
-<p><strong>MeinCronjobTask.inc.php</strong> (Ausführungslogik):
-<div class="highlight"><pre><span></span><code><span class="x">class MeinCronjobTask extends AbstractCronjobTask</span>
+<p><strong>MyCronjobTask.inc.php</strong>: Execution logic:
+<div class="highlight"><pre><span></span><code><span class="x">class MyCronjobTask extends AbstractCronjobTask</span>
 <span class="x">{</span>
 <span class="x">    public function run(array $cronjobStartArguments): void</span>
 <span class="x">    {</span>
-<span class="x">        $this-&gt;logger-&gt;log(&#39;Starte Synchronisation...&#39;);</span>
-<span class="x">        // Deine geplante Aufgabe</span>
-<span class="x">        $this-&gt;logger-&gt;log(&#39;Synchronisation abgeschlossen.&#39;);</span>
+<span class="x">        $this-&gt;logger-&gt;log(&#39;Starting sync...&#39;);</span>
+<span class="x">        // Your scheduled task logic</span>
+<span class="x">        $this-&gt;logger-&gt;log(&#39;Sync complete.&#39;);</span>
 <span class="x">    }</span>
 <span class="x">}</span>
 </code></pre></div></p>
-<p><strong>MeinCronjobDependencies.inc.php</strong> (Abhängigkeiten):
-<div class="highlight"><pre><span></span><code><span class="x">class MeinCronjobDependencies extends AbstractCronjobDependencies</span>
+<p><strong>MyCronjobDependencies.inc.php</strong>: Dependencies:
+<div class="highlight"><pre><span></span><code><span class="x">class MyCronjobDependencies extends AbstractCronjobDependencies</span>
 <span class="x">{</span>
-<span class="x">    // Getter-Methoden für Services, die der Task braucht</span>
+<span class="x">    // Add getter methods for services the task needs</span>
 <span class="x">}</span>
 </code></pre></div></p>
-<p><strong>MeinCronjobLogger.inc.php</strong> (Logger):
-<div class="highlight"><pre><span></span><code><span class="x">class MeinCronjobLogger extends AbstractCronjobLogger</span>
+<p><strong>MyCronjobLogger.inc.php</strong>: Logger:
+<div class="highlight"><pre><span></span><code><span class="x">class MyCronjobLogger extends AbstractCronjobLogger</span>
 <span class="x">{</span>
-<span class="x">    // Die Standard-Implementierung reicht in der Regel aus</span>
+<span class="x">    // Default implementation is usually sufficient</span>
 <span class="x">}</span>
 </code></pre></div></p>
-<p>Füge Übersetzungen in <code>Admin/TextPhrases/{sprache}/mein_cronjob.lang.inc.php</code> hinzu.</p>
-<h2 id="schritt-11-indexhtml-dateien-hinzufugen">Schritt 11: index.html Dateien hinzufügen<a class="headerlink" href="#schritt-11-indexhtml-dateien-hinzufugen" title="Permanent link">&para;</a></h2>
-<p>Platziere eine leere <code>&lt;html&gt;&lt;/html&gt;</code> Datei namens <code>index.html</code> in <strong>jedem Verzeichnis</strong> deines Moduls. Dies ist eine Gambio-Konvention, um Directory Listing auf Webservern zu verhindern:</p>
+<p>Add translations in <code>Admin/TextPhrases/{lang}/my_cronjob.lang.inc.php</code>.</p>
+<h2 id="step-11-add-indexhtml-files">Step 11: Add index.html Files<a class="headerlink" href="#step-11-add-indexhtml-files" title="Permanent link">&para;</a></h2>
+<p>Place an empty <code>&lt;html&gt;&lt;/html&gt;</code> file named <code>index.html</code> in <strong>every directory</strong> of your module. This is a Gambio convention to prevent directory listing on web servers:</p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-<h2 id="minimales-vs-vollstandiges-modul">Minimales vs. vollständiges Modul<a class="headerlink" href="#minimales-vs-vollstandiges-modul" title="Permanent link">&para;</a></h2>
-<p>Nicht jedes Modul braucht alle Extension Points. Hier einige Beispiele:</p>
-<p><strong>Reines CSS-Modul</strong> (nur Stiländerungen):
+<h2 id="minimal-vs-full-module">Minimal vs. Full Module<a class="headerlink" href="#minimal-vs-full-module" title="Permanent link">&para;</a></h2>
+<p>Not every module needs all extension points. Here are some examples:</p>
+<p><strong>CSS-only module</strong> (just style changes):
 <div class="highlight"><pre><span></span><code>GXModules/AcmeCorp/PinkButtons/
     GXModule.json
     Shop/Themes/All/Css/pink_buttons.css
 </code></pre></div></p>
-<p><strong>JavaScript-Erweiterung</strong> (kein PHP nötig):
-<div class="highlight"><pre><span></span><code>GXModules/AcmeCorp/ProduktErweiterung/
+<p><strong>JavaScript enhancement</strong> (no PHP needed):
+<div class="highlight"><pre><span></span><code>GXModules/AcmeCorp/ProductEnhancer/
     GXModule.json
-    Shop/Themes/All/Javascript/product_info/erweiterung.js
+    Shop/Themes/All/Javascript/product_info/enhancer.js
 </code></pre></div></p>
-<p><strong>Vollständiges Modul</strong> (alle Extension Points):
-<div class="highlight"><pre><span></span><code>GXModules/AcmeCorp/MeinModul/
+<p><strong>Full-featured module</strong> (all extension points):
+<div class="highlight"><pre><span></span><code>GXModules/AcmeCorp/MyModule/
     GXModule.json
-    MeinModulServiceProvider.php
-    MeinModulModule.php
+    MyModuleServiceProvider.php
+    MyModuleModule.php
     routes.php
     Admin/Actions/...
     Admin/CronjobConfiguration/...
-    Admin/Menu/mein_modul.menu.json
+    Admin/Menu/my_module.menu.json
     Admin/Overloads/...
     Admin/TextPhrases/...
     Shop/Overloads/...
     Shop/Themes/All/...
 </code></pre></div></p>
-<h2 id="nachste-schritte">Nächste Schritte<a class="headerlink" href="#nachste-schritte" title="Permanent link">&para;</a></h2>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../gxmodule-json-referenz/">GXModule.json Referenz</a>: Vollständige Feldtyp-Dokumentation</li>
-<li><a href="../lokal-testen/">Lokal testen</a>: Dein Modul testen</li>
-<li><a href="../store-json-referenz/">store.json Referenz</a>: Store-Metadaten-Format</li>
-<li><a href="../veroeffentlichung-guide/">Veröffentlichung</a>: Modul im Gambio Store einreichen</li>
+<li><a href="../gxmodule-json-reference/">GXModule.json Reference</a>: Complete field type documentation</li>
+<li><a href="../local-testing/">Local Testing</a>: How to test your module</li>
+<li><a href="../store-json-reference/">store.json Reference</a>: Store metadata format</li>
+<li><a href="../publishing-guide/">Publishing Guide</a>: How to submit to the Gambio Store</li>
 </ul>
 
 
@@ -1308,7 +1308,7 @@ Shop/Themes/All/Javascript/index/mein_modul.js               Startseite
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  Zurück zum Seitenanfang
+  Back to top
 </button>
         
       </main>
@@ -1374,7 +1374,7 @@ Shop/Themes/All/Javascript/index/mein_modul.js               Startseite
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["toc.autohide", "navigation.expand", "toc.integrate", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["toc.autohide", "navigation.expand", "toc.integrate", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
