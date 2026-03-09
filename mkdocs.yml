@@ -1,0 +1,94 @@
+site_name: Store Module Skeleton
+site_url: https://gambio.github.io/store-module-skeleton/
+docs_dir: ./docs
+site_dir: ./site
+copyright: Copyright &copy; 2026 Gambio GmbH
+theme:
+  name: material
+  custom_dir: html
+  favicon: favicon.ico
+  logo: logo.svg
+  language: en
+  palette:
+    - media: "(prefers-color-scheme)"
+      scheme: gambio
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: gambio
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: yellow
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - toc.autohide
+    - navigation.tabs
+    - navigation.expand
+    - toc.integrate
+    - navigation.top
+extra:
+  generator: false
+  social:
+    - icon: gambio/white
+      link: https://www.gambio-support.de
+      name: Gambio Kundenportal
+    - icon: fontawesome/brands/github
+      link: https://github.com/gambio/store-module-skeleton
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/gambio-gmbh
+extra_css:
+  - assets/css/extra.css
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.smartsymbols
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      options:
+        custom_icons:
+          - html/.icons
+  - def_list
+  - footnotes
+  - abbr
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      toc_depth: 4
+      permalink: true
+plugins:
+  - search:
+      lang:
+        - en
+        - de
+      separator: '[\s\-\.]+'
+nav:
+  - Home: index.md
+  - English:
+      - Module Development Guide: en/module-development-guide.md
+      - GXModule.json Reference: en/gxmodule-json-reference.md
+      - store.json Reference: en/store-json-reference.md
+      - Local Testing: en/local-testing.md
+      - Publishing Guide: en/publishing-guide.md
+      - Release Checklist: en/release-checklist.md
+      - Smarty Blocks Reference: en/smarty-blocks-reference.md
+  - Deutsch:
+      - Modulentwicklung Anleitung: de/modulentwicklung-anleitung.md
+      - GXModule.json Referenz: de/gxmodule-json-referenz.md
+      - store.json Referenz: de/store-json-referenz.md
+      - Lokal testen: de/lokal-testen.md
+      - Veröffentlichung: de/veroeffentlichung-guide.md
+      - Release Checkliste: de/release-checkliste.md
+      - Smarty Blocks Referenz: de/smarty-blocks-referenz.md
