@@ -15,7 +15,61 @@ This skeleton demonstrates **all major extension points** available to third-par
 
 > **Important:** `XYZ` is used as a placeholder throughout the entire skeleton — both as the directory name (`src/GXModules/XYZ/`) and as the PHP namespace (`GXModules\XYZ\Skeleton`). You **must** replace it with your own vendor name before publishing.
 
-## File Structure
+## Minimal Module
+
+This skeleton showcases every extension point, but a module does **not** need all of them. The only required file is `GXModule.json` — everything else is optional.
+
+The simplest possible module consists of just a `GXModule.json` and one or more theme overrides (CSS, JavaScript, or Smarty template changes):
+
+```
+src/GXModules/AcmeCorp/PinkButtons/
+├── GXModule.json
+└── Shop/
+    └── Themes/All/
+        └── Css/
+            └── pink_buttons.css
+```
+
+With a minimal `GXModule.json`:
+
+```json
+{
+    "title": "pink_buttons.PAGE_TITLE",
+    "description": "pink_buttons.DESCRIPTION"
+}
+```
+
+This is enough to make the module appear in the Module Center, where users can install and uninstall it. When installed, the CSS file is automatically loaded on every storefront page.
+
+**Other minimal examples:**
+
+A module that only modifies the product detail page via JavaScript:
+
+```
+src/GXModules/AcmeCorp/ProductEnhancer/
+├── GXModule.json
+└── Shop/
+    └── Themes/All/
+        └── Javascript/
+            └── product_info/
+                └── enhancer.js
+```
+
+A module that overrides a Smarty template block across all themes:
+
+```
+src/GXModules/AcmeCorp/CustomFooter/
+├── GXModule.json
+└── Shop/
+    └── Themes/All/
+        └── snippets/
+            └── footer/
+                └── footer.html
+```
+
+You can combine any of the extension points described below as needed — add a `SkeletonServiceProvider.php` only if you need DI, add `routes.php` only if you need custom HTTP endpoints, add `Admin/CronjobConfiguration/` only if you need scheduled tasks, and so on.
+
+## File Structure (Full Skeleton)
 
 ```
 store-module-skeleton/
