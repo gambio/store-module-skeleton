@@ -57,7 +57,18 @@ This is enough to make the module appear in the Module Center.
 1. The class is first looked up in the DI container (if registered via ServiceProvider)
 2. Fallback: resolved via MainFactory
 
+**Method signature (DI container):**
+
+When the class is resolved via the DI container, the method receives only the parsed GXModule.json data:
+
+```php
+public function onInstall(array $gxModulesJsonData): void
+```
+
 **Method signature (MainFactory fallback):**
+
+When the class is resolved via MainFactory, the method receives four parameters:
+
 ```php
 public function onInstall($db, array $moduleData, $languageTextManager, $cacheControl): void
 ```
@@ -304,8 +315,10 @@ Multiple-choice selection.
     "label": "my_module.LABEL_OPTIONS",
     "values": [
         { "value": "a", "text": "Option A" },
-        { "value": "b", "text": "Option B" }
-    ]
+        { "value": "b", "text": "Option B" },
+        { "value": "c", "text": "Option C" }
+    ],
+    "selected": ["a", "b"]
 }
 ```
 
@@ -371,7 +384,7 @@ An action button that triggers an AJAX call.
 }
 ```
 
-- `color`: Button color: `primary`, `warning`, `danger`, `success`
+- `color`: Button color: `default`, `primary`, `success`, `info`, `warning`, `danger`, `link`
 - `action.controller`: PHP class to call (must extend `GXModuleController`)
 - `action.method`: Method name to invoke
 - `action.message`: Translation key for the success message
@@ -392,7 +405,9 @@ The `modal` value must match a field key of type `modal` in the same section.
 
 ### modal
 
-A confirmation dialog triggered by a button.
+A confirmation dialog triggered by a button. Use `description` for simple text or `content` for custom HTML.
+
+**Modal with text:**
 
 ```json
 {
@@ -415,6 +430,30 @@ A confirmation dialog triggered by a button.
 }
 ```
 
+**Modal with rendered HTML:**
+
+```json
+{
+    "type": "modal",
+    "title": "my_module.MODAL_TITLE",
+    "content": "AcmeCorp/MyModule/Admin/Html/modal_content.html",
+    "buttons": {
+        "close": { "text": "buttons.cancel" },
+        "confirm": {
+            "text": "my_module.BTN_CONFIRM",
+            "action": {
+                "controller": "GXModules\\AcmeCorp\\MyModule\\Admin\\Actions\\SomeAction",
+                "method": "execute",
+                "message": "my_module.MSG_DONE"
+            }
+        }
+    }
+}
+```
+
+The `content` attribute references an HTML file relative to the GXModules directory that will be rendered inside the modal.
+```
+
 ## Common Field Properties
 
 These properties can be added to most field types:
@@ -424,8 +463,11 @@ These properties can be added to most field types:
 | `label` | string | Translation key for the field label |
 | `required` | boolean | Makes the field required |
 | `default_value` | string | Default value for the field |
-| `languageDependent` | boolean | Render per-language input tabs |
-| `tooltip` | object | Add an info or warning tooltip |
+| `readonly` | boolean | Makes the field read-only (for text, email, number, date, datetime, textarea, editor) |
+| `regex` | string | Validation pattern the input value must match (for text, password, email, number) |
+| `selected` | array | Default selected values for multiselect fields |
+| `languageDependent` | boolean | Render per-language input tabs (works with text-based field types, not just editor) |
+| `tooltip` | object | Add an info or error tooltip |
 
 ### Tooltips
 
@@ -438,8 +480,33 @@ These properties can be added to most field types:
 }
 ```
 
-- `type`: `info` (blue) or `warning` (yellow)
+- `type`: `info` (blue) or `error` (red)
 - `text`: Translation key for the tooltip text
+
+## Reading Configuration Values
+
+To read saved configuration values in PHP, use the `GXModuleConfigurationStorage`:
+
+```php
+$configurationStorage = MainFactory::create('GXModuleConfigurationStorage', 'AcmeCorp/MyModule');
+$isActive = $configurationStorage->get('enableFeature');
+$apiKey = $configurationStorage->get('apiKey');
+```
+
+The second argument to `MainFactory::create` is `{Vendor}/{Module}`.
+
+!!! note
+    If no configuration has been saved yet, `GXModuleConfigurationStorage` returns the `default_value` from the `GXModule.json`.
+
+### Return types per field type
+
+| Type | Return value |
+|------|-------------|
+| `checkbox` | string: `"1"` for true, `"0"` for false |
+| `text`, `password`, `email`, `number`, `color`, `date`, `datetime`, `textarea`, `editor` | string |
+| `file` | string: file path relative to shop root |
+| `select`, `customer_group`, `order_status`, `countries`, `languages` | string |
+| `multiselect` | array |
 
 ## Complete Example
 

@@ -57,7 +57,18 @@ Das reicht aus, damit das Modul im Module Center erscheint.
 1. Die Klasse wird zuerst im DI-Container gesucht (wenn per ServiceProvider registriert)
 2. Fallback: Auflösung über MainFactory
 
+**Methodensignatur (DI-Container):**
+
+Wenn die Klasse über den DI-Container aufgelöst wird, erhält die Methode nur die geparsten GXModule.json Daten:
+
+```php
+public function onInstall(array $gxModulesJsonData): void
+```
+
 **Methodensignatur (MainFactory Fallback):**
+
+Wenn die Klasse über MainFactory aufgelöst wird, erhält die Methode vier Parameter:
+
 ```php
 public function onInstall($db, array $moduleData, $languageTextManager, $cacheControl): void
 ```
@@ -304,8 +315,10 @@ Mehrfachauswahl.
     "label": "mein_modul.LABEL_OPTIONEN",
     "values": [
         { "value": "a", "text": "Option A" },
-        { "value": "b", "text": "Option B" }
-    ]
+        { "value": "b", "text": "Option B" },
+        { "value": "c", "text": "Option C" }
+    ],
+    "selected": ["a", "b"]
 }
 ```
 
@@ -371,7 +384,7 @@ Ein Aktionsbutton, der einen AJAX-Aufruf auslöst.
 }
 ```
 
-- `color`: Buttonfarbe (`primary`, `warning`, `danger`, `success`)
+- `color`: Buttonfarbe (`default`, `primary`, `success`, `info`, `warning`, `danger`, `link`)
 - `action.controller`: PHP-Klasse (muss `GXModuleController` erweitern)
 - `action.method`: Methodenname
 - `action.message`: Übersetzungsschlüssel für die Erfolgsmeldung
@@ -392,7 +405,9 @@ Der `modal` Wert muss einem Feldschlüssel vom Typ `modal` in derselben Sektion 
 
 ### modal
 
-Ein Bestätigungsdialog, der von einem Button ausgelöst wird.
+Ein Bestätigungsdialog, der von einem Button ausgelöst wird. Verwende `description` für einfachen Text oder `content` für eigenes HTML.
+
+**Modal mit Text:**
 
 ```json
 {
@@ -415,6 +430,30 @@ Ein Bestätigungsdialog, der von einem Button ausgelöst wird.
 }
 ```
 
+**Modal mit gerendertem HTML:**
+
+```json
+{
+    "type": "modal",
+    "title": "mein_modul.MODAL_TITEL",
+    "content": "AcmeCorp/MeinModul/Admin/Html/modal_inhalt.html",
+    "buttons": {
+        "close": { "text": "buttons.cancel" },
+        "confirm": {
+            "text": "mein_modul.BTN_BESTAETIGEN",
+            "action": {
+                "controller": "GXModules\\AcmeCorp\\MeinModul\\Admin\\Actions\\EineAction",
+                "method": "ausfuehren",
+                "message": "mein_modul.MSG_FERTIG"
+            }
+        }
+    }
+}
+```
+
+Das `content` Attribut verweist auf eine HTML-Datei relativ zum GXModules-Verzeichnis, die im Modal gerendert wird.
+```
+
 ## Allgemeine Feldeigenschaften
 
 Diese Eigenschaften können bei den meisten Feldtypen verwendet werden:
@@ -424,8 +463,11 @@ Diese Eigenschaften können bei den meisten Feldtypen verwendet werden:
 | `label` | string | Übersetzungsschlüssel für das Feldlabel |
 | `required` | boolean | Macht das Feld zum Pflichtfeld |
 | `default_value` | string | Standardwert für das Feld |
-| `languageDependent` | boolean | Zeigt pro Sprache einen eigenen Eingabe-Tab an |
-| `tooltip` | object | Fügt einen Info- oder Warnungs-Tooltip hinzu |
+| `readonly` | boolean | Macht das Feld schreibgeschützt (für text, email, number, date, datetime, textarea, editor) |
+| `regex` | string | Validierungsmuster, dem der Eingabewert entsprechen muss (für text, password, email, number) |
+| `selected` | array | Vorausgewählte Werte für Multiselect-Felder |
+| `languageDependent` | boolean | Zeigt pro Sprache einen eigenen Eingabe-Tab an (funktioniert mit textbasierten Feldtypen, nicht nur editor) |
+| `tooltip` | object | Fügt einen Info- oder Fehler-Tooltip hinzu |
 
 ### Tooltips
 
@@ -438,8 +480,33 @@ Diese Eigenschaften können bei den meisten Feldtypen verwendet werden:
 }
 ```
 
-- `type`: `info` (blau) oder `warning` (gelb)
+- `type`: `info` (blau) oder `error` (rot)
 - `text`: Übersetzungsschlüssel für den Tooltip-Text
+
+## Konfigurationswerte lesen
+
+Um gespeicherte Konfigurationswerte in PHP zu lesen, verwende den `GXModuleConfigurationStorage`:
+
+```php
+$configurationStorage = MainFactory::create('GXModuleConfigurationStorage', 'AcmeCorp/MeinModul');
+$istAktiv = $configurationStorage->get('featureAktivieren');
+$apiKey = $configurationStorage->get('apiSchluessel');
+```
+
+Das zweite Argument für `MainFactory::create` ist `{Vendor}/{Modul}`.
+
+!!! note
+    Wenn noch keine Konfiguration gespeichert wurde, gibt `GXModuleConfigurationStorage` den `default_value` aus der `GXModule.json` zurück.
+
+### Rückgabetypen pro Feldtyp
+
+| Typ | Rückgabewert |
+|-----|-------------|
+| `checkbox` | string: `"1"` für true, `"0"` für false |
+| `text`, `password`, `email`, `number`, `color`, `date`, `datetime`, `textarea`, `editor` | string |
+| `file` | string: Dateipfad relativ zum Shop-Root |
+| `select`, `customer_group`, `order_status`, `countries`, `languages` | string |
+| `multiselect` | array |
 
 ## Vollständiges Beispiel
 

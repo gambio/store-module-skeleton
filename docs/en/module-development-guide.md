@@ -91,7 +91,22 @@ You can run custom PHP code when the module is installed, uninstalled, or when s
 }
 ```
 
-The install method receives `($db, $moduleData, $languageTextManager, $cacheControl)`. Use it for database table creation or initial data seeding.
+**When resolved via DI container** (class registered in ServiceProvider), the install/uninstall method receives only the parsed GXModule.json data:
+
+```php
+public function onInstall(array $gxModulesJsonData): void
+```
+
+**When resolved via MainFactory fallback**, it receives:
+
+```php
+public function onInstall($db, array $moduleData, $languageTextManager, $cacheControl): void
+```
+
+- `$db`: CI_DB_query_builder database instance
+- `$moduleData`: Parsed GXModule.json content as array
+- `$languageTextManager`: LanguageTextManager for translations
+- `$cacheControl`: DataCache for cache clearing
 
 The save method receives `($db, $configurationStorage, $languageTextManager, $cacheControl)`. Use it for cache invalidation or validation after config changes.
 
@@ -119,20 +134,46 @@ $t_language_text_section_content_array = [
 
 The section name comes from the filename (without `.lang.inc.php`). Reference keys in GXModule.json as `{section}.{KEY}`, e.g. `my_module.PAGE_TITLE`.
 
-## Step 4: Add Storefront Customizations (Optional)
+### Shop Text Phrases
 
-### CSS
-
-Place CSS files in `Shop/Themes/All/Css/` to load them on every storefront page across all themes:
+If your module needs translations on the storefront (not just in the admin), place language files in `Shop/TextPhrases/`:
 
 ```
-Shop/Themes/All/Css/my_module.css
+Shop/TextPhrases/German/my_module.lang.inc.php
+Shop/TextPhrases/English/my_module.lang.inc.php
+```
+
+Note that language folder names are capitalized (`German`, `English`).
+
+In Smarty templates, load them with: `{load_language_text section="my_module"}`, then use `{$txt.KEY}`.
+
+## Step 4: Add Storefront Customizations (Optional)
+
+### CSS / SCSS
+
+Create a `main.scss` file in `Shop/Themes/All/Css/` to add styles across all themes:
+
+```
+Shop/Themes/All/Css/main.scss
+```
+
+This file is automatically included when the theme styles are built. You can add your styles directly or import additional SCSS files:
+
+```scss
+// main.scss
+@import 'components/buttons';
+@import 'components/badges';
+
+.my-module-widget {
+    border: 1px solid #ccc;
+    padding: 1rem;
+}
 ```
 
 To target a specific theme, replace `All` with the theme name:
 
 ```
-Shop/Themes/Malibu/Css/my_module.css
+Shop/Themes/Malibu/Css/main.scss
 ```
 
 ### JavaScript
@@ -169,13 +210,15 @@ Create `Admin/Menu/my_module.menu.json` to add an entry to the admin sidebar:
     "type": "standalone",
     "items": [{
         "sort": 10,
-        "link": "admin.php?do=MyModule",
+        "link": "admin/my-module",
         "title": "my_module.PAGE_TITLE"
     }]
 }]
 ```
 
-This replaces the deprecated XML menu format (`menu_*.xml`).
+The `link` value is relative to the shop root URL (without the domain). Use modern route paths (e.g. `admin/my-module`) that match your `routes.php` definitions.
+
+This replaces the deprecated XML menu format (`menu_*.xml`). After adding or changing menu entries, clear the module cache in the Gambio Admin (**Toolbox > Caches**).
 
 ## Step 6: Extend Existing Functionality with Overloads (Optional)
 
@@ -246,20 +289,15 @@ class MyModuleServiceProvider extends AbstractModuleBootableServiceProvider
 
     public function register(): void
     {
-        $this->application->registerShared(MyService::class, function () {
-            return new MyService(
-                $this->application->get(\Gambio\Core\Configuration\ConfigurationService::class)
-            );
-        });
+        $this->application->registerShared(MyService::class, MyServiceImpl::class)
+            ->addArgument(\Gambio\Core\Configuration\ConfigurationService::class);
     }
 
     public function boot(): void
     {
-        // Register event listeners after all providers are loaded
-        $this->application->attachEventListener(
-            SomeEvent::class,
-            MyEventListener::class
-        );
+        // Register event listeners using inflections
+        $this->application->inflect(\Gambio\Core\Event\EventListenerProvider::class)
+            ->invokeMethod('attachListener', [SomeEvent::class, MyEventListener::class]);
     }
 }
 ```
