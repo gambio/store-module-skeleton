@@ -67,7 +67,10 @@ Gambio automatically generates the configuration page from this JSON. No HTML te
 
 For the complete field type reference, see [GXModule.json Reference](./gxmodule-json-reference.md).
 
-### Adding Lifecycle Hooks
+### Adding Lifecycle Hooks (Optional)
+
+!!! note
+    Lifecycle hooks are **completely optional**. If your module only needs a simple configuration (checkboxes, text fields, selects, etc.), you do not need any PHP action files. Gambio handles storing and reading configuration values automatically. You only need hooks if your module requires custom logic during installation, uninstallation, or when saving settings (e.g. creating database tables, clearing caches, or validating input).
 
 You can run custom PHP code when the module is installed, uninstalled, or when settings are saved:
 

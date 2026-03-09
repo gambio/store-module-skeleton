@@ -28,12 +28,15 @@ Das reicht aus, damit das Modul im Module Center erscheint.
 | `sortOrder` | number | Position in der Module Center Liste (Standard: 0) |
 | `forceIncludingFiles` | boolean | Moduldateien auch laden wenn nicht installiert (Standard: false) |
 | `config_url` | string | Eigene URL für die Konfigurationsseite (überschreibt die automatisch generierte) |
-| `install` | object | PHP-Hook beim Installieren |
-| `uninstall` | object | PHP-Hook beim Deinstallieren |
-| `save` | object | PHP-Hook nach dem Speichern der Konfiguration |
+| `install` | object | *(Optional)* PHP-Hook beim Installieren |
+| `uninstall` | object | *(Optional)* PHP-Hook beim Deinstallieren |
+| `save` | object | *(Optional)* PHP-Hook nach dem Speichern der Konfiguration |
 | `configuration` | array | Konfigurationssektionen mit Formularfeldern |
 
-## Lifecycle Hooks
+## Lifecycle Hooks (Optional)
+
+!!! note
+    Lifecycle Hooks sind **komplett optional**. Wenn dein Modul nur eine einfache Konfigurationsseite braucht, musst du keine `install`, `uninstall` oder `save` Hooks definieren. Gambio speichert und liest Konfigurationswerte automatisch. Füge Hooks nur hinzu, wenn dein Modul eigene Logik benötigt (z.B. Datenbanktabellen anlegen, Caches leeren oder Eingaben validieren).
 
 ### install / uninstall
 

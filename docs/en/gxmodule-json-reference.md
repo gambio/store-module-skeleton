@@ -28,12 +28,15 @@ This is enough to make the module appear in the Module Center.
 | `sortOrder` | number | Position in the Module Center list (default: 0) |
 | `forceIncludingFiles` | boolean | Force-load module files even when not installed (default: false) |
 | `config_url` | string | Custom URL for the configuration page (overrides auto-generated page) |
-| `install` | object | PHP hook called on module installation |
-| `uninstall` | object | PHP hook called on module uninstallation |
-| `save` | object | PHP hook called after configuration is saved |
+| `install` | object | *(Optional)* PHP hook called on module installation |
+| `uninstall` | object | *(Optional)* PHP hook called on module uninstallation |
+| `save` | object | *(Optional)* PHP hook called after configuration is saved |
 | `configuration` | array | Configuration sections with form fields |
 
-## Lifecycle Hooks
+## Lifecycle Hooks (Optional)
+
+!!! note
+    Lifecycle hooks are **completely optional**. If your module only needs a simple configuration page, you do not need to define `install`, `uninstall`, or `save` hooks. Gambio stores and reads configuration values automatically. Only add hooks if your module needs custom logic (e.g. creating database tables, clearing caches, or validating input).
 
 ### install / uninstall
 
