@@ -44,7 +44,14 @@ To preview the documentation locally:
 
 ```bash
 pip install mkdocs-material
+
+# English (default)
 mkdocs serve
+
+# German
+mkdocs serve --config-file mkdocs.de.yml
 ```
 
 Then open http://127.0.0.1:8000 in your browser.
+
+The site uses two separate MkDocs configurations (`mkdocs.yml` for English, `mkdocs.de.yml` for German) connected by a language switcher in the header. The GitHub Actions workflow builds both and deploys English at `/` and German at `/de/`.

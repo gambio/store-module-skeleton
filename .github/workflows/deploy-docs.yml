@@ -10,14 +10,29 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Build
-        uses: Tiryoh/actions-mkdocs@v0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          mkdocs_version: 'latest'
-          requirements: '/requirements.txt'
-          configfile: '/mkdocs.yml'
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build English site
+        run: mkdocs build --config-file mkdocs.yml
+
+      - name: Build German site
+        run: mkdocs build --config-file mkdocs.de.yml
+
+      - name: Merge sites
+        run: |
+          mkdir -p ./site-merged/de
+          cp -r ./site/en/* ./site-merged/
+          cp -r ./site/de/* ./site-merged/de/
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
+          publish_dir: ./site-merged

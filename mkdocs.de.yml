@@ -1,32 +1,32 @@
-site_name: Gambio Store Module Documentation
-site_url: https://gambio.github.io/store-module-skeleton/
-docs_dir: ./docs/en
-site_dir: ./site/en
+site_name: Gambio Store Modul Dokumentation
+site_url: https://gambio.github.io/store-module-skeleton/de/
+docs_dir: ./docs/de
+site_dir: ./site/de
 copyright: Copyright &copy; 2026 Gambio GmbH
 theme:
   name: material
   custom_dir: html
   favicon: favicon.ico
   logo: logo.svg
-  language: en
+  language: de
   palette:
     - media: "(prefers-color-scheme)"
       scheme: gambio
       toggle:
         icon: material/brightness-auto
-        name: Switch to dark mode
+        name: Zum Dunkelmodus wechseln
     - media: "(prefers-color-scheme: light)"
       scheme: gambio
       toggle:
         icon: material/brightness-7
-        name: Switch to dark mode
+        name: Zum Dunkelmodus wechseln
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: black
       accent: yellow
       toggle:
         icon: material/brightness-4
-        name: Switch to light mode
+        name: Zum Hellmodus wechseln
   font:
     text: Roboto
     code: Roboto Mono
@@ -76,13 +76,13 @@ markdown_extensions:
       permalink: true
 plugins:
   - search:
-      lang: en
+      lang: de
 nav:
-  - Home: index.md
-  - Module Development Guide: module-development-guide.md
-  - GXModule.json Reference: gxmodule-json-reference.md
-  - store.json Reference: store-json-reference.md
-  - Local Testing: local-testing.md
-  - Publishing Guide: publishing-guide.md
-  - Release Checklist: release-checklist.md
-  - Smarty Blocks Reference: smarty-blocks-reference.md
+  - Startseite: index.md
+  - Modulentwicklung Anleitung: modulentwicklung-anleitung.md
+  - GXModule.json Referenz: gxmodule-json-referenz.md
+  - store.json Referenz: store-json-referenz.md
+  - Lokal testen: lokal-testen.md
+  - Veröffentlichung: veroeffentlichung-guide.md
+  - Release Checkliste: release-checkliste.md
+  - Smarty Blocks Referenz: smarty-blocks-referenz.md
