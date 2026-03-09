@@ -51,4 +51,4 @@ Verify these items before creating a GitHub release.
 - [ ] All changes committed and pushed
 - [ ] Version tag follows semantic versioning (`vX.Y.Z`)
 - [ ] GitHub release created with release notes
-- [ ] Module imported in the Developer Portal
+- [ ] Module submitted to Gambio via email to **info@gambio.de**

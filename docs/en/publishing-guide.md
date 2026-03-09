@@ -9,9 +9,11 @@ How to submit your module to the Gambio App Store.
 - A valid `store.json` in the project root (see [store.json Reference](./store-json-reference.md))
 - Store assets in `.assets/` (logos, description)
 
-## Step 1: Create a Developer Account
+## Step 1: Register as a Developer
 
-Register at the [Gambio Developer Portal](https://store-api.new.gambio.com) and sign in.
+Developer registration is currently handled manually. Send an email to **info@gambio.de** with the link to your GitHub repository. Gambio will set up your developer account.
+
+> **Note:** A self-service Developer Portal is coming soon. Until then, developer onboarding is handled via email.
 
 ## Step 2: Set Up Your GitHub Repository
 
@@ -38,14 +40,9 @@ Install the [Gambio Store GitHub App](https://github.com/apps/gambio-store) on y
 
 The tag version should follow [Semantic Versioning](https://semver.org/) (e.g. `v1.0.0`, `v1.1.0`, `v2.0.0`).
 
-## Step 5: Register the Module in the Developer Portal
+## Step 5: Submit Your Module for Review
 
-1. Sign in to the [Developer Portal](https://store-api.new.gambio.com)
-2. Add a new module
-3. Enter your GitHub organization/user name and repository name
-4. Click **Import** to read the repository data
-
-## Step 6: Wait for Review
+Send an email to **info@gambio.de** with the link to your GitHub repository. Include the version tag you want reviewed.
 
 Gambio reviews submitted modules before they appear in the Store. The review checks:
 
@@ -62,7 +59,7 @@ To publish an update:
 
 1. Make your changes and push to the repository
 2. Create a new GitHub release with an incremented version tag
-3. The Developer Portal detects the new release automatically
+3. Notify Gambio via email (**info@gambio.de**) about the new release
 
 ## Store Assets
 

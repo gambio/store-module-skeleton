@@ -9,9 +9,11 @@ Wie du dein Modul im Gambio App Store einreichst.
 - Eine gültige `store.json` im Projekt-Root (siehe [store.json Referenz](./store-json-referenz.md))
 - Store-Assets in `.assets/` (Logos, Beschreibung)
 
-## Schritt 1: Developer Account erstellen
+## Schritt 1: Als Developer registrieren
 
-Registriere dich im [Gambio Developer Portal](https://store-api.new.gambio.com) und melde dich an.
+Die Developer-Registrierung erfolgt derzeit manuell. Schreibe eine E-Mail an **info@gambio.de** mit dem Link zu deinem GitHub Repository. Gambio richtet dann deinen Developer-Account ein.
+
+> **Hinweis:** Ein Self-Service Developer Portal ist in Planung (bald verfügbar). Bis dahin läuft das Onboarding per E-Mail.
 
 ## Schritt 2: GitHub Repository einrichten
 
@@ -38,14 +40,9 @@ Installiere die [Gambio Store GitHub App](https://github.com/apps/gambio-store) 
 
 Der Versions-Tag sollte [Semantic Versioning](https://semver.org/) folgen (z.B. `v1.0.0`, `v1.1.0`, `v2.0.0`).
 
-## Schritt 5: Modul im Developer Portal registrieren
+## Schritt 5: Modul zur Prüfung einreichen
 
-1. Im [Developer Portal](https://store-api.new.gambio.com) anmelden
-2. Neues Modul anlegen
-3. GitHub Organisations-/Benutzernamen und Repository-Namen eintragen
-4. Auf **Einlesen** klicken, um die Repository-Daten zu importieren
-
-## Schritt 6: Freigabe abwarten
+Schreibe eine E-Mail an **info@gambio.de** mit dem Link zu deinem GitHub Repository. Gib den Versions-Tag an, der geprüft werden soll.
 
 Gambio prüft eingereichte Module, bevor sie im Store erscheinen. Die Prüfung umfasst:
 
@@ -62,7 +59,7 @@ Um ein Update zu veröffentlichen:
 
 1. Änderungen vornehmen und zum Repository pushen
 2. Ein neues GitHub Release mit erhöhtem Versions-Tag erstellen
-3. Das Developer Portal erkennt das neue Release automatisch
+3. Gambio per E-Mail (**info@gambio.de**) über das neue Release informieren
 
 ## Store-Assets
 

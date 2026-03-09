@@ -51,4 +51,4 @@ Prüfe diese Punkte bevor du ein GitHub Release erstellst.
 - [ ] Alle Änderungen committet und gepusht
 - [ ] Versions-Tag folgt Semantic Versioning (`vX.Y.Z`)
 - [ ] GitHub Release mit Release Notes erstellt
-- [ ] Modul im Developer Portal importiert
+- [ ] Modul per E-Mail an **info@gambio.de** eingereicht
