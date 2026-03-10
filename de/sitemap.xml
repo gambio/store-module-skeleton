@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://gambio.github.io/store-module-skeleton/de/</loc>
+         <loc>https://developers.gambio.de/store-module-skeleton/de/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
     <url>
-         <loc>https://gambio.github.io/store-module-skeleton/de/gxmodule-json-referenz/</loc>
+         <loc>https://developers.gambio.de/store-module-skeleton/de/gxmodule-json-referenz/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
     <url>
-         <loc>https://gambio.github.io/store-module-skeleton/de/lokal-testen/</loc>
+         <loc>https://developers.gambio.de/store-module-skeleton/de/lokal-testen/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
     <url>
-         <loc>https://gambio.github.io/store-module-skeleton/de/modulentwicklung-anleitung/</loc>
+         <loc>https://developers.gambio.de/store-module-skeleton/de/modulentwicklung-anleitung/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
     <url>
-         <loc>https://gambio.github.io/store-module-skeleton/de/release-checkliste/</loc>
+         <loc>https://developers.gambio.de/store-module-skeleton/de/release-checkliste/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
     <url>
-         <loc>https://gambio.github.io/store-module-skeleton/de/smarty-blocks-referenz/</loc>
+         <loc>https://developers.gambio.de/store-module-skeleton/de/smarty-blocks-referenz/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
     <url>
-         <loc>https://gambio.github.io/store-module-skeleton/de/store-json-referenz/</loc>
+         <loc>https://developers.gambio.de/store-module-skeleton/de/store-json-referenz/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
     <url>
-         <loc>https://gambio.github.io/store-module-skeleton/de/veroeffentlichung-guide/</loc>
+         <loc>https://developers.gambio.de/store-module-skeleton/de/veroeffentlichung-guide/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
 </urlset>

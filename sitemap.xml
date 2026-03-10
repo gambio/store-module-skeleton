@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://gambio.github.io/store-module-skeleton/</loc>
+         <loc>https://developers.gambio.de/store-module-skeleton/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
     <url>
-         <loc>https://gambio.github.io/store-module-skeleton/gxmodule-json-reference/</loc>
+         <loc>https://developers.gambio.de/store-module-skeleton/gxmodule-json-reference/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
     <url>
-         <loc>https://gambio.github.io/store-module-skeleton/local-testing/</loc>
+         <loc>https://developers.gambio.de/store-module-skeleton/local-testing/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
     <url>
-         <loc>https://gambio.github.io/store-module-skeleton/module-development-guide/</loc>
+         <loc>https://developers.gambio.de/store-module-skeleton/module-development-guide/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
     <url>
-         <loc>https://gambio.github.io/store-module-skeleton/publishing-guide/</loc>
+         <loc>https://developers.gambio.de/store-module-skeleton/publishing-guide/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
     <url>
-         <loc>https://gambio.github.io/store-module-skeleton/release-checklist/</loc>
+         <loc>https://developers.gambio.de/store-module-skeleton/release-checklist/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
     <url>
-         <loc>https://gambio.github.io/store-module-skeleton/smarty-blocks-reference/</loc>
+         <loc>https://developers.gambio.de/store-module-skeleton/smarty-blocks-reference/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
     <url>
-         <loc>https://gambio.github.io/store-module-skeleton/store-json-reference/</loc>
+         <loc>https://developers.gambio.de/store-module-skeleton/store-json-reference/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
 </urlset>
