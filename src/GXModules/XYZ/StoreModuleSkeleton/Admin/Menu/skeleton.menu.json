@@ -1,0 +1,16 @@
+[
+    {
+        "id": "BOX_HEADING_SKELETON_MODULE",
+        "sort": 400,
+        "class": "fa fa-puzzle-piece",
+        "title": "skeleton_module.BOX_SKELETON_MODULE",
+        "type": "standalone",
+        "items": [
+            {
+                "sort": 10,
+                "link": "admin.php?do=SkeletonModule",
+                "title": "skeleton_module.BOX_SKELETON_MODULE"
+            }
+        ]
+    }
+]
