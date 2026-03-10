@@ -849,6 +849,10 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>If the required module is not installed on the target shop, your module cannot be installed and the customer sees a message about the missing dependency.</p>
+<div class="admonition info">
+<p class="admonition-title">version_info files are added by the Gambio team</p>
+<p>The files in <code>version_info/</code> are automatically generated during the module onboarding process by the Gambio team. You do not need to create them yourself. See the <a href="../publishing-guide/#version-info-file">Publishing Guide</a> for details.</p>
+</div>
 <h2 id="description-images">Description Images<a class="headerlink" href="#description-images" title="Permanent link">&para;</a></h2>
 <p>You can embed images in the Store description HTML. Place image files in <code>.assets/</code> and reference them using bracket notation:</p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;[screenshot.png]&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;img-fluid w-100&quot;</span><span class="p">&gt;</span>

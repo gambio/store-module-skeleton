@@ -537,6 +537,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#version-info-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Info File
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#updating-your-module" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -732,6 +743,13 @@ store.json
 <li>Module functions as described</li>
 </ul>
 <p>After approval, your module appears in the Gambio App Store.</p>
+<h2 id="version-info-file">Version Info File<a class="headerlink" href="#version-info-file" title="Permanent link">&para;</a></h2>
+<p>During the onboarding process, the Gambio team automatically adds a <code>version_info/</code> file to your module. This PHP file is placed in the shop's <code>version_info/</code> directory when the module is installed and serves as a receipt that the module is present.</p>
+<div class="admonition info">
+<p class="admonition-title">You do not need to create this file yourself</p>
+<p>The <code>version_info/</code> file is generated and managed entirely by the Gambio team during module onboarding. You do not need to include it in your repository.</p>
+</div>
+<p>Other modules can depend on your module by referencing this file via the <code>receiptFiles</code> field in their <code>store.json</code> (see <a href="../store-json-reference/#example-depending-on-another-gambio-module">store.json Reference &gt; receiptFiles</a>).</p>
 <h2 id="updating-your-module">Updating Your Module<a class="headerlink" href="#updating-your-module" title="Permanent link">&para;</a></h2>
 <p>To publish an update:</p>
 <ol>
