@@ -53,6 +53,16 @@ Gambio prüft eingereichte Module, bevor sie im Store erscheinen. Die Prüfung u
 
 Nach der Freigabe erscheint dein Modul im Gambio App Store.
 
+## Version-Info-Datei
+
+Während des Onboarding-Prozesses fügt das Gambio Team automatisch eine `version_info/`-Datei zu deinem Modul hinzu. Diese PHP-Datei wird bei der Installation des Moduls im `version_info/`-Verzeichnis des Shops abgelegt und dient als Nachweis, dass das Modul vorhanden ist.
+
+!!! info "Du musst diese Datei nicht selbst erstellen"
+
+    Die `version_info/`-Datei wird vollständig vom Gambio Team während des Modul-Onboardings generiert und verwaltet. Du brauchst sie nicht in dein Repository aufzunehmen.
+
+Andere Module können über das `receiptFiles`-Feld in ihrer `store.json` eine Abhängigkeit zu deinem Modul definieren (siehe [store.json Referenz > receiptFiles](./store-json-referenz.md#beispiel-abhangigkeit-von-einem-anderen-gambio-modul)).
+
 ## Modul aktualisieren
 
 Um ein Update zu veröffentlichen:

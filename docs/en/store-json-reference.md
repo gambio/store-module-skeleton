@@ -137,6 +137,10 @@ If your module depends on another Gambio module being installed, use `receiptFil
 
 If the required module is not installed on the target shop, your module cannot be installed and the customer sees a message about the missing dependency.
 
+!!! info "version_info files are added by the Gambio team"
+
+    The files in `version_info/` are automatically generated during the module onboarding process by the Gambio team. You do not need to create them yourself. See the [Publishing Guide](./publishing-guide.md#version-info-file) for details.
+
 ## Description Images
 
 You can embed images in the Store description HTML. Place image files in `.assets/` and reference them using bracket notation:

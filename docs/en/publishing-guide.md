@@ -53,6 +53,16 @@ Gambio reviews submitted modules before they appear in the Store. The review che
 
 After approval, your module appears in the Gambio App Store.
 
+## Version Info File
+
+During the onboarding process, the Gambio team automatically adds a `version_info/` file to your module. This PHP file is placed in the shop's `version_info/` directory when the module is installed and serves as a receipt that the module is present.
+
+!!! info "You do not need to create this file yourself"
+
+    The `version_info/` file is generated and managed entirely by the Gambio team during module onboarding. You do not need to include it in your repository.
+
+Other modules can depend on your module by referencing this file via the `receiptFiles` field in their `store.json` (see [store.json Reference > receiptFiles](./store-json-reference.md#example-depending-on-another-gambio-module)).
+
 ## Updating Your Module
 
 To publish an update:

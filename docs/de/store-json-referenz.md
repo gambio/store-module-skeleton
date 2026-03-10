@@ -137,6 +137,10 @@ Wenn dein Modul ein anderes Gambio Modul voraussetzt, verwende `receiptFiles`. D
 
 Wenn das benötigte Modul im Ziel-Shop nicht installiert ist, kann dein Modul nicht installiert werden und der Kunde sieht einen Hinweis auf die fehlende Abhängigkeit.
 
+!!! info "version_info-Dateien werden vom Gambio Team hinzugefügt"
+
+    Die Dateien in `version_info/` werden automatisch während des Modul-Onboardings vom Gambio Team generiert. Du musst sie nicht selbst erstellen. Siehe [Veröffentlichung > Version-Info-Datei](./veroeffentlichung-guide.md#version-info-datei) für Details.
+
 ## Beschreibungsbilder
 
 Du kannst Bilder in die Store-Beschreibungs-HTML einbetten. Platziere Bilddateien in `.assets/` und referenziere sie mit eckigen Klammern:
