@@ -1,0 +1,37 @@
+{extends file="get_usermod:layouts/main/layout.html"}
+{load_language_text section="skeleton_module" name="skeleton_module"}
+{block name="content"}
+
+    <div class="row skeleton-module-description">
+        <div class="col-md-4">{$skeleton_module.DESCRIPTION}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-1">
+            <div class="timer-group">
+                <div class="timer hour">
+                    <div class="hand"><span></span></div>
+                    <div class="hand"><span></span></div>
+                </div>
+                <div class="timer minute">
+                    <div class="hand"><span></span></div>
+                    <div class="hand"><span></span></div>
+                </div>
+                <div class="timer second">
+                    <div class="hand"><span></span></div>
+                    <div class="hand"><span></span></div>
+                </div>
+                <div class="face">
+                    <h2>Beautiful Timer</h2>
+                    <p id="lazy" data-remained="{$content.remained}" data-timer_value="{$content.timer_value}"></p>
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="skeleton-timer-start" type="button" class="btn btn-primary">{$skeleton_module.START}</button>
+                <button id="skeleton-timer-reset" type="button" class="btn btn-secondary">{$skeleton_modules.RESET}</button>
+            </div>
+        </div>
+    </div>
+
+{/block}
+
