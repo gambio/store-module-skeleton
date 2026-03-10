@@ -4,7 +4,7 @@ on:
   push:
     branches:
       # the main branch of the repo - that varies
-      - develop
+      - master
 jobs:
   release:
     name: Create a new release
