@@ -1,5 +1,5 @@
 site_name: Gambio Store Modul Dokumentation
-site_url: https://gambio.github.io/store-module-skeleton/de/
+site_url: https://developers.gambio.de/store-module-skeleton/de/
 docs_dir: ./docs/de
 site_dir: ./site/de
 copyright: Copyright &copy; 2026 Gambio GmbH
