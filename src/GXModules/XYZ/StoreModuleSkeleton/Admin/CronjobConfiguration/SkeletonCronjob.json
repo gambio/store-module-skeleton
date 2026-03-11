@@ -1,0 +1,31 @@
+{
+    "name": "SkeletonCronjob",
+    "title": "cronjob_skeleton.CRONJOB_TITLE",
+    "configuration": {
+        "active": {
+            "name": "active",
+            "type": "checkbox",
+            "label": "cronjob_skeleton.LABEL_ACTIVE",
+            "defaultValue": false
+        },
+        "interval": {
+            "name": "interval",
+            "type": "select",
+            "label": "cronjob_skeleton.LABEL_INTERVAL",
+            "defaultValue": "0 * * * *",
+            "values": [
+                { "value": "* * * * *",   "text": "cronjob_skeleton.EVERY_MINUTE" },
+                { "value": "*/5 * * * *", "text": "cronjob_skeleton.EVERY_5_MINUTES" },
+                { "value": "*/15 * * * *","text": "cronjob_skeleton.EVERY_15_MINUTES" },
+                { "value": "0 * * * *",   "text": "cronjob_skeleton.EVERY_HOUR" },
+                { "value": "0 0 * * *",   "text": "cronjob_skeleton.EVERY_DAY" }
+            ]
+        },
+        "sortOrder": {
+            "name": "sort-order",
+            "type": "hidden",
+            "label": "",
+            "defaultValue": "90"
+        }
+    }
+}

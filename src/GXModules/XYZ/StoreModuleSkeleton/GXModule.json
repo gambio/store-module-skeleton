@@ -1,0 +1,139 @@
+{
+    "title": "skeleton_module.PAGE_TITLE",
+    "description": "skeleton_module.DESCRIPTION",
+    "sortOrder": 99999,
+    "forceIncludingFiles": false,
+    "install": {
+        "controller": "GXModules\\XYZ\\Skeleton\\Admin\\Actions\\SkeletonInstallAction",
+        "method": "onInstall"
+    },
+    "uninstall": {
+        "controller": "GXModules\\XYZ\\Skeleton\\Admin\\Actions\\SkeletonInstallAction",
+        "method": "onUninstall"
+    },
+    "save": {
+        "controller": "GXModules\\XYZ\\Skeleton\\Admin\\Actions\\SkeletonSaveAction",
+        "method": "onSave"
+    },
+    "configuration": [
+        {
+            "title": "skeleton_module.SECTION_GENERAL",
+            "fields": {
+                "enableFeature": {
+                    "type": "checkbox",
+                    "label": "skeleton_module.LABEL_ENABLE_FEATURE",
+                    "tooltip": {
+                        "type": "info",
+                        "text": "skeleton_module.TOOLTIP_ENABLE_FEATURE"
+                    }
+                },
+                "apiKey": {
+                    "type": "text",
+                    "label": "skeleton_module.LABEL_API_KEY",
+                    "required": true,
+                    "tooltip": {
+                        "type": "info",
+                        "text": "skeleton_module.TOOLTIP_API_KEY"
+                    }
+                },
+                "maxItems": {
+                    "type": "number",
+                    "label": "skeleton_module.LABEL_MAX_ITEMS",
+                    "default_value": "10",
+                    "min": 1,
+                    "max": 100,
+                    "step": 1
+                },
+                "displayMode": {
+                    "type": "select",
+                    "label": "skeleton_module.LABEL_DISPLAY_MODE",
+                    "values": [
+                        { "value": "grid", "text": "skeleton_module.OPTION_GRID" },
+                        { "value": "list", "text": "skeleton_module.OPTION_LIST" },
+                        { "value": "carousel", "text": "skeleton_module.OPTION_CAROUSEL" }
+                    ]
+                }
+            }
+        },
+        {
+            "title": "skeleton_module.SECTION_ADVANCED",
+            "tab": "skeleton_module.TAB_ADVANCED",
+            "fields": {
+                "customCss": {
+                    "type": "textarea",
+                    "label": "skeleton_module.LABEL_CUSTOM_CSS"
+                },
+                "welcomeText": {
+                    "type": "editor",
+                    "label": "skeleton_module.LABEL_WELCOME_TEXT",
+                    "languageDependent": true
+                },
+                "targetCustomerGroups": {
+                    "type": "customer_group",
+                    "label": "skeleton_module.LABEL_CUSTOMER_GROUPS"
+                },
+                "notifyOnStatus": {
+                    "type": "order_status",
+                    "label": "skeleton_module.LABEL_NOTIFY_STATUS"
+                },
+                "targetCountries": {
+                    "type": "countries",
+                    "label": "skeleton_module.LABEL_TARGET_COUNTRIES"
+                },
+                "logoUpload": {
+                    "type": "file",
+                    "label": "skeleton_module.LABEL_LOGO",
+                    "folder": "images/modules",
+                    "accept": "image/*"
+                },
+                "primaryColor": {
+                    "type": "color",
+                    "label": "skeleton_module.LABEL_PRIMARY_COLOR",
+                    "default_value": "#002337"
+                }
+            }
+        },
+        {
+            "title": "skeleton_module.SECTION_ACTIONS",
+            "tab": "skeleton_module.TAB_ADVANCED",
+            "fields": {
+                "clearCacheButton": {
+                    "type": "button",
+                    "label": "skeleton_module.LABEL_CLEAR_CACHE",
+                    "text": "skeleton_module.BTN_CLEAR_CACHE",
+                    "color": "warning",
+                    "action": {
+                        "controller": "GXModules\\XYZ\\Skeleton\\Admin\\Actions\\SkeletonCacheAction",
+                        "method": "clearCache",
+                        "message": "skeleton_module.MSG_CACHE_CLEARED"
+                    }
+                },
+                "resetButton": {
+                    "type": "button",
+                    "label": "skeleton_module.LABEL_RESET",
+                    "text": "skeleton_module.BTN_RESET",
+                    "color": "danger",
+                    "modal": "resetConfirmModal"
+                },
+                "resetConfirmModal": {
+                    "type": "modal",
+                    "title": "skeleton_module.MODAL_RESET_TITLE",
+                    "description": "skeleton_module.MODAL_RESET_DESCRIPTION",
+                    "buttons": {
+                        "cancel": {
+                            "text": "skeleton_module.BTN_CANCEL"
+                        },
+                        "confirm": {
+                            "text": "skeleton_module.BTN_CONFIRM_RESET",
+                            "action": {
+                                "controller": "GXModules\\XYZ\\Skeleton\\Admin\\Actions\\SkeletonCacheAction",
+                                "method": "resetAll",
+                                "message": "skeleton_module.MSG_RESET_DONE"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
