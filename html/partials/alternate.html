@@ -1,0 +1,26 @@
+{% if config.extra.alternate %}
+  <div class="md-header__option">
+    <div class="md-select">
+      <button class="md-header__button md-icon md-lang-button" aria-label="{{ lang.t('select.language') }}">
+        {% include ".icons/octicons/globe-24.svg" %}
+        {% include ".icons/octicons/chevron-down-24.svg" %}
+      </button>
+      <div class="md-select__inner">
+        <ul class="md-select__list">
+          {% for alt in config.extra.alternate %}
+            <li class="md-select__item">
+              <a href="{{ alt.link | url }}" hreflang="{{ alt.lang }}" class="md-select__link">
+                {% if alt.lang == "en" %}
+                <span class="lang-flag" aria-hidden="true"><svg viewBox="0 0 60 30"><clipPath id="ukclip"><path d="M0,0 v30 h60 v-30 z"/></clipPath><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#ukclip)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></svg></span>
+                {% elif alt.lang == "de" %}
+                <span class="lang-flag" aria-hidden="true"><svg viewBox="0 0 5 3"><rect width="5" height="1" y="0" fill="#000"/><rect width="5" height="1" y="1" fill="#DD0000"/><rect width="5" height="1" y="2" fill="#FFCE00"/></svg></span>
+                {% endif %}
+                {{ alt.name }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endif %}

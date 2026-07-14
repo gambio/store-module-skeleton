@@ -1,8 +1,9 @@
-site_name: Gambio Store Modul Dokumentation
+site_name: Info Portal
 site_url: https://developers.gambio.de/store-module-skeleton/de/
 docs_dir: ./docs/de
 site_dir: ./site/de
-copyright: Copyright &copy; 2026 Gambio GmbH
+copyright: >-
+  Copyright &copy; 2026 Gambio GmbH &nbsp;&middot;&nbsp; <a href="https://www.gambio.de/rechtliches/impressum" target="_blank" rel="noopener">Impressum</a> &nbsp;&middot;&nbsp; <a href="https://www.gambio.de/rechtliches/datenschutz" target="_blank" rel="noopener">Datenschutz</a> &nbsp;&middot;&nbsp; <a href="https://www.gambio.de/kontakt" target="_blank" rel="noopener">Kontakt</a>
 theme:
   name: material
   custom_dir: html
@@ -10,23 +11,16 @@ theme:
   logo: logo.svg
   language: de
   palette:
-    - media: "(prefers-color-scheme)"
-      scheme: gambio
-      toggle:
-        icon: material/brightness-auto
-        name: Zum Dunkelmodus wechseln
-    - media: "(prefers-color-scheme: light)"
-      scheme: gambio
-      toggle:
-        icon: material/brightness-7
-        name: Zum Dunkelmodus wechseln
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+    - scheme: slate
       primary: black
       accent: yellow
       toggle:
-        icon: material/brightness-4
+        icon: octicons/sun-24
         name: Zum Hellmodus wechseln
+    - scheme: gambio
+      toggle:
+        icon: octicons/moon-24
+        name: Zum Dunkelmodus wechseln
   font:
     text: Roboto
     code: Roboto Mono

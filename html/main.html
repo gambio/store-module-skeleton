@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{%- set is_en = config.theme.language == "en" -%}
+
+{#- Portal-level navigation: static tabs linking across developers.gambio.de.
+    This site's own chapters live in the left sidebar. -#}
+{% block tabs %}
+  <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+    <div class="md-grid">
+      <ul class="md-tabs__list">
+        {% if is_en %}
+          <li class="md-tabs__item">
+            <a href="/en/installation/" class="md-tabs__link">Installation</a>
+          </li>
+          <li class="md-tabs__item">
+            <a href="/en/release-notes/" class="md-tabs__link">Release Notes</a>
+          </li>
+          <li class="md-tabs__item">
+            <a href="/manual/en/" class="md-tabs__link">User Manual</a>
+          </li>
+          <li class="md-tabs__item">
+            <a href="/docs/" class="md-tabs__link">Developer Documentation</a>
+          </li>
+        {% else %}
+          <li class="md-tabs__item">
+            <a href="/installation/" class="md-tabs__link">Installation</a>
+          </li>
+          <li class="md-tabs__item">
+            <a href="/release-notes/" class="md-tabs__link">Versionshinweise</a>
+          </li>
+          <li class="md-tabs__item">
+            <a href="/manual/" class="md-tabs__link">Benutzerhandbuch</a>
+          </li>
+          <li class="md-tabs__item">
+            <a href="/docs/" class="md-tabs__link">Entwickler-Dokumentation</a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+{% endblock %}
+
+{#- Breadcrumbs: portal home / site root / chapter path / current page -#}
+{% block content %}
+  {%- set site_label = "Store Module Skeleton" -%}
+  {%- set site_root = base_url ~ "/" -%}
+  {%- set portal_home = "/en/" if is_en else "/" -%}
+  <nav class="breadcrumbs" aria-label="Breadcrumbs">
+    <a class="breadcrumbs__home" href="{{ portal_home }}" aria-label="Home">
+      {% include ".icons/octicons/home-24.svg" %}
+    </a>
+    <span class="breadcrumbs__sep">›</span>
+    {% if page.is_homepage %}
+      <span class="breadcrumbs__current">{{ site_label }}</span>
+    {% else %}
+      <a class="breadcrumbs__item" href="{{ site_root }}">{{ site_label }}</a>
+      {% for ancestor in page.ancestors | reverse %}
+        <span class="breadcrumbs__sep">›</span>
+        {% set crumb_url = ancestor.url if ancestor.is_page else none %}
+        {% if not crumb_url %}
+          {% set first_page = ancestor.children | selectattr("is_page") | list | first %}
+          {% if first_page %}{% set crumb_url = first_page.url %}{% endif %}
+        {% endif %}
+        {% if crumb_url %}
+          <a class="breadcrumbs__item" href="{{ crumb_url | url }}">{{ ancestor.title }}</a>
+        {% else %}
+          <span class="breadcrumbs__item">{{ ancestor.title }}</span>
+        {% endif %}
+      {% endfor %}
+      <span class="breadcrumbs__sep">›</span>
+      <span class="breadcrumbs__current">{{ page.title }}</span>
+    {% endif %}
+  </nav>
+  {{ super() }}
+
+  {#- Empty chapter index pages: list the chapter's topics automatically.
+      With mkdocs-section-index the page has no parent, so locate the deepest
+      active section in the nav tree instead. -#}
+  {% if (page.content | striptags | trim | length) < 200 %}
+    {% set ns = namespace(section=none) %}
+    {%- for item in nav recursive -%}
+      {%- if item.is_section and item.active %}{% set ns.section = item %}{% endif -%}
+      {%- if item.children %}{{ loop(item.children) }}{% endif -%}
+    {%- endfor -%}
+    {% if ns.section %}
+      <nav class="section-links" aria-label="{{ 'Topics' if is_en else 'Themen' }}">
+        {% for item in ns.section.children %}
+          {% if not (item.is_page and item.url == page.url) %}
+            {% set item_url = item.url if item.is_page else none %}
+            {% if not item_url %}
+              {% set first_page = item.children | selectattr("is_page") | list | first %}
+              {% if first_page %}{% set item_url = first_page.url %}{% endif %}
+            {% endif %}
+            {% if item_url %}
+              <a class="section-links__item" href="{{ item_url | url }}">
+                <span class="section-links__title">{{ item.title }}</span>
+                <span class="section-links__arrow">→</span>
+              </a>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </nav>
+    {% endif %}
+  {% endif %}
+{% endblock %}
