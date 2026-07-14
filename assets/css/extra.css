@@ -47,8 +47,296 @@ span[align="right"]
 		transition: transform 0.25s ease;
 		cursor: zoom-in;
 	}
-	
+
 	img.enlargeable:active{
 		transform: scale(1.66);
 	}
+}
+
+/* ---------- Breadcrumbs ---------- */
+.breadcrumbs {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: .35rem;
+	margin: 0 0 1.2rem;
+	font-size: .66rem;
+	color: var(--md-default-fg-color--light);
+}
+
+.md-typeset .breadcrumbs__home,
+.breadcrumbs__home {
+	display: inline-flex;
+	color: var(--md-default-fg-color--light);
+}
+
+.breadcrumbs__home svg {
+	width: .8rem;
+	height: .8rem;
+	fill: currentColor;
+}
+
+.md-typeset .breadcrumbs__home:hover,
+.breadcrumbs__home:hover {
+	color: var(--md-accent-fg-color);
+}
+
+.md-typeset a.breadcrumbs__item,
+a.breadcrumbs__item {
+	color: inherit;
+}
+
+.md-typeset a.breadcrumbs__item:hover,
+a.breadcrumbs__item:hover {
+	color: var(--md-accent-fg-color);
+}
+
+.breadcrumbs__sep {
+	opacity: .55;
+}
+
+.breadcrumbs__current {
+	color: var(--md-default-fg-color);
+	font-weight: 600;
+}
+
+/* ---------- Auto topic list on empty chapter pages ---------- */
+.section-links {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: .8rem;
+	margin: 1.2rem 0 2rem;
+}
+
+@media only screen and (max-width: 700px) {
+	.section-links {
+		grid-template-columns: 1fr;
+	}
+}
+
+.section-links__item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: .8rem;
+	padding: .85rem 1.1rem;
+	border: 1px solid var(--md-default-fg-color--lightest);
+	border-radius: 10px;
+	color: var(--md-default-fg-color) !important;
+	font-weight: 600;
+	font-size: .78rem;
+	transition: border-color .2s ease, transform .2s ease;
+}
+
+.section-links__item:hover {
+	border-color: rgba(253, 195, 0, .55);
+	transform: translateY(-2px);
+}
+
+.section-links__arrow {
+	color: #fdc300;
+	transition: transform .2s ease;
+}
+
+.section-links__item:hover .section-links__arrow {
+	transform: translateX(4px);
+}
+
+/* ---------- Header: language button with chevron ---------- */
+.md-lang-button {
+	display: inline-flex !important;
+	align-items: center;
+	gap: .05rem;
+	width: auto !important;
+}
+
+.md-lang-button svg:last-child {
+	width: .7rem;
+	height: .7rem;
+}
+
+/* ---------- Header: pill search field ---------- */
+.md-search__form {
+	border-radius: 2rem;
+	background-color: rgba(255, 255, 255, .08);
+	transition: background-color .2s ease, box-shadow .2s ease;
+}
+
+.md-search__form:hover {
+	background-color: rgba(255, 255, 255, .14);
+	box-shadow: 0 0 0 1px rgba(253, 195, 0, .35);
+}
+
+.md-search__input {
+	border-radius: 2rem;
+}
+
+/* focused state: flatten bottom corners so the results panel docks cleanly */
+[data-md-toggle="search"]:checked ~ .md-header .md-search__form {
+	border-radius: .5rem .5rem 0 0;
+}
+
+[data-md-toggle="search"]:checked ~ .md-header .md-search__output {
+	border-radius: 0 0 .5rem .5rem;
+}
+
+/* ---------- Language dropdown: flags + rounded panel ---------- */
+.md-select:is(:hover, :focus-within) .md-lang-button svg:last-child {
+	transform: rotate(180deg);
+}
+
+.md-lang-button svg:last-child {
+	transition: transform .2s ease;
+}
+
+.md-select__inner {
+	border-radius: 12px;
+	border: 1px solid var(--md-default-fg-color--lightest);
+	box-shadow: 0 12px 32px rgba(0, 0, 0, .3);
+	padding: .3rem;
+	min-width: 11rem;
+}
+
+.md-select__list {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.md-typeset .md-select__item,
+.md-select__item {
+	list-style: none;
+	margin: 0 !important;
+	padding: 0 !important;
+	line-height: 1.2;
+}
+
+.md-select__link {
+	display: flex !important;
+	align-items: center;
+	gap: .65rem;
+	border-radius: 8px;
+	padding: .5rem .7rem !important;
+	font-size: .75rem;
+	font-weight: 600;
+}
+
+.md-select__link:hover {
+	background: rgba(128, 128, 128, .14);
+}
+
+.lang-flag {
+	display: inline-flex;
+	flex-shrink: 0;
+	width: 1.5em;
+	height: 1em;
+	border-radius: 2px;
+	overflow: hidden;
+	box-shadow: 0 0 0 1px rgba(128, 128, 128, .35);
+}
+
+.lang-flag svg {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+	font-size: .75rem;
+}
+
+/* ---------- Admonitions: soft tinted cards ---------- */
+.md-typeset .admonition,
+.md-typeset details {
+	border-radius: 12px;
+	border-width: 1px;
+	box-shadow: none;
+	padding: .15rem 1.1rem .45rem;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+	background: transparent !important;
+	margin: 0 -1.1rem .2rem;
+	padding: .7rem 1.1rem .2rem 2.7rem;
+	font-weight: 700;
+}
+
+.md-typeset .admonition-title::before,
+.md-typeset summary::before {
+	left: 1.1rem;
+	top: .78rem;
+}
+
+.md-typeset summary::after {
+	top: .78rem;
+}
+
+/* per-type tint, border and title color */
+.md-typeset .admonition.note,
+.md-typeset details.note {
+	border-color: rgba(68, 138, 255, .35);
+	background: rgba(68, 138, 255, .06);
+}
+.md-typeset .note > .admonition-title,
+.md-typeset .note > summary { color: #448aff; }
+
+.md-typeset .admonition.info,
+.md-typeset details.info {
+	border-color: rgba(0, 184, 212, .35);
+	background: rgba(0, 184, 212, .06);
+}
+.md-typeset .info > .admonition-title,
+.md-typeset .info > summary { color: #00b8d4; }
+
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+	border-color: rgba(0, 191, 165, .35);
+	background: rgba(0, 191, 165, .06);
+}
+.md-typeset .tip > .admonition-title,
+.md-typeset .tip > summary { color: #009e88; }
+
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+	border-color: rgba(255, 145, 0, .4);
+	background: rgba(255, 145, 0, .07);
+}
+.md-typeset .warning > .admonition-title,
+.md-typeset .warning > summary { color: #e08200; }
+
+.md-typeset .admonition.danger,
+.md-typeset details.danger {
+	border-color: rgba(255, 23, 68, .4);
+	background: rgba(255, 23, 68, .06);
+}
+.md-typeset .danger > .admonition-title,
+.md-typeset .danger > summary { color: #f5254e; }
+
+/* Header always shows the site name - never swap to the page title on scroll */
+.md-header__topic + .md-header__topic {
+	display: none;
+}
+
+.md-header__title .md-header__topic {
+	transform: none !important;
+	opacity: 1 !important;
+}
+
+/* Footer legal links */
+.md-copyright a {
+	color: var(--md-footer-fg-color--light);
+}
+
+.md-copyright a:hover {
+	color: #fdc300;
+}
+
+/* ---------- Typography: larger base text, especially tables ---------- */
+.md-typeset {
+	font-size: .85rem;
+}
+
+.md-typeset table:not([class]) {
+	font-size: .8rem;
 }
