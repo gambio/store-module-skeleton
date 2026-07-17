@@ -340,3 +340,18 @@ a.breadcrumbs__item:hover {
 .md-typeset table:not([class]) {
 	font-size: .8rem;
 }
+
+/* ---------- Self-hosted fonts (no Google Fonts requests — GDPR) ---------- */
+@font-face { font-family: Roboto; font-style: normal; font-weight: 300; font-display: swap; src: url("../fonts/roboto-v51-latin-300.woff2") format("woff2"); }
+@font-face { font-family: Roboto; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/roboto-v51-latin-regular.woff2") format("woff2"); }
+@font-face { font-family: Roboto; font-style: italic; font-weight: 400; font-display: swap; src: url("../fonts/roboto-v51-latin-italic.woff2") format("woff2"); }
+@font-face { font-family: Roboto; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/roboto-v51-latin-500.woff2") format("woff2"); }
+@font-face { font-family: Roboto; font-style: normal; font-weight: 700; font-display: swap; src: url("../fonts/roboto-v51-latin-700.woff2") format("woff2"); }
+@font-face { font-family: "Roboto Mono"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/roboto-mono-v31-latin-regular.woff2") format("woff2"); }
+@font-face { font-family: "Roboto Mono"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fonts/roboto-mono-v31-latin-700.woff2") format("woff2"); }
+
+:root {
+	--md-text-font: "Roboto";
+	--md-code-font: "Roboto Mono";
+}
+
