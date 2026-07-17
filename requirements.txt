@@ -1,3 +1,4 @@
+-c constraints.txt
 # Pinned to the verified working set (2026-07). Bump deliberately, not implicitly.
 mkdocs==1.6.1
 mkdocs-material==9.7.6
