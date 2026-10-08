@@ -28,6 +28,7 @@ theme:
     - toc.integrate
     - navigation.top
 extra:
+  portal_tab_active: store-module-skeleton   # key of this site's tab in the portal menu (see hooks/portal_nav.py)
   alternate:
     - name: English
       link: /store-module-skeleton/
@@ -66,6 +67,8 @@ markdown_extensions:
   - toc:
       toc_depth: 4
       permalink: true
+hooks:
+  - hooks/portal_nav.py   # loads the portal menu for the shared tab bar
 plugins:
   - search:
       lang: de

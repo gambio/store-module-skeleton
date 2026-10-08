@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - docs
+  # Manual run, e.g. after the portal menu changed (the tab bar is fetched at build time)
+  workflow_dispatch:
 jobs:
   build:
     name: Deploy docs to GitHub Pages
