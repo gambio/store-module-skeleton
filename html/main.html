@@ -2,39 +2,23 @@
 
 {%- set is_en = config.theme.language == "en" -%}
 
-{#- Portal-level navigation: static tabs linking across developers.gambio.de.
-    This site's own chapters live in the left sidebar. -#}
+{#- Portal-level navigation: the tab bar shared across developers.gambio.de.
+    The tabs come from the portal's own menu (hooks/portal_nav.py loads
+    https://developers.gambio.de/assets/portal-nav.json into config.extra.portal_tabs);
+    `extra.portal_tab_active` in mkdocs.yml marks this site's tab. This site's own
+    chapters live in the left sidebar.
+    This block is identical in manual, docs and store-module-skeleton. -#}
 {% block tabs %}
+  {%- set portal_tabs = config.extra.portal_tabs[config.theme.language] -%}
+  {%- set active_key = config.extra.portal_tab_active -%}
   <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
     <div class="md-grid">
       <ul class="md-tabs__list">
-        {% if is_en %}
-          <li class="md-tabs__item">
-            <a href="/en/installation/" class="md-tabs__link">Installation</a>
+        {%- for tab in portal_tabs %}
+          <li class="md-tabs__item{% if tab.key == active_key %} md-tabs__item--active{% endif %}">
+            <a href="{{ tab.url }}" class="md-tabs__link">{{ tab.title }}</a>
           </li>
-          <li class="md-tabs__item">
-            <a href="/en/release-notes/" class="md-tabs__link">Release Notes</a>
-          </li>
-          <li class="md-tabs__item">
-            <a href="/manual/en/" class="md-tabs__link">User Manual</a>
-          </li>
-          <li class="md-tabs__item">
-            <a href="/docs/" class="md-tabs__link">Developer Documentation</a>
-          </li>
-        {% else %}
-          <li class="md-tabs__item">
-            <a href="/installation/" class="md-tabs__link">Installation</a>
-          </li>
-          <li class="md-tabs__item">
-            <a href="/release-notes/" class="md-tabs__link">Versionshinweise</a>
-          </li>
-          <li class="md-tabs__item">
-            <a href="/manual/" class="md-tabs__link">Benutzerhandbuch</a>
-          </li>
-          <li class="md-tabs__item">
-            <a href="/docs/" class="md-tabs__link">Entwickler-Dokumentation</a>
-          </li>
-        {% endif %}
+        {%- endfor %}
       </ul>
     </div>
   </nav>
