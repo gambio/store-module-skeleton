@@ -1,13 +1,12 @@
 # Modulentwicklung Anleitung
 
-Diese Anleitung zeigt Schritt für Schritt, wie du ein Gambio GX Modul mit dem [Store Module Skeleton](https://github.com/gambio/store-module-skeleton) erstellst.
+Diese Anleitung zeigt Schritt für Schritt, wie du ein Gambio GX Modul mit dem [Module Skeleton](https://github.com/gambio/store-module-skeleton) erstellst.
 
 ## Voraussetzungen
 
 - Eine Gambio Shop Installation (lokal oder Testsystem)
 - PHP >= 8.0
 - Grundkenntnisse in PHP, HTML, CSS und JavaScript
-- Ein GitHub Account (für die Veröffentlichung im Store)
 
 ## Wie Gambio Module funktionieren
 
@@ -566,5 +565,3 @@ GXModules/AcmeCorp/MeinModul/
 
 - [GXModule.json Referenz](./gxmodule-json-referenz.md): Vollständige Feldtyp-Dokumentation
 - [Lokal testen](./lokal-testen.md): Dein Modul testen
-- [store.json Referenz](./store-json-referenz.md): Store-Metadaten-Format
-- [Veröffentlichung](./veroeffentlichung-guide.md): Modul im Gambio Store einreichen

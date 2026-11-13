@@ -76,8 +76,5 @@ nav:
   - Startseite: index.md
   - Modulentwicklung Anleitung: modulentwicklung-anleitung.md
   - GXModule.json Referenz: gxmodule-json-referenz.md
-  - store.json Referenz: store-json-referenz.md
   - Lokal testen: lokal-testen.md
-  - Veröffentlichung: veroeffentlichung-guide.md
-  - Release Checkliste: release-checkliste.md
   - Smarty Blocks Referenz: smarty-blocks-referenz.md

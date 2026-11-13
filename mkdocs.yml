@@ -76,8 +76,5 @@ nav:
   - Home: index.md
   - Module Development Guide: module-development-guide.md
   - GXModule.json Reference: gxmodule-json-reference.md
-  - store.json Reference: store-json-reference.md
   - Local Testing: local-testing.md
-  - Publishing Guide: publishing-guide.md
-  - Release Checklist: release-checklist.md
   - Smarty Blocks Reference: smarty-blocks-reference.md
