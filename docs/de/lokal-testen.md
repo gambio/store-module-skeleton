@@ -1,6 +1,6 @@
 # Lokal testen
 
-Wie du dein Modul in einem lokalen Gambio Shop installierst und testest, bevor du es veröffentlichst.
+Wie du dein Modul in einem lokalen Gambio Shop installierst und testest, bevor du es in einem Live-Shop einsetzt.
 
 ## Installation
 
@@ -103,5 +103,5 @@ rm /var/www/gambio-shop/.dev-environment
 
 ## Nächste Schritte
 
-- [Veröffentlichung](./veroeffentlichung-guide.md): Dein getestetes Modul im Store einreichen
-- [Release Checkliste](./release-checkliste.md): Alles vor dem Release prüfen
+- [Modulentwicklung Anleitung](./modulentwicklung-anleitung.md): Dein Modul erstellen
+- [GXModule.json Referenz](./gxmodule-json-referenz.md): Vollständige Feldtyp-Dokumentation
